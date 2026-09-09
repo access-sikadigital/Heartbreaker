@@ -25,7 +25,7 @@ export default function FlashPage() {
         eyebrow="Flash"
         heading="Drawn once. Tattooed once."
         intro="Flash days are a limited set of designs, released together and claimed first come. Each is tattooed a single time, so the piece you take home stays yours alone."
-        image="/brand/photography/placeholder-14.jpg"
+        image="/brand/photography/fine-line/shoulder-circles.jpg"
         trail={[{ label: "Flash", href: "/flash/" }]}
       />
 

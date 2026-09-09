@@ -95,9 +95,9 @@ export default function AboutPage() {
 
         <Reveal stagger={0.1} className="mt-12 grid gap-5 md:grid-cols-3">
           {[
-            "/brand/photography/placeholder-02.jpg",
-            "/brand/photography/placeholder-10.jpg",
-            "/brand/photography/placeholder-13.jpg",
+            "/brand/photography/small-micro/back-black-shirt.jpg",
+            "/brand/photography/fine-line/back-red-knit.jpg",
+            "/brand/photography/script-lettering/arm-garden.jpg",
           ].map((src, i) => (
             <RevealItem key={src}>
               <Parallax speed={0.1 + i * 0.04} className="aspect-3/4">
@@ -119,7 +119,7 @@ export default function AboutPage() {
         <div className="grid gap-14 lg:grid-cols-2 lg:gap-20">
           <ImageReveal from="left" className="aspect-4/3">
             <Image
-              src="/brand/photography/placeholder-03.jpg"
+              src="/brand/photography/fine-line/floral-arm.jpg"
               alt="Healed fine line work"
               width={900}
               height={675}

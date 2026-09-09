@@ -3,6 +3,7 @@ import Link from "next/link";
 import { PageHero } from "@/components/ui/PageHero";
 import { Section } from "@/components/ui/Section";
 import { TextScrub } from "@/components/motion/TextScrub";
+import { EnquiryForm } from "@/components/forms/EnquiryForm";
 import { site } from "@/data/site";
 import { JsonLd, localBusinessSchema } from "@/lib/schema";
 
@@ -34,14 +35,46 @@ export default function ContactPage() {
       />
 
       <Section ground="paper">
-        <div className="grid gap-14 lg:grid-cols-[1fr_1fr] lg:gap-20">
-          <div>
-            <TextScrub as="p" className="type-lead max-w-[42ch] text-maroon">
+        {/*
+          The left column is sticky and carries real content. It previously
+          held three short blocks against a long form, so it ran out of things
+          to say a third of the way down and left a hole.
+
+          The "what to include" list is the part doing actual work: enquiries
+          that arrive with placement, size and timing attached can be answered
+          in one reply instead of four.
+        */}
+        <div className="grid gap-14 lg:grid-cols-[0.85fr_1.15fr] lg:items-start lg:gap-20">
+          <div className="lg:sticky lg:top-28 lg:self-start">
+            <TextScrub as="p" className="type-lead max-w-[38ch] text-maroon">
               Tell us what you are thinking, roughly where you want it, and any
               references. You will get a straight answer on whether it works.
             </TextScrub>
 
-            <div className="mt-12 flex flex-col gap-8 border-t rule-ink pt-8">
+            <div className="mt-10 border-t rule-ink pt-8">
+              <p className="type-label text-chilli">What to include</p>
+              <ul className="mt-5 flex flex-col gap-3">
+                {[
+                  "The idea, even half-formed",
+                  "Where on the body it goes",
+                  "Rough size in centimetres",
+                  "Days or weeks that suit you",
+                  "Reference images, sent on Instagram",
+                ].map((item) => (
+                  <li
+                    key={item}
+                    className="type-body flex gap-3 text-ink-70"
+                  >
+                    <span aria-hidden="true" className="text-chilli">
+                      &mdash;
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="mt-10 grid gap-8 border-t rule-ink pt-8 sm:grid-cols-2 lg:grid-cols-1">
               <div>
                 <p className="type-label text-ink-50">Instagram</p>
                 <a
@@ -68,38 +101,36 @@ export default function ContactPage() {
               <div>
                 <p className="type-label text-ink-50">Hours</p>
                 <p className="type-body mt-2 text-ink-70">
-                  By appointment. Later sessions available on request.
+                  By appointment. Later sessions on request.
+                </p>
+              </div>
+
+              <div>
+                <p className="type-label text-ink-50">Reply time</p>
+                <p className="type-body mt-2 text-ink-70">
+                  Usually the same day.
                 </p>
               </div>
             </div>
-          </div>
 
-          {/* Enquiry form slot — wire to the booking tool once chosen. */}
-          <div className="border rule-ink bg-paper-warm p-8 md:p-10">
-            <h2 className="type-subhead text-maroon">Send an enquiry</h2>
-            <p className="type-body mt-4 text-ink-70">
-              The enquiry form arrives with the booking system. Until then,
-              Instagram is the quickest route and lets you attach references
-              straight from your camera roll.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <a
-                href={site.social.instagram}
-                target="_blank"
-                rel="noreferrer noopener"
-                className="type-button inline-flex items-center gap-3 bg-maroon px-7 py-3.5 text-offwhite transition-colors duration-(--duration-fast) hover:bg-chilli"
-              >
-                Message on Instagram
-                <span aria-hidden="true">&#8599;</span>
-              </a>
-              <Link
-                href="/faqs/"
-                className="type-button inline-flex items-center gap-3 border border-maroon px-7 py-3.5 text-maroon transition-colors duration-(--duration-fast) hover:bg-maroon hover:text-offwhite"
-              >
-                Read the FAQs
-              </Link>
+            <div className="mt-10 flex flex-wrap gap-x-6 gap-y-3 border-t rule-ink pt-8">
+              {[
+                { label: "FAQs", href: "/faqs/" },
+                { label: "Pricing", href: "/pricing/" },
+                { label: "Aftercare", href: "/aftercare/" },
+              ].map((l) => (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  className="type-label text-ink-50 underline-offset-8 transition-colors hover:text-maroon hover:underline"
+                >
+                  {l.label}
+                </Link>
+              ))}
             </div>
           </div>
+
+          <EnquiryForm />
         </div>
       </Section>
     </>

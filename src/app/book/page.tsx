@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { PageHero } from "@/components/ui/PageHero";
 import { Section } from "@/components/ui/Section";
 import { PinnedSteps } from "@/components/motion/PinnedSteps";
 import { TextScrub } from "@/components/motion/TextScrub";
+import { EnquiryForm } from "@/components/forms/EnquiryForm";
 import { site } from "@/data/site";
 
 /**
@@ -49,7 +49,7 @@ export default function BookPage() {
         eyebrow="Bookings"
         heading="Start an enquiry"
         intro="Every piece starts with a conversation rather than a calendar slot. Tell us the idea and you will get an honest read on it."
-        image="/brand/photography/placeholder-15.jpg"
+        image="/brand/photography/small-micro/urban-pair.jpg"
         trail={[{ label: "Book", href: "/book/" }]}
       />
 
@@ -85,31 +85,29 @@ export default function BookPage() {
         </PinnedSteps>
       </Section>
 
-      {/* Booking widget slot — replace once the tool is chosen. */}
-      <Section ground="maroon" className="text-center">
-        <h2 className="type-headline mx-auto max-w-[16ch]">
-          Send it through
-        </h2>
-        <p className="type-body mx-auto mt-6 max-w-[44ch] text-paper-80">
-          Online booking is coming. Until then, a message is the fastest way to
-          get an answer — usually the same day.
-        </p>
-        <div className="mt-10 flex flex-wrap justify-center gap-4">
-          <a
-            href={site.social.instagram}
-            target="_blank"
-            rel="noreferrer noopener"
-            className="type-button inline-flex items-center gap-3 bg-offwhite px-8 py-4 text-maroon transition-colors duration-(--duration-fast) hover:bg-chilli hover:text-offwhite"
-          >
-            Message on Instagram
-            <span aria-hidden="true">&#8599;</span>
-          </a>
-          <Link
-            href="/contact/"
-            className="type-button inline-flex items-center gap-3 border border-offwhite px-8 py-4 transition-colors duration-(--duration-fast) hover:bg-offwhite hover:text-maroon"
-          >
-            Contact details
-          </Link>
+      {/* The enquiry form stands in until a booking tool is chosen. */}
+      <Section ground="paper" className="border-t rule-ink">
+        <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
+          <div>
+            <p className="type-label text-chilli">Send it through</p>
+            <h2 className="type-headline mt-4 max-w-[12ch] text-maroon">
+              Tell us the idea
+            </h2>
+            <p className="type-body mt-6 max-w-[38ch] text-ink-70">
+              Online booking with deposits is coming. Until then this reaches
+              Beth directly, usually answered the same day.
+            </p>
+            <a
+              href={site.social.instagram}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="type-label mt-8 inline-block text-ink-50 underline-offset-8 hover:text-maroon hover:underline"
+            >
+              Or message on Instagram
+            </a>
+          </div>
+
+          <EnquiryForm />
         </div>
       </Section>
     </>

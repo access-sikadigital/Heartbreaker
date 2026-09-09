@@ -17,21 +17,21 @@ const articles = [
     href: "/journal/tattoo-healing-guide/",
     cluster: "Aftercare",
     read: "8 min",
-    image: "/brand/photography/placeholder-16.jpg",
+    image: "/brand/photography/fine-line/neck-crane.jpg",
   },
   {
     title: "How much does a tattoo cost in Australia?",
     href: "/pricing/",
     cluster: "Pricing",
     read: "6 min",
-    image: "/brand/photography/placeholder-06.jpg",
+    image: "/brand/photography/small-micro/rose-abdomen.jpg",
   },
   {
     title: "Getting your first tattoo: what to expect",
     href: "/journal/first-tattoo-guide/",
     cluster: "First timers",
     read: "7 min",
-    image: "/brand/photography/placeholder-12.jpg",
+    image: "/brand/photography/small-micro/urban-pair.jpg",
   },
 ];
 

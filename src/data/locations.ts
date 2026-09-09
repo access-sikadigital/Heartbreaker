@@ -35,7 +35,7 @@ export const locations: Location[] = [
     travel:
       "Parking is straightforward and the studio is private — you will not be walking through a shopfront to get to your appointment. Exact address comes with your booking confirmation.",
     nearby: ["Mount Eliza", "Mount Martha", "Somerville", "Moorooduc", "Tyabb"],
-    hero: "/brand/photography/placeholder-05.jpg",
+    hero: "/brand/photography/placeholder-02.jpg",
   },
   {
     slug: "fine-line-tattoo-melbourne",
@@ -65,7 +65,7 @@ export const locations: Location[] = [
     travel:
       "A short run down the Nepean Highway or the Peninsula Link. Easy enough to come after work — later appointments are available on request.",
     nearby: ["Frankston South", "Seaford", "Carrum Downs", "Langwarrin", "Mount Eliza"],
-    hero: "/brand/photography/placeholder-17.jpg",
+    hero: "/brand/photography/placeholder-11.jpg",
   },
 ];
 

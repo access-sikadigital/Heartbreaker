@@ -68,7 +68,7 @@ export function LocationTemplate({ location }: { location: Location }) {
 
           <ImageReveal from="bottom" className="aspect-4/5">
             <Image
-              src="/brand/photography/placeholder-05.jpg"
+              src="/brand/photography/script-lettering/back-script.jpg"
               alt="Inside the studio"
               width={900}
               height={1125}

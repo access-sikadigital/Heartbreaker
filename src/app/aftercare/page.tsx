@@ -62,7 +62,7 @@ export default function AftercarePage() {
         eyebrow="Aftercare"
         heading="Looking after fine line work"
         intro="Fine line asks a little more of the first fortnight than heavier styles do. The lines carry less ink to start with, so anything that pulls pigment out shows up sooner."
-        image="/brand/photography/placeholder-16.jpg"
+        image="/brand/photography/fine-line/back-red-knit.jpg"
         trail={[{ label: "Aftercare", href: "/aftercare/" }]}
       />
 

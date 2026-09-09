@@ -28,7 +28,7 @@ export default function PricingPage() {
         eyebrow="Pricing"
         heading="What a tattoo costs"
         intro="Guide prices, not a menu. Every piece is quoted properly before you commit, and you will never find out the real number on the day."
-        image="/brand/photography/placeholder-09.jpg"
+        image="/brand/photography/small-micro/rose-abdomen.jpg"
         trail={[{ label: "Pricing", href: "/pricing/" }]}
       />
 

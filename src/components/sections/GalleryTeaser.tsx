@@ -16,8 +16,8 @@ import { colors } from "@/lib/tokens";
 const tiles: CollageImage[] = [
   {
     // Top left, wide.
-    src: "/brand/photography/placeholder-09.jpg",
-    alt: "Fine line ankle piece",
+    src: "/brand/photography/fine-line/shoulder-circles.jpg",
+    alt: "Concentric line work tattooed on a shoulder",
     rect: { x: 1.5, y: 2, w: 62, h: 29 },
     travel: { y: -70 },
     sizes: "65vw",
@@ -27,8 +27,8 @@ const tiles: CollageImage[] = [
   },
   {
     // Top right.
-    src: "/brand/photography/placeholder-08.jpg",
-    alt: "Small wrist tattoo",
+    src: "/brand/photography/script-lettering/hand-script.jpg",
+    alt: "Fine line script along the inside of a forearm",
     rect: { x: 65, y: 14, w: 33.5, h: 33 },
     travel: { x: 70 },
     sizes: "36vw",
@@ -37,8 +37,8 @@ const tiles: CollageImage[] = [
   },
   {
     // Centre — the piece that opens to fill the frame.
-    src: "/brand/photography/placeholder-03.jpg",
-    alt: "Fine line work across a collarbone",
+    src: "/brand/photography/small-micro/rose-abdomen.jpg",
+    alt: "Fine line rose tattooed on the abdomen",
     rect: { x: 33.5, y: 33, w: 30, h: 32 },
     fill: true,
     sizes: "100vw",
@@ -48,8 +48,8 @@ const tiles: CollageImage[] = [
   },
   {
     // Left, tall.
-    src: "/brand/photography/placeholder-07.jpg",
-    alt: "Floral piece on a thigh",
+    src: "/brand/photography/fine-line/bird-arm.jpg",
+    alt: "Small fine line bird tattooed on an upper arm",
     rect: { x: 1.5, y: 33, w: 30, h: 55 },
     travel: { x: -70 },
     sizes: "32vw",
@@ -58,8 +58,8 @@ const tiles: CollageImage[] = [
   },
   {
     // Bottom, wide.
-    src: "/brand/photography/placeholder-01.jpg",
-    alt: "Delicate line work across a hand",
+    src: "/brand/photography/script-lettering/arm-garden.jpg",
+    alt: "Script tattoo on a forearm, photographed in a garden",
     rect: { x: 33.5, y: 67, w: 65, h: 31 },
     travel: { y: 70 },
     sizes: "68vw",

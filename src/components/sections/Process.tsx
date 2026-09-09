@@ -16,14 +16,14 @@ const steps: ProcessStep[] = [
   {
     title: "Talk it through",
     body: "Send your idea, references and rough placement. We will tell you honestly whether it will work as fine line, and what it needs.",
-    image: "/brand/photography/placeholder-02.jpg",
-    alt: "A client outside the studio",
+    image: "/brand/photography/small-micro/urban-pair.jpg",
+    alt: "Two people talking through a tattoo idea",
   },
   {
     title: "Design & deposit",
     body: "Beth draws your piece custom, and you see it before the day. A deposit holds the date and comes off the final price.",
-    image: "/brand/photography/placeholder-13.jpg",
-    alt: "Hand-drawn script lettering on a shoulder",
+    image: "/brand/photography/script-lettering/hand-script.jpg",
+    alt: "Hand-drawn script along the inside of a forearm",
   },
   {
     title: "Your session",
@@ -34,8 +34,8 @@ const steps: ProcessStep[] = [
   {
     title: "Healing & aftercare",
     body: "You leave with written aftercare and a way to reach us. Fine line needs care in the first fortnight — we will walk you through it.",
-    image: "/brand/photography/placeholder-01.jpg",
-    alt: "Healed fine line work on a hand",
+    image: "/brand/photography/fine-line/neck-crane.jpg",
+    alt: "A healed origami crane behind the ear",
   },
 ];
 

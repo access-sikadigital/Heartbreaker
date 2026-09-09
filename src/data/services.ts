@@ -37,7 +37,7 @@ export const pillar = {
   description:
     "Delicate, precise fine line tattoo work on the Mornington Peninsula. Custom designs, script, small pieces and flash days. Book online with Beth.",
   keyword: { term: "fine line tattoo", volume: 2900, kd: 28 },
-  hero: "/brand/photography/placeholder-10.jpg",
+  hero: "/brand/photography/fine-line/floral-arm.jpg",
   intro:
     "Fine line is the whole studio, not a style on a menu. Single-needle work, drawn to sit with your body rather than on it, and built to still read in ten years.",
 } as const;
@@ -53,11 +53,11 @@ export const services: Service[] = [
     keyword: { term: "small tattoo", volume: 720, kd: 14 },
     tier: 1,
     icon: "sun",
-    hero: "/brand/photography/placeholder-08.jpg",
+    hero: "/brand/photography/small-micro/legs-foliage.jpg",
     gallery: [
-      "/brand/photography/placeholder-01.jpg",
-      "/brand/photography/placeholder-09.jpg",
-      "/brand/photography/placeholder-10.jpg",
+      "/brand/photography/small-micro/heart-hands.jpg",
+      "/brand/photography/small-micro/urban-pair.jpg",
+      "/brand/photography/small-micro/back-black-shirt.jpg",
     ],
     intro:
       "Something quiet, on your terms. Small work is where most people start, and it is rarely where they stop.",
@@ -90,11 +90,11 @@ export const services: Service[] = [
     keyword: { term: "script tattoo", volume: 480, kd: 24 },
     tier: 1,
     icon: "bookings",
-    hero: "/brand/photography/placeholder-13.jpg",
+    hero: "/brand/photography/script-lettering/back-script.jpg",
     gallery: [
-      "/brand/photography/placeholder-13.jpg",
-      "/brand/photography/placeholder-01.jpg",
-      "/brand/photography/placeholder-03.jpg",
+      "/brand/photography/script-lettering/hand-script.jpg",
+      "/brand/photography/script-lettering/arm-script.jpg",
+      "/brand/photography/script-lettering/arm-garden.jpg",
     ],
     intro:
       "Script is Beth's signature. Every piece is drawn by hand for the body it will sit on — never typed out in a font and stretched to fit.",
@@ -127,11 +127,11 @@ export const services: Service[] = [
     keyword: { term: "custom tattoo", volume: 210, kd: 17 },
     tier: 1,
     icon: "events",
-    hero: "/brand/photography/placeholder-07.jpg",
+    hero: "/brand/photography/fine-line/shoulder-circles.jpg",
     gallery: [
-      "/brand/photography/placeholder-07.jpg",
-      "/brand/photography/placeholder-10.jpg",
-      "/brand/photography/placeholder-09.jpg",
+      "/brand/photography/fine-line/neck-crane.jpg",
+      "/brand/photography/fine-line/bird-arm.jpg",
+      "/brand/photography/fine-line/back-red-knit.jpg",
     ],
     intro:
       "Bring the idea, however half-formed. Custom work starts with a conversation, not a catalogue.",
@@ -164,11 +164,11 @@ export const services: Service[] = [
     keyword: { term: "matching tattoos", volume: 1000, kd: 28 },
     tier: 2,
     icon: "clients",
-    hero: "/brand/photography/placeholder-02.jpg",
+    hero: "/brand/photography/small-micro/heart-hands.jpg",
     gallery: [
-      "/brand/photography/placeholder-01.jpg",
-      "/brand/photography/placeholder-08.jpg",
-      "/brand/photography/placeholder-13.jpg",
+      "/brand/photography/small-micro/urban-pair.jpg",
+      "/brand/photography/script-lettering/hand-script.jpg",
+      "/brand/photography/small-micro/legs-foliage.jpg",
     ],
     intro:
       "Two pieces designed to belong together — matching, mirrored, or halves of one idea.",
@@ -201,11 +201,11 @@ export const services: Service[] = [
     keyword: { term: "fine line flower tattoo", volume: 260, kd: 28 },
     tier: 2,
     icon: "healed",
-    hero: "/brand/photography/placeholder-07.jpg",
+    hero: "/brand/photography/fine-line/floral-arm.jpg",
     gallery: [
-      "/brand/photography/placeholder-07.jpg",
-      "/brand/photography/placeholder-03.jpg",
-      "/brand/photography/placeholder-10.jpg",
+      "/brand/photography/small-micro/rose-abdomen.jpg",
+      "/brand/photography/script-lettering/arm-garden.jpg",
+      "/brand/photography/fine-line/back-red-knit.jpg",
     ],
     intro:
       "Botanical work is where fine line earns its name — stems, seed heads and petals drawn thin enough to breathe.",
@@ -238,11 +238,11 @@ export const services: Service[] = [
     keyword: { term: "minimalist tattoo", volume: 480, kd: 32 },
     tier: 2,
     icon: "moth",
-    hero: "/brand/photography/placeholder-01.jpg",
+    hero: "/brand/photography/fine-line/neck-crane.jpg",
     gallery: [
-      "/brand/photography/placeholder-01.jpg",
-      "/brand/photography/placeholder-08.jpg",
-      "/brand/photography/placeholder-09.jpg",
+      "/brand/photography/fine-line/bird-arm.jpg",
+      "/brand/photography/script-lettering/hand-script.jpg",
+      "/brand/photography/small-micro/legs-foliage.jpg",
     ],
     intro:
       "The smallest number of lines that still says it. Minimalist work is subtraction, and it is harder than it looks.",
@@ -275,11 +275,11 @@ export const services: Service[] = [
     keyword: { term: "cover up tattoo", volume: 590, kd: 31 },
     tier: 2,
     icon: "panther",
-    hero: "/brand/photography/placeholder-06.jpg",
+    hero: "/brand/photography/fine-line/back-red-knit.jpg",
     gallery: [
-      "/brand/photography/placeholder-07.jpg",
-      "/brand/photography/placeholder-10.jpg",
-      "/brand/photography/placeholder-03.jpg",
+      "/brand/photography/fine-line/shoulder-circles.jpg",
+      "/brand/photography/small-micro/rose-abdomen.jpg",
+      "/brand/photography/small-micro/back-black-shirt.jpg",
     ],
     intro:
       "Some pieces can be reworked into something you want to keep. Some cannot, and we will say so.",

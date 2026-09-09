@@ -118,8 +118,8 @@ export function Hero() {
         <div data-hero-arch className="hidden justify-self-end lg:block">
           <ArchFrame rise="50%" className="w-[19rem] bg-maroon-deep">
             <Image
-              src="/brand/photography/placeholder-10.jpg"
-              alt="Fine line work across a shoulder"
+              src="/brand/photography/fine-line/floral-arm.jpg"
+              alt="Fine line floral piece running along a forearm"
               width={760}
               height={1000}
               sizes="19rem"

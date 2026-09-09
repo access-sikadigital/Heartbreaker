@@ -74,8 +74,8 @@ export default function FineLineTattoosPage() {
 
           <ImageReveal className="aspect-4/5 lg:aspect-3/4">
             <Image
-              src="/brand/photography/placeholder-03.jpg"
-              alt="Healed fine line work across a collarbone"
+              src="/brand/photography/script-lettering/back-script.jpg"
+              alt="Hand-drawn script across an upper back"
               width={900}
               height={1200}
               sizes="(max-width: 1024px) 100vw, 45vw"

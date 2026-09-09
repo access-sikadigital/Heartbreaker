@@ -40,7 +40,7 @@ export const articles: Article[] = [
     cluster: "Aftercare",
     read: "8 min",
     date: "2026-09-10",
-    hero: "/brand/photography/placeholder-16.jpg",
+    hero: "/brand/photography/fine-line/neck-crane.jpg",
     excerpt:
       "Fine line needs more care than heavier work, not less. The lines are thinner, so there is less ink to lose before the piece changes.",
     body: [
@@ -92,7 +92,7 @@ export const articles: Article[] = [
     cluster: "Aftercare",
     read: "5 min",
     date: "2026-09-12",
-    hero: "/brand/photography/placeholder-09.jpg",
+    hero: "/brand/photography/small-micro/legs-foliage.jpg",
     excerpt:
       "The short answer is two to four weeks. The longer answer is that it depends what you mean by swimming.",
     body: [
@@ -131,7 +131,7 @@ export const articles: Article[] = [
     cluster: "First timers",
     read: "7 min",
     date: "2026-09-14",
-    hero: "/brand/photography/placeholder-12.jpg",
+    hero: "/brand/photography/small-micro/urban-pair.jpg",
     excerpt:
       "Most nerves about a first tattoo are really nerves about not knowing what happens. Here is the whole thing, start to finish.",
     body: [
@@ -175,7 +175,7 @@ export const articles: Article[] = [
     cluster: "Fine line",
     read: "6 min",
     date: "2026-09-16",
-    hero: "/brand/photography/placeholder-10.jpg",
+    hero: "/brand/photography/fine-line/bird-arm.jpg",
     excerpt:
       "Yes — but they age differently to bold work, and pretending otherwise does nobody any favours.",
     body: [
@@ -214,7 +214,7 @@ export const articles: Article[] = [
     cluster: "Ideas",
     read: "9 min",
     date: "2026-09-18",
-    hero: "/brand/photography/placeholder-01.jpg",
+    hero: "/brand/photography/small-micro/heart-hands.jpg",
     excerpt:
       "Ideas are easy. Ideas that still look good in a decade are the harder list, so this one is sorted by how well each ages.",
     body: [
@@ -268,7 +268,7 @@ export const articles: Article[] = [
     cluster: "Ideas",
     read: "7 min",
     date: "2026-09-20",
-    hero: "/brand/photography/placeholder-07.jpg",
+    hero: "/brand/photography/fine-line/floral-arm.jpg",
     excerpt:
       "A quiet way to mark a person or a date without lettering — and some translate to single needle far better than others.",
     body: [

@@ -55,8 +55,8 @@ export function Intro() {
         <div className="relative">
           <Parallax speed={0.14} className="aspect-4/5 w-[82%]">
             <Image
-              src="/brand/photography/placeholder-05.jpg"
-              alt="Beth at work in the studio"
+              src="/brand/photography/fine-line/back-red-knit.jpg"
+              alt="Delicate script and stars across an upper back"
               width={900}
               height={1125}
               sizes="(max-width: 1024px) 82vw, 40vw"
@@ -70,8 +70,8 @@ export function Intro() {
             className="absolute right-0 bottom-[-8%] aspect-square w-[46%] border-8 border-offwhite"
           >
             <Image
-              src="/brand/photography/placeholder-02.jpg"
-              alt="Healed fine line work"
+              src="/brand/photography/small-micro/heart-hands.jpg"
+              alt="Matching heart tattoos on two hands"
               width={620}
               height={620}
               sizes="(max-width: 1024px) 46vw, 22vw"

@@ -17,24 +17,24 @@ export const metadata: Metadata = {
 };
 
 const rail = [
-  "/brand/photography/placeholder-10.jpg",
-  "/brand/photography/placeholder-13.jpg",
-  "/brand/photography/placeholder-01.jpg",
-  "/brand/photography/placeholder-07.jpg",
-  "/brand/photography/placeholder-08.jpg",
-  "/brand/photography/placeholder-09.jpg",
+  "/brand/photography/fine-line/floral-arm.jpg",
+  "/brand/photography/script-lettering/back-script.jpg",
+  "/brand/photography/small-micro/heart-hands.jpg",
+  "/brand/photography/fine-line/back-red-knit.jpg",
+  "/brand/photography/script-lettering/arm-script.jpg",
+  "/brand/photography/small-micro/rose-abdomen.jpg",
 ];
 
 const grid = [
-  "/brand/photography/placeholder-03.jpg",
-  "/brand/photography/placeholder-02.jpg",
-  "/brand/photography/placeholder-05.jpg",
-  "/brand/photography/placeholder-14.jpg",
-  "/brand/photography/placeholder-16.jpg",
-  "/brand/photography/placeholder-06.jpg",
-  "/brand/photography/placeholder-12.jpg",
-  "/brand/photography/placeholder-17.jpg",
-  "/brand/photography/placeholder-15.jpg",
+  "/brand/photography/fine-line/neck-crane.jpg",
+  "/brand/photography/fine-line/bird-arm.jpg",
+  "/brand/photography/script-lettering/hand-script.jpg",
+  "/brand/photography/small-micro/legs-foliage.jpg",
+  "/brand/photography/small-micro/urban-pair.jpg",
+  "/brand/photography/fine-line/shoulder-circles.jpg",
+  "/brand/photography/script-lettering/arm-garden.jpg",
+  "/brand/photography/small-micro/back-black-shirt.jpg",
+  "/brand/photography/fine-line/floral-arm.jpg",
 ];
 
 export default function GalleryPage() {
@@ -94,11 +94,6 @@ export default function GalleryPage() {
             </RevealItem>
           ))}
         </Reveal>
-
-        <p className="type-label mt-12 text-ink-50">
-          Placeholder imagery — replace with the studio&rsquo;s own portfolio
-          before launch.
-        </p>
       </Section>
 
       <BookingCta />
