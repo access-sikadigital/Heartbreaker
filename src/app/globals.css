@@ -1,0 +1,513 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   HEARTBREAKER INK — DESIGN TOKENS
+   Encoded from "Heartbreaker Ink | Brand Identity" (Full Cup Design Studio,
+   2026), reconciled against the NEW Brand Guidelines asset library. Where the
+   two differ, the asset library wins.
+
+   Four colours. Two typefaces. Nothing else enters this system.
+   ========================================================================== */
+
+@theme {
+  /* --- 02. Colour palette (Brand Identity p.11) ------------------------- */
+  --color-maroon: #570b0b; /* RGB 87/11/11    CMYK 0/87/87/66   PMS 490 C        */
+  --color-chilli: #de0202; /* RGB 222/2/2     CMYK 7/100/100/1  PMS 032 C        */
+  --color-offwhite: #f2f1ee; /* RGB 242/241/238 CMYK 0/0/2/5      PMS Warm Gray 1 C */
+  --color-ink: #262626; /* RGB 38/38/38    CMYK 0/0/0/85     PMS Black 7 C    */
+
+  /* Semantic aliases. Same four hues, named by the job they do.
+     Hierarchy (p.12): Maroon leads, Chilli accents, Off-White breathes,
+     Ink is for type and fine detail — never large fields. */
+  --color-ground: var(--color-maroon);
+  --color-paper: var(--color-offwhite);
+  --color-accent: var(--color-chilli);
+  --color-type: var(--color-ink);
+
+  /* Derived surfaces. Alpha over the brand hues — no new colours enter here. */
+  --color-ink-90: color-mix(in oklab, var(--color-ink) 90%, transparent);
+  --color-ink-70: color-mix(in oklab, var(--color-ink) 70%, transparent);
+  --color-ink-50: color-mix(in oklab, var(--color-ink) 50%, transparent);
+  --color-ink-30: color-mix(in oklab, var(--color-ink) 30%, transparent);
+  --color-ink-12: color-mix(in oklab, var(--color-ink) 12%, transparent);
+  --color-ink-06: color-mix(in oklab, var(--color-ink) 6%, transparent);
+
+  --color-paper-80: color-mix(in oklab, var(--color-offwhite) 80%, transparent);
+  --color-paper-60: color-mix(in oklab, var(--color-offwhite) 60%, transparent);
+  --color-paper-40: color-mix(in oklab, var(--color-offwhite) 40%, transparent);
+  --color-paper-20: color-mix(in oklab, var(--color-offwhite) 20%, transparent);
+  --color-paper-10: color-mix(in oklab, var(--color-offwhite) 10%, transparent);
+
+  --color-maroon-80: color-mix(in oklab, var(--color-maroon) 80%, transparent);
+  --color-maroon-40: color-mix(in oklab, var(--color-maroon) 40%, transparent);
+  --color-maroon-12: color-mix(in oklab, var(--color-maroon) 12%, transparent);
+
+  --color-chilli-60: color-mix(in oklab, var(--color-chilli) 60%, transparent);
+  --color-chilli-30: color-mix(in oklab, var(--color-chilli) 30%, transparent);
+  --color-chilli-12: color-mix(in oklab, var(--color-chilli) 12%, transparent);
+
+  /* Section banding. Brand hues blended with each other, nothing else. */
+  --color-maroon-deep: color-mix(in oklab, var(--color-maroon) 82%, var(--color-ink));
+  --color-paper-warm: color-mix(in oklab, var(--color-offwhite) 92%, var(--color-maroon));
+
+  /* --- 03. Typography (Brand Identity p.16-19) -------------------------- */
+  /* Bold Money  — display only. One weight (Bold).
+     Lenia Mono  — everything else. One weight (Medium).
+     Neither has a second cut, so emphasis comes from case, colour and scale. */
+  --font-display: var(--font-bold-money), "Arial Black", "Helvetica Neue", Impact,
+    sans-serif;
+  --font-mono: var(--font-lenia-mono), ui-monospace, "SFMono-Regular", Menlo,
+    Consolas, monospace;
+  /* The brand runs on the mono for all running text, so it is also the default. */
+  --font-sans: var(--font-mono);
+
+  /* Fluid type scale. min(vw, vh) keeps the hero in frame on short windows. */
+  --text-hero: clamp(2.75rem, min(9vw, 13vh), 8.5rem);
+  --text-display: clamp(2.25rem, min(6vw, 10vh), 5.5rem);
+  --text-h1: clamp(2rem, 4.6vw, 4rem);
+  --text-h2: clamp(1.625rem, 3.2vw, 2.75rem);
+  --text-h3: clamp(1.25rem, 2vw, 1.75rem);
+  --text-h4: clamp(1.0625rem, 1.4vw, 1.25rem);
+  --text-lead: clamp(1.0625rem, 1.4vw, 1.375rem);
+  --text-body: clamp(0.9375rem, 1vw, 1.0625rem);
+  --text-small: 0.875rem;
+  --text-label: 0.6875rem;
+
+  /* Line heights. Display is set tight; the mono needs room to breathe. */
+  /* Display type is set tight — Bold Money is an extended face and wants its
+     lines close. Nothing clips at these values because the split-line reveal
+     no longer masks; see SplitLines. */
+  --leading-display: 0.85;
+  --leading-title: 0.9;
+  --leading-subtitle: 1.35;
+  --leading-body: 1.65;
+  --leading-label: 1.4;
+
+  /* Tracking. The guidelines specify 2% at EVERY level, display and body
+     included — it is what gives both faces their engineered feel.
+     Bold Money is drawn with very tight sidebearings, so at display sizes the
+     letters collide without it. Do not take this negative. */
+  --tracking-brand: 0.02em; /* the 2% rule */
+  --tracking-display: 0.02em;
+  --tracking-label: 0.14em;
+
+  /* --- Motion ----------------------------------------------------------- */
+  /* Confident entrances, hard settles. The brand is not bouncy. */
+  --ease-brand: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-brand-in: cubic-bezier(0.64, 0, 0.78, 0);
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-snap: cubic-bezier(0.85, 0, 0.15, 1);
+
+  --duration-fast: 240ms;
+  --duration-base: 560ms;
+  --duration-slow: 900ms;
+  --duration-crawl: 1400ms;
+
+  /* --- Structure --------------------------------------------------------- */
+  /* Square by default. This brand has no soft corners — the only radii in the
+     artwork are the app icon and the pill buttons. */
+  --radius-none: 0px;
+  --radius-pill: 999px;
+  --radius-icon: 22%;
+
+  --spacing-gutter: clamp(1.25rem, 4vw, 4rem);
+  --spacing-section: clamp(4.5rem, 10vh, 9rem);
+
+  --header-h: 4.5rem;
+  --ticker-h: 2.25rem;
+
+  /* Both containers run to 1520px so every section lines up on one edge.
+     They stay as two tokens rather than one so a narrower reading measure can
+     be reintroduced later — on the long-form journal pages especially —
+     without touching every section. */
+  --container-content: 95rem; /* 1520px */
+  --container-wide: 95rem; /* 1520px */
+
+  /* --- Brand pattern ------------------------------------------------------ */
+  --pattern-tile: url("/brand/pattern/pattern-tile.svg");
+  --pattern-size: 420px auto;
+}
+
+/* ==========================================================================
+   BASE
+   ========================================================================== */
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    /* Lenis drives scrolling; native smooth scroll must stay off. */
+    scroll-behavior: auto;
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-type);
+    font-family: var(--font-mono);
+    font-size: var(--text-body);
+    line-height: var(--leading-body);
+    letter-spacing: var(--tracking-brand);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: clip;
+  }
+
+  /* Headings default to the display face in caps — that is what every
+     specimen and every mockup does, whatever the type table says. */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    font-weight: 400; /* Bold Money ships one weight; do not synthesise more */
+    line-height: var(--leading-title);
+    letter-spacing: var(--tracking-display);
+    text-transform: uppercase;
+    text-wrap: balance;
+    margin: 0;
+  }
+
+  p {
+    text-wrap: pretty;
+    margin: 0;
+  }
+
+  ::selection {
+    background-color: var(--color-chilli);
+    color: var(--color-offwhite);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-chilli);
+    outline-offset: 3px;
+  }
+
+  /* On maroon and ink grounds the chilli ring disappears; swap to paper. */
+  .on-dark :focus-visible {
+    outline-color: var(--color-offwhite);
+  }
+
+  img,
+  svg,
+  video {
+    display: block;
+    max-width: 100%;
+  }
+
+  button {
+    font: inherit;
+    color: inherit;
+  }
+}
+
+/* ==========================================================================
+   LENIS — required base styles for the smooth-scroll container
+   ========================================================================== */
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+/* Opt an inner scroller out of Lenis with data-lenis-prevent. */
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   SCROLLBAR
+
+   Styled rather than hidden. A hidden scrollbar costs the reader their only
+   read on how long the page is and how far through it they are, and this page
+   is long — the gallery alone is nearly three viewports. Thin, square and in
+   the palette is the honest version of "custom".
+
+   `scrollbar-gutter: stable` reserves the track whether or not it is needed,
+   so navigating between a short page and a long one does not shift the layout
+   sideways.
+   ========================================================================== */
+
+html {
+  scrollbar-gutter: stable;
+  /* Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-maroon) color-mix(in oklab, var(--color-ink) 10%, transparent);
+}
+
+/* WebKit / Chromium */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: color-mix(in oklab, var(--color-ink) 8%, transparent);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-maroon);
+  /* Transparent border + content-box clip insets the thumb inside the track,
+     which is what stops a 12px bar reading as a heavy slab. */
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-chilli);
+}
+
+/* The stepper arrows are the least useful part of the native control. */
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* On dark sections the maroon thumb needs a lighter track to read against. */
+.on-dark ::-webkit-scrollbar-track {
+  background: color-mix(in oklab, var(--color-offwhite) 12%, transparent);
+}
+
+/* ==========================================================================
+   TYPE ROLES — the hierarchy on Brand Identity p.19.
+   The table there says "Title Case", but every specimen and every mockup in
+   the asset library is set in caps. The artwork wins; only body is mixed case.
+   ========================================================================== */
+
+@utility type-hero {
+  font-family: var(--font-display);
+  font-size: var(--text-hero);
+  line-height: var(--leading-display);
+  letter-spacing: var(--tracking-display);
+  text-transform: uppercase;
+}
+
+@utility type-display {
+  font-family: var(--font-display);
+  font-size: var(--text-display);
+  line-height: var(--leading-display);
+  letter-spacing: var(--tracking-display);
+  text-transform: uppercase;
+}
+
+/* Headline large — Bold Money. */
+@utility type-headline {
+  font-family: var(--font-display);
+  font-size: var(--text-h1);
+  line-height: var(--leading-title);
+  letter-spacing: var(--tracking-display);
+  text-transform: uppercase;
+}
+
+/* Headline small — Lenia Mono, caps, 2% tracking. */
+@utility type-headline-sm {
+  font-family: var(--font-mono);
+  font-size: var(--text-h2);
+  line-height: var(--leading-title);
+  letter-spacing: var(--tracking-brand);
+  text-transform: uppercase;
+}
+
+@utility type-subhead {
+  font-family: var(--font-mono);
+  font-size: var(--text-h3);
+  line-height: var(--leading-subtitle);
+  letter-spacing: var(--tracking-brand);
+  text-transform: uppercase;
+}
+
+/* Body — the one role in mixed case. */
+@utility type-body {
+  font-family: var(--font-mono);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  letter-spacing: var(--tracking-brand);
+  text-transform: none;
+}
+
+@utility type-lead {
+  font-family: var(--font-mono);
+  font-size: var(--text-lead);
+  line-height: var(--leading-subtitle);
+  letter-spacing: var(--tracking-brand);
+}
+
+@utility type-button {
+  font-family: var(--font-mono);
+  font-size: var(--text-small);
+  line-height: 1;
+  letter-spacing: var(--tracking-brand);
+  text-transform: uppercase;
+}
+
+@utility type-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  line-height: var(--leading-label);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+}
+
+/* Tabular figures for prices, dates and any column of numbers. */
+@utility numeric {
+  font-variant-numeric: tabular-nums lining-nums;
+  font-feature-settings: "tnum" 1, "lnum" 1;
+}
+
+/* ==========================================================================
+   LAYOUT HELPERS
+   ========================================================================== */
+
+@utility container-content {
+  width: 100%;
+  max-width: var(--container-content);
+  margin-inline: auto;
+  padding-inline: var(--spacing-gutter);
+}
+
+@utility container-wide {
+  width: 100%;
+  max-width: var(--container-wide);
+  margin-inline: auto;
+  padding-inline: var(--spacing-gutter);
+}
+
+@utility section-y {
+  padding-block: var(--spacing-section);
+}
+
+@utility rule-ink {
+  border-color: var(--color-ink-12);
+}
+
+@utility rule-paper {
+  border-color: var(--color-paper-20);
+}
+
+/* The brand pattern, rebuilt from the logo art (Brand Identity p.30). */
+@utility surface-pattern {
+  background-color: var(--color-maroon);
+  background-image: var(--pattern-tile);
+  background-size: var(--pattern-size);
+  background-repeat: repeat;
+}
+
+/* ==========================================================================
+   ANIMATION PRIMITIVES
+   Elements only start hidden once JS is confirmed live, so a no-JS visitor
+   still sees every word.
+   ========================================================================== */
+
+@layer components {
+  /* Split text: each line rides inside its own overflow mask. */
+  .line-mask {
+    display: block;
+    overflow: hidden;
+    padding-bottom: 0.14em;
+    margin-bottom: -0.14em;
+  }
+
+  /* No padding hack here. An earlier version padded the line and pulled it
+     back with a negative margin — which cancels out for layout, so the mask
+     wrapper never grew and the glyphs still clipped. The reveal simply does
+     not mask any more, so there is nothing to clip against. */
+  .line-inner {
+    display: block;
+    will-change: transform;
+  }
+
+  .js .anim-fade {
+    opacity: 0;
+  }
+
+  .js .anim-rise {
+    opacity: 0;
+    transform: translate3d(0, 2.5rem, 0);
+  }
+
+  .js .anim-clip {
+    clip-path: inset(0 0 100% 0);
+  }
+
+  /* Ticker — the repeating "NOW BOOKING" strip from the website mockup.
+     CSS-driven so it runs without a scroll trigger. */
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee var(--marquee-duration, 40s) linear infinite;
+  }
+
+  .marquee-track[data-direction="reverse"] {
+    animation-direction: reverse;
+  }
+
+  .marquee:hover .marquee-track {
+    animation-play-state: paused;
+  }
+
+  @keyframes marquee {
+    to {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+
+  /* Fine grain so the large maroon flats do not band on wide gamut screens. */
+  .grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.04;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+/* ==========================================================================
+   ACCESSIBILITY — honour reduced motion everywhere
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .js .anim-fade,
+  .js .anim-rise,
+  .js .anim-clip {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+  }
+
+  .marquee-track {
+    animation: none !important;
+  }
+}

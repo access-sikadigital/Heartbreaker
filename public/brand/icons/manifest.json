@@ -1,0 +1,110 @@
+[
+  {
+    "slug": "after-care",
+    "label": "After Care",
+    "depicts": "Anchor",
+    "set": "functional"
+  },
+  {
+    "slug": "bookings",
+    "label": "Bookings",
+    "depicts": "Faceted diamond",
+    "set": "functional"
+  },
+  {
+    "slug": "clients",
+    "label": "Clients",
+    "depicts": "Swallow",
+    "set": "functional"
+  },
+  {
+    "slug": "events",
+    "label": "Events",
+    "depicts": "Pair of dice",
+    "set": "functional"
+  },
+  {
+    "slug": "flash",
+    "label": "Flash",
+    "depicts": "Lightning bolt",
+    "set": "functional"
+  },
+  {
+    "slug": "gift-cards",
+    "label": "Gift Cards",
+    "depicts": "Ace of hearts",
+    "set": "functional"
+  },
+  {
+    "slug": "gun",
+    "label": "Gun",
+    "depicts": "Revolver",
+    "set": "flash"
+  },
+  {
+    "slug": "healed",
+    "label": "Healed",
+    "depicts": "Rose",
+    "set": "functional"
+  },
+  {
+    "slug": "horse-shoe",
+    "label": "Horse Shoe",
+    "depicts": "Studded horseshoe",
+    "set": "flash"
+  },
+  {
+    "slug": "moth",
+    "label": "Moth",
+    "depicts": "Winged moth",
+    "set": "flash"
+  },
+  {
+    "slug": "panther",
+    "label": "Panther",
+    "depicts": "Roaring panther head",
+    "set": "flash"
+  },
+  {
+    "slug": "policy",
+    "label": "Policy",
+    "depicts": "Seated leopard",
+    "set": "functional"
+  },
+  {
+    "slug": "reviews",
+    "label": "Reviews",
+    "depicts": "Envelope with heart",
+    "set": "functional"
+  },
+  {
+    "slug": "rock-n-roll",
+    "label": "Rock \u2018N\u2019 Roll",
+    "depicts": "Horns hand sign",
+    "set": "flash"
+  },
+  {
+    "slug": "scorpion",
+    "label": "Scorpion",
+    "depicts": "Scorpion",
+    "set": "flash"
+  },
+  {
+    "slug": "scull",
+    "label": "Scull",
+    "depicts": "Skull",
+    "set": "flash"
+  },
+  {
+    "slug": "snake",
+    "label": "Snake",
+    "depicts": "Coiled serpent",
+    "set": "flash"
+  },
+  {
+    "slug": "sun",
+    "label": "Sun",
+    "depicts": "Rayed sun",
+    "set": "flash"
+  }
+]
