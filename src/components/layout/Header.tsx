@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { gsap, useGSAP, ScrollTrigger, prefersReducedMotion } from "@/lib/gsap";
 import { useSmoothScroll } from "@/components/providers/SmoothScroll";
+import { CtaLink } from "@/components/ui/CtaLink";
 import { Magnetic } from "@/components/motion/Magnetic";
 import { primaryNav, primaryCta, legalNav } from "@/data/navigation";
 import { site } from "@/data/site";
@@ -104,18 +105,26 @@ export function Header() {
         <div className="container-wide flex h-(--header-h) items-center justify-between gap-6">
           <Link
             href="/"
-            aria-label={`${site.name} — home`}
+            aria-label={`${site.name}, home`}
             className="relative z-10 shrink-0"
             onClick={() => setOpen(false)}
           >
-            {/* Intrinsic size is the lockup's own viewBox; CSS does the sizing. */}
+            {/*
+              Intrinsic size is the lockup's own viewBox; CSS does the sizing.
+
+              The primary lockup is 830x53, a 15.7:1 band, so width is the only
+              dimension worth setting and height follows. At 300px it stands
+              19px tall inside a 72px bar, which is as large as the lockup can
+              go before the brand's own clearspace rule (a third of the mark's
+              height above and below) starts to be broken by the bar edges.
+            */}
             <Image
               src="/brand/logo/primary-offwhite.svg"
               alt={site.name}
               width={830}
               height={53}
               priority
-              className="h-auto w-[128px] sm:w-[168px]"
+              className="h-auto w-[176px] sm:w-[240px] lg:w-[264px] xl:w-[300px]"
             />
           </Link>
 
@@ -130,12 +139,11 @@ export function Header() {
 
           <div className="flex items-center gap-4">
             <Magnetic className="hidden sm:block">
-              <Link
-                href={primaryCta.href}
+              <CtaLink href={primaryCta.href}
                 className="type-button border border-offwhite px-5 py-2.5 transition-colors duration-(--duration-fast) hover:bg-offwhite hover:text-maroon"
               >
                 {primaryCta.label}
-              </Link>
+              </CtaLink>
             </Magnetic>
 
             <button
@@ -203,13 +211,12 @@ export function Header() {
               transition={{ delay: 0.34, duration: 0.4 }}
               className="flex flex-col gap-6"
             >
-              <Link
-                href={primaryCta.href}
+              <CtaLink href={primaryCta.href}
                 onClick={() => setOpen(false)}
                 className="type-button flex items-center justify-center border border-offwhite px-6 py-4"
               >
                 {primaryCta.label}
-              </Link>
+              </CtaLink>
 
               <div className="flex flex-wrap items-center justify-between gap-4">
                 <a

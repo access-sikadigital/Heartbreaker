@@ -35,7 +35,7 @@ export const colorSpec = {
     rgb: [222, 2, 2],
     cmyk: [7, 100, 100, 1],
     pms: "032 C",
-    role: "Accent. One job per composition — it shouts.",
+    role: "Accent. One job per composition. It shouts.",
   },
   offwhite: {
     name: "Off-White",
@@ -89,11 +89,11 @@ export const fonts = {
 
 /** Fluid sizes, as authored in `globals.css`. */
 export const fontSize = {
-  hero: "clamp(2.75rem, min(9vw, 13vh), 8.5rem)",
-  display: "clamp(2.25rem, min(6vw, 10vh), 5.5rem)",
-  h1: "clamp(2rem, 4.6vw, 4rem)",
-  h2: "clamp(1.625rem, 3.2vw, 2.75rem)",
-  h3: "clamp(1.25rem, 2vw, 1.75rem)",
+  hero: "clamp(3.5rem, min(10.5vw, 13vh), 8.5rem)",
+  display: "clamp(2.875rem, min(7vw, 10vh), 5.5rem)",
+  h1: "clamp(2.5rem, 5.2vw, 4rem)",
+  h2: "clamp(2rem, 3.6vw, 2.75rem)",
+  h3: "clamp(1.4375rem, 2.2vw, 1.75rem)",
   h4: "clamp(1.0625rem, 1.4vw, 1.25rem)",
   lead: "clamp(1.0625rem, 1.4vw, 1.375rem)",
   body: "clamp(0.9375rem, 1vw, 1.0625rem)",

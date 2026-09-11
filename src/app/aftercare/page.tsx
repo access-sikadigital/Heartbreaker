@@ -1,19 +1,29 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { PageHero } from "@/components/ui/PageHero";
 import { Section } from "@/components/ui/Section";
+import { PolicyList } from "@/components/ui/PolicyList";
 import { PinnedSteps } from "@/components/motion/PinnedSteps";
 import { TextScrub } from "@/components/motion/TextScrub";
+import { Reveal } from "@/components/motion/Reveal";
 import { BookingCta } from "@/components/sections/BookingCta";
+import { aftercareIntro, aftercareSteps } from "@/data/policy";
 
 /**
  * Target: "tattoo aftercare" — 2,900/mo, KD 19. The single biggest
  * low-difficulty term in the scope, which is why it is a page and not a PDF.
+ *
+ * The studio's own instructions lead, because they are the ones the client is
+ * actually held to and the ones Beth hands over at the end of a session. The
+ * week-by-week timeline below them is supporting depth for the search term,
+ * and is written to stay inside the studio's minimums rather than invent
+ * looser ones.
  */
 export const metadata: Metadata = {
-  title: "Fine Line Tattoo Aftercare | Heartbreaker Ink",
+  title: "Fine Line Tattoo Aftercare",
   description:
-    "How to look after a new fine line tattoo — the first 48 hours, the first fortnight, what normal healing looks like, and when to get in touch.",
+    "Heartbreaker Ink's own aftercare instructions for a new fine line tattoo, plus what healing looks like week by week and when to get in touch.",
   alternates: { canonical: "/aftercare/" },
 };
 
@@ -21,10 +31,10 @@ const stages = [
   {
     title: "First 48 hours",
     lines: [
-      "Leave the wrap on for as long as your artist told you — not as long as the internet says.",
+      "Leave the wrap on for as long as Beth told you, not as long as the internet says.",
       "Wash with clean hands and fragrance-free soap, two to three times a day.",
       "Pat dry with clean paper towel. Never a shared bath towel.",
-      "A thin layer of balm. Thin enough that the skin still looks like skin.",
+      "A thin coat of ointment. Thin enough that the skin still looks like skin.",
     ],
   },
   {
@@ -33,24 +43,24 @@ const stages = [
       "Flaking is normal and will look alarming for a few days.",
       "The piece may go dull or patchy before it settles. This passes.",
       "Do not pick, scratch or peel. A flake taking colour with it is dead skin, not your tattoo.",
-      "Keep it out of the sun entirely while it is healing.",
+      "Keep applying your aftercare until the flaking stops.",
     ],
   },
   {
-    title: "Avoid until healed",
+    title: "Still off limits",
     lines: [
-      "Swimming, baths and spas — soaking lifts scabs early and fine line cannot spare the ink.",
-      "Heavy training that stretches the area.",
-      "Tight clothing over the piece.",
+      "Swimming, baths and spas for at least two to three weeks. Soaking lifts scabs early and fine line cannot spare the ink.",
+      "Direct sun for at least two to four weeks while it heals.",
+      "Heavy training that stretches the area, and tight clothing over the piece.",
       "Fake tan, exfoliants and anything with fragrance.",
     ],
   },
   {
     title: "For the long run",
     lines: [
-      "Sunscreen is the single biggest factor in how fine line ages.",
-      "Keep the skin moisturised — hydrated skin holds a line better.",
-      "A light touch-up after a few years is maintenance, not a fault.",
+      "Sunscreen is the single biggest factor in how fine line ages. Slip, slop, slap.",
+      "Keep the skin moisturised. Hydrated skin holds a line better.",
+      "A touch-up is free within three months, and priced after that.",
     ],
   },
 ];
@@ -66,11 +76,45 @@ export default function AftercarePage() {
         trail={[{ label: "Aftercare", href: "/aftercare/" }]}
       />
 
+      {/*
+        The studio's own card, in full, before anything written for search.
+        These are the instructions a client is held to, and the touch-up policy
+        refers back to them, so they lead the page.
+      */}
       <Section ground="paper">
+        <div className="grid gap-14 lg:grid-cols-[0.8fr_1.2fr] lg:items-start lg:gap-20">
+          <div className="lg:sticky lg:top-28 lg:self-start">
+            <Reveal>
+              <Image
+                src="/brand/icons/after-care.svg"
+                alt=""
+                width={120}
+                height={120}
+                className="h-16 w-16"
+              />
+            </Reveal>
+
+            <p className="type-label mt-8 text-chilli">From the studio</p>
+
+            <TextScrub as="p" className="type-lead mt-5 max-w-[34ch] text-maroon">
+              {aftercareIntro}
+            </TextScrub>
+
+            <p className="type-body mt-8 max-w-[40ch] text-ink-70">
+              Ink Nurse is stocked in the studio, so you can pick yours up on
+              the day rather than hunting for something on the way home.
+            </p>
+          </div>
+
+          <PolicyList items={aftercareSteps} />
+        </div>
+      </Section>
+
+      <Section ground="paper" className="pt-0">
         <PinnedSteps
           aside={
             <>
-              <p className="type-label text-chilli">The short version</p>
+              <p className="type-label text-chilli">Week by week</p>
               <TextScrub as="p" className="type-lead mt-6 max-w-[36ch] text-maroon">
                 Keep it clean, keep it dry, keep it out of the sun, and leave it
                 alone. Almost every healing problem is one of those four.
@@ -97,17 +141,26 @@ export default function AftercarePage() {
         <h2 className="type-headline max-w-[16ch]">When to ask for help</h2>
         <p className="type-lead mt-6 max-w-[52ch] text-paper-80">
           Spreading redness, heat, swelling that worsens after day three, or any
-          discharge is worth a call — to us and to a doctor. Infection is
+          discharge is worth a call, to us and to a doctor. Infection is
           uncommon and very treatable early. If something feels wrong, ask
           rather than wait.
         </p>
-        <Link
-          href="/contact/"
-          className="type-button mt-9 inline-flex items-center gap-3 border border-offwhite px-7 py-3.5 transition-colors duration-(--duration-fast) hover:bg-offwhite hover:text-chilli"
-        >
-          Get in touch
-          <span aria-hidden="true">&#8599;</span>
-        </Link>
+        <div className="mt-9 flex flex-wrap gap-4">
+          <Link
+            href="/contact/"
+            className="type-button inline-flex items-center gap-3 border border-offwhite px-7 py-3.5 transition-colors duration-(--duration-fast) hover:bg-offwhite hover:text-chilli"
+          >
+            Get in touch
+            <span aria-hidden="true">&#8599;</span>
+          </Link>
+          <Link
+            href="/studio-policy/"
+            className="type-button inline-flex items-center gap-3 border border-paper-40 px-7 py-3.5 text-paper-80 transition-colors duration-(--duration-fast) hover:border-offwhite hover:text-offwhite"
+          >
+            Touch-up policy
+            <span aria-hidden="true">&#8599;</span>
+          </Link>
+        </div>
       </Section>
 
       <BookingCta />

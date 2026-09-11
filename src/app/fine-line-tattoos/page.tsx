@@ -29,7 +29,7 @@ export default function FineLineTattoosPage() {
       />
 
       {/*
-        Columns are vertically centred and the text column carries real weight —
+        Columns are vertically centred and the text column carries real weight , 
         a label, a scrubbed statement, supporting copy and a spec list. An
         earlier version put one short paragraph against a full-height image,
         which left most of the row empty and made the photograph look like it
@@ -53,8 +53,8 @@ export default function FineLineTattoosPage() {
             </p>
 
             <p className="type-body mt-5 max-w-[48ch] text-ink-70">
-              So the drawing is the work. Everything else — the sitting, the
-              healing, the touch-up years later — follows from getting that
+              So the drawing is the work. Everything else, the sitting, the
+              healing, the touch-up years later, follows from getting that
               right first.
             </p>
 
@@ -91,20 +91,22 @@ export default function FineLineTattoosPage() {
           Pick where to start
         </h2>
 
-        <Reveal stagger={0.07} className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Same stepping as the homepage card grid: one up below 576px, 2x2
+            from 576px, three across from 1024px. */}
+        <Reveal stagger={0.07} className="mt-12 grid gap-6 xs:grid-cols-2 lg:grid-cols-3">
           {allServices.map((s) => (
             <RevealItem key={s.slug}>
               <Link
                 href={`/fine-line-tattoos/${s.slug}/`}
                 className="group flex h-full flex-col"
               >
-                <div className="relative aspect-4/5 overflow-hidden bg-maroon-deep">
+                <div className="relative aspect-16/10 overflow-hidden bg-maroon-deep xs:aspect-4/3 md:aspect-4/5">
                   <Image
                     src={s.hero}
                     alt=""
                     width={700}
                     height={875}
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    sizes="(max-width: 575px) 100vw, (max-width: 1023px) 50vw, 33vw"
                     className="h-full w-full object-cover transition-transform duration-[1000ms] ease-(--ease-brand) group-hover:scale-[1.05]"
                   />
                   <span className="absolute bottom-4 left-4 grid h-11 w-11 place-items-center bg-offwhite">

@@ -20,7 +20,7 @@ export default function GiftVouchersPage() {
       <PageHero
         eyebrow="Gift vouchers"
         heading="Give the sitting, not the design"
-        intro="A voucher covers the session. They pick the piece, the placement and the date — which is the only sensible way to gift a tattoo."
+        intro="A voucher covers the session. They pick the piece, the placement and the date, which is the only sensible way to gift a tattoo."
         trail={[{ label: "Gift vouchers", href: "/gift-vouchers/" }]}
       />
 
@@ -29,8 +29,8 @@ export default function GiftVouchersPage() {
           <div>
             <TextScrub as="p" className="type-lead max-w-[44ch] text-maroon">
               Never choose someone else&rsquo;s tattoo for them. A voucher gives
-              them the room to work it out properly, with the awkward part —
-              paying — already handled.
+              them the room to work it out properly, with the awkward part of
+              paying already handled.
             </TextScrub>
 
             <ul className="mt-12 flex flex-col">

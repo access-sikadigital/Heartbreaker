@@ -23,12 +23,13 @@ export function localBusinessSchema() {
     image: `https://${site.domain}/opengraph-image.png`,
     address: {
       "@type": "PostalAddress",
+      streetAddress: site.contact.street,
       addressLocality: "Mornington",
       addressRegion: "VIC",
       addressCountry: "AU",
     },
     areaServed: site.serviceAreas.map((name) => ({ "@type": "Place", name })),
-    sameAs: [site.social.instagram],
+    sameAs: [site.social.instagram, site.social.linktree],
     founder: {
       "@type": "Person",
       name: site.founder.name,

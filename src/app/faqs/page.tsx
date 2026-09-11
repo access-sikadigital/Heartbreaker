@@ -8,7 +8,7 @@ import { studioFaqs, flatFaqs } from "@/data/faqs";
 export const metadata: Metadata = {
   title: "FAQs | Heartbreaker Ink, Mornington",
   description:
-    "Common questions about getting tattooed at Heartbreaker Ink — booking, pain, healing, aftercare, age and everything else worth asking first.",
+    "Common questions about getting tattooed at Heartbreaker Ink, booking, pain, healing, aftercare, age and everything else worth asking first.",
   alternates: { canonical: "/faqs/" },
 };
 

@@ -61,12 +61,16 @@
   /* The brand runs on the mono for all running text, so it is also the default. */
   --font-sans: var(--font-mono);
 
-  /* Fluid type scale. min(vw, vh) keeps the hero in frame on short windows. */
-  --text-hero: clamp(2.75rem, min(9vw, 13vh), 8.5rem);
-  --text-display: clamp(2.25rem, min(6vw, 10vh), 5.5rem);
-  --text-h1: clamp(2rem, 4.6vw, 4rem);
-  --text-h2: clamp(1.625rem, 3.2vw, 2.75rem);
-  --text-h3: clamp(1.25rem, 2vw, 1.75rem);
+  /* Fluid type scale. min(vw, vh) keeps the hero in frame on short windows.
+     The FLOOR of each clamp is the phone size, and these floors are set
+     deliberately high: a viewport-only heading collapses to something timid on
+     a 390px screen, and this brand's whole voice is scale. The ceilings are
+     unchanged, so nothing above tablet moves. */
+  --text-hero: clamp(3.5rem, min(10.5vw, 13vh), 8.5rem);
+  --text-display: clamp(2.875rem, min(7vw, 10vh), 5.5rem);
+  --text-h1: clamp(2.5rem, 5.2vw, 4rem);
+  --text-h2: clamp(2rem, 3.6vw, 2.75rem);
+  --text-h3: clamp(1.4375rem, 2.2vw, 1.75rem);
   --text-h4: clamp(1.0625rem, 1.4vw, 1.25rem);
   --text-lead: clamp(1.0625rem, 1.4vw, 1.375rem);
   --text-body: clamp(0.9375rem, 1vw, 1.0625rem);
@@ -115,6 +119,12 @@
 
   --header-h: 4.5rem;
   --ticker-h: 2.25rem;
+
+  /* Tailwind's own `sm` is 640px, which is too late for the card grids: a
+     large phone in landscape and a small tablet both sit below it and get the
+     single-column layout meant for a 375px screen. `xs` is 576px, the width
+     where two cards side by side stop being cramped. */
+  --breakpoint-xs: 36rem; /* 576px */
 
   /* Both containers run to 1520px so every section lines up on one edge.
      They stay as two tokens rather than one so a narrower reading measure can
@@ -298,6 +308,8 @@ html {
 
 @utility type-hero {
   font-family: var(--font-display);
+  /* Only bites when a single word exceeds the line box. */
+  overflow-wrap: break-word;
   font-size: var(--text-hero);
   line-height: var(--leading-display);
   letter-spacing: var(--tracking-display);
@@ -306,6 +318,8 @@ html {
 
 @utility type-display {
   font-family: var(--font-display);
+  /* Only bites when a single word exceeds the line box. */
+  overflow-wrap: break-word;
   font-size: var(--text-display);
   line-height: var(--leading-display);
   letter-spacing: var(--tracking-display);
@@ -315,6 +329,8 @@ html {
 /* Headline large — Bold Money. */
 @utility type-headline {
   font-family: var(--font-display);
+  /* Only bites when a single word exceeds the line box. */
+  overflow-wrap: break-word;
   font-size: var(--text-h1);
   line-height: var(--leading-title);
   letter-spacing: var(--tracking-display);

@@ -18,7 +18,7 @@ import { JsonLd, localBusinessSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Contact | Heartbreaker Ink, Mornington Peninsula",
   description:
-    "Get in touch with Heartbreaker Ink, a private fine line tattoo studio in Mornington, Victoria. By appointment — send your idea and we will come back to you.",
+    "Get in touch with Heartbreaker Ink, a private fine line tattoo studio in Mornington, Victoria. By appointment, send your idea and we will come back to you.",
   alternates: { canonical: "/contact/" },
 };
 
@@ -30,7 +30,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Contact"
         heading="Get in touch"
-        intro="The studio is private and by appointment. A message with your idea is the fastest way to an answer — usually the same day."
+        intro="The studio is private and by appointment. A message with your idea is the fastest way to an answer, usually the same day."
         trail={[{ label: "Contact", href: "/contact/" }]}
       />
 
@@ -66,7 +66,7 @@ export default function ContactPage() {
                     className="type-body flex gap-3 text-ink-70"
                   >
                     <span aria-hidden="true" className="text-chilli">
-                      &mdash;
+                      &middot;
                     </span>
                     {item}
                   </li>
@@ -90,11 +90,11 @@ export default function ContactPage() {
               <div>
                 <p className="type-label text-ink-50">Studio</p>
                 <address className="type-body mt-2 not-italic text-ink-70">
+                  {site.contact.street}
+                  <br />
                   {site.contact.location}
                   <br />
                   {site.contact.region}, Australia
-                  <br />
-                  Exact address with your booking
                 </address>
               </div>
 
@@ -117,6 +117,7 @@ export default function ContactPage() {
               {[
                 { label: "FAQs", href: "/faqs/" },
                 { label: "Pricing", href: "/pricing/" },
+                { label: "Studio policy", href: "/studio-policy/" },
                 { label: "Aftercare", href: "/aftercare/" },
               ].map((l) => (
                 <Link

@@ -7,7 +7,9 @@
  * read at a glance.
  */
 
-export type NavLink = { label: string; href: string };
+import { site } from "@/data/site";
+
+export type NavLink = { label: string; href: string; external?: boolean };
 
 /** Primary header navigation. */
 export const primaryNav: NavLink[] = [
@@ -18,7 +20,16 @@ export const primaryNav: NavLink[] = [
   { label: "About", href: "/about/" },
 ];
 
-export const primaryCta: NavLink = { label: "Book now", href: "/book/" };
+/**
+ * The primary call to action goes straight to the live booking widget, which
+ * lives on a different host. `external` tells CtaLink to render a plain anchor
+ * rather than a client-routed Link.
+ */
+export const primaryCta: NavLink = {
+  label: site.booking.label,
+  href: site.booking.url,
+  external: true,
+};
 
 /** Footer columns. Mirrors the sitemap so nothing gets orphaned. */
 export const footerNav: { title: string; links: NavLink[] }[] = [
@@ -41,6 +52,7 @@ export const footerNav: { title: string; links: NavLink[] }[] = [
       { label: "Reviews", href: "/reviews/" },
       { label: "Pricing", href: "/pricing/" },
       { label: "Aftercare", href: "/aftercare/" },
+      { label: "Studio policy", href: "/studio-policy/" },
       { label: "FAQs", href: "/faqs/" },
     ],
   },

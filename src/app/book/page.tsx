@@ -18,7 +18,7 @@ import { site } from "@/data/site";
 export const metadata: Metadata = {
   title: "Book a Fine Line Tattoo | Heartbreaker Ink, Mornington",
   description:
-    "Book a fine line tattoo at Heartbreaker Ink. Send your idea, get an honest answer on whether it works, and hold your date with a deposit.",
+    "Book a fine line tattoo at Heartbreaker Ink. Send your idea, get an honest answer on whether it works, and secure your date with a deposit.",
   alternates: { canonical: "/book/" },
   robots: { index: true, follow: true },
 };
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 const steps = [
   {
     title: "Send the idea",
-    body: "Rough size, where you want it, and any reference images. Half-formed is fine — that is what the conversation is for.",
+    body: "Rough size, where you want it, and any reference images. Half-formed is fine, that is what the conversation is for.",
   },
   {
     title: "Get a straight answer",
@@ -34,7 +34,7 @@ const steps = [
   },
   {
     title: "Hold the date",
-    body: "A deposit secures your slot and comes off the final price. Reschedule with notice and it moves with you.",
+    body: "A non-refundable deposit secures your slot. Reschedule once with at least 48 hours notice and it moves with you.",
   },
   {
     title: "Come in",

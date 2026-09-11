@@ -21,7 +21,7 @@ const steps: ProcessStep[] = [
   },
   {
     title: "Design & deposit",
-    body: "Beth draws your piece custom, and you see it before the day. A deposit holds the date and comes off the final price.",
+    body: "Beth draws your piece custom, and you see it before the day. A non-refundable deposit secures the date.",
     image: "/brand/photography/script-lettering/hand-script.jpg",
     alt: "Hand-drawn script along the inside of a forearm",
   },
@@ -33,7 +33,7 @@ const steps: ProcessStep[] = [
   },
   {
     title: "Healing & aftercare",
-    body: "You leave with written aftercare and a way to reach us. Fine line needs care in the first fortnight — we will walk you through it.",
+    body: "You leave with written aftercare and a way to reach us. Fine line needs care in the first fortnight, we will walk you through it.",
     image: "/brand/photography/fine-line/neck-crane.jpg",
     alt: "A healed origami crane behind the ear",
   },

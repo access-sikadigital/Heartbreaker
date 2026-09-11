@@ -7,7 +7,6 @@ import { GalleryTeaser } from "@/components/sections/GalleryTeaser";
 import { Flash } from "@/components/sections/Flash";
 import { Process } from "@/components/sections/Process";
 import { Reviews } from "@/components/sections/Reviews";
-import { JournalTeaser } from "@/components/sections/JournalTeaser";
 import { BookingCta } from "@/components/sections/BookingCta";
 import { JsonLd, localBusinessSchema, websiteSchema } from "@/lib/schema";
 
@@ -46,7 +45,6 @@ export default function HomePage() {
       <Flash />
       <Process />
       <Reviews />
-      <JournalTeaser />
       <BookingCta />
     </>
   );

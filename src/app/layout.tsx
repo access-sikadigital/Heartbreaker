@@ -10,7 +10,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(`https://${site.domain}`),
   title: {
-    default: `${site.name} — ${site.tagline}`,
+    default: `${site.name}, ${site.tagline}`,
     template: `%s | ${site.name}`,
   },
   description: site.description,
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_AU",
     siteName: site.name,
-    title: `${site.name} — ${site.tagline}`,
+    title: `${site.name}, ${site.tagline}`,
     description: site.description,
   },
   twitter: { card: "summary_large_image" },
@@ -49,7 +49,7 @@ export default function RootLayout({
         <SmoothScroll>
           {/*
             Ink cursor is parked, not deleted. The stroke profile still needs
-            work — velocity and the tail taper compound into a blob rather than
+            work, velocity and the tail taper compound into a blob rather than
             an even brush. Re-enable with <InkCursor /> once that is fixed.
           */}
           <Header />

@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { SplitLines } from "@/components/motion/SplitLines";
 import { Magnetic } from "@/components/motion/Magnetic";
+import { CtaLink } from "@/components/ui/CtaLink";
 import { primaryCta } from "@/data/navigation";
 import { site } from "@/data/site";
 import { colors } from "@/lib/tokens";
@@ -42,13 +43,12 @@ export function BookingCta() {
 
         <div className="mt-12 flex flex-wrap items-center justify-center gap-5">
           <Magnetic>
-            <Link
-              href={primaryCta.href}
+            <CtaLink href={primaryCta.href}
               className="type-button inline-flex items-center gap-3 bg-offwhite px-9 py-4 text-ink transition-colors duration-(--duration-fast) hover:bg-chilli hover:text-offwhite"
             >
               {primaryCta.label}
               <span aria-hidden="true">&#8599;</span>
-            </Link>
+            </CtaLink>
           </Magnetic>
 
           <Link

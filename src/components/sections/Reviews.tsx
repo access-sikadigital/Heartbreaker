@@ -16,7 +16,7 @@ import { StackCards } from "@/components/motion/StackCards";
 const reviews = [
   {
     quote:
-      "From the first consultation to the final result, everything felt thoughtful and calm. The fine line work is stunning — exactly what I imagined, only better.",
+      "From the first consultation to the final result, everything felt thoughtful and calm. The fine line work is stunning, exactly what I imagined, only better.",
     name: "Placeholder review",
     source: "Google",
   },

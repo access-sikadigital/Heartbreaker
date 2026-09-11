@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { CtaLink } from "@/components/ui/CtaLink";
 import { footerNav, legalNav, primaryCta } from "@/data/navigation";
 import { site } from "@/data/site";
 import { colors } from "@/lib/tokens";
@@ -34,13 +35,12 @@ export function Footer() {
             </h2>
           </div>
 
-          <Link
-            href={primaryCta.href}
+          <CtaLink href={primaryCta.href}
             className="type-button inline-flex shrink-0 items-center gap-3 border border-offwhite px-8 py-4 transition-colors duration-(--duration-fast) hover:bg-offwhite hover:text-maroon"
           >
             {primaryCta.label}
             <span aria-hidden="true">&#8599;</span>
-          </Link>
+          </CtaLink>
         </div>
       </div>
 
@@ -55,9 +55,11 @@ export function Footer() {
             className="h-auto w-[168px]"
           />
 
-          {/* NAP block — keep in step with the Google Business Profile. */}
+          {/* NAP block, keep in step with the Google Business Profile. */}
           <address className="type-body not-italic text-paper-60">
             <span className="block text-offwhite">{site.name}</span>
+            {site.contact.street}
+            <br />
             {site.contact.location}
             <br />
             {site.contact.region}
@@ -95,7 +97,7 @@ export function Footer() {
       {/*
         Oversized wordmark as a graphic device.
 
-        It sits in its own band with real padding — an earlier version used a
+        It sits in its own band with real padding. An earlier version used a
         negative bottom margin to tuck it behind the legal row, which just put
         the copyright on top of it and pushed the "INK" past the right edge
         where the footer's overflow clipped it. Contained and full-width, the

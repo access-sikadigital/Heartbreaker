@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { PageHero } from "@/components/ui/PageHero";
+import { CtaLink } from "@/components/ui/CtaLink";
 import { Section } from "@/components/ui/Section";
 import { TextScrub } from "@/components/motion/TextScrub";
 import { ImageReveal } from "@/components/motion/ImageReveal";
@@ -57,13 +58,13 @@ export function LocationTemplate({ location }: { location: Location }) {
               {site.contact.region}
             </address>
 
-            <Link
-              href="/book/"
+            <CtaLink
+              href={site.booking.url}
               className="type-button mt-8 inline-flex items-center gap-3 border border-maroon px-7 py-3.5 text-maroon transition-colors duration-(--duration-fast) hover:bg-maroon hover:text-offwhite"
             >
               Book a session
               <span aria-hidden="true">&#8599;</span>
-            </Link>
+            </CtaLink>
           </div>
 
           <ImageReveal from="bottom" className="aspect-4/5">

@@ -129,7 +129,7 @@ export function ProcessScroller({
     <div ref={scope} className={cn(className)}>
       {/*
         The heading scrolls away normally. Sticking it to the media meant the
-        title sat next to step four still announcing the section — and it pushed
+        title sat next to step four still announcing the section. And it pushed
         the image most of a viewport down the screen before the sequence began.
         Only the media holds.
       */}

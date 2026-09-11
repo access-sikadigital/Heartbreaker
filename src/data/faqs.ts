@@ -14,7 +14,7 @@ export const studioFaqs: { group: string; items: Faq[] }[] = [
     items: [
       {
         q: "How do I book?",
-        a: "Send an enquiry with your idea, rough size and placement, and any reference images. Beth will come back with whether it works as fine line, what it needs, and a quote. A deposit holds your date and comes off the final price.",
+        a: "Send an enquiry with your idea, rough size and placement, and any reference images. Beth will come back with whether it works as fine line, what it needs, and a quote. A non-refundable deposit is required to secure the appointment.",
       },
       {
         q: "Do you take walk-ins?",
@@ -22,7 +22,7 @@ export const studioFaqs: { group: string; items: Faq[] }[] = [
       },
       {
         q: "What if I need to reschedule?",
-        a: "Give as much notice as you can and we will move you without fuss. Deposits carry over. Repeated last-minute changes are the one thing that costs a deposit, because the slot cannot be refilled.",
+        a: "Cancellations and reschedules need at least 48 hours notice. Inside that window the deposit is lost. You can reschedule once on the same deposit; any reschedule after that needs a new one. Full details are on the studio policy page.",
       },
     ],
   },
@@ -73,7 +73,7 @@ export const studioFaqs: { group: string; items: Faq[] }[] = [
       },
       {
         q: "Can I donate blood after being tattooed?",
-        a: "In Australia there is a waiting period after any tattoo before donating. Lifeblood publishes the current rule, and it changes from time to time — check with them directly rather than relying on a studio website.",
+        a: "In Australia there is a waiting period after any tattoo before donating. Lifeblood publishes the current rule, and it changes from time to time, check with them directly rather than relying on a studio website.",
       },
     ],
   },

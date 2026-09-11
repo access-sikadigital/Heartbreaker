@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero } from "@/components/ui/PageHero";
+import { CtaLink } from "@/components/ui/CtaLink";
+import { site } from "@/data/site";
 import { Section } from "@/components/ui/Section";
 import { Icon } from "@/components/ui/Icon";
 import { TextScrub } from "@/components/motion/TextScrub";
@@ -31,7 +33,7 @@ export default function FlashPage() {
 
       <Section ground="paper">
         <TextScrub as="p" className="type-lead mx-auto max-w-[54ch] text-center text-maroon">
-          Flash is where the studio gets to be selfish — designs drawn for their
+          Flash is where the studio gets to be selfish, designs drawn for their
           own sake rather than to a brief, priced simply, and gone once claimed.
         </TextScrub>
 
@@ -64,7 +66,7 @@ export default function FlashPage() {
             {[
               "A set drops. You will see it here and on Instagram at the same time.",
               "Claim the design you want by sending its number. First message takes it.",
-              "Flash is priced as drawn — size and placement are set, so the quote is simple.",
+              "Flash is priced as drawn, size and placement are set, so the quote is simple.",
               "Once a design is tattooed it is retired. Nobody else gets that piece.",
             ].map((step, i) => (
               <li
@@ -90,12 +92,12 @@ export default function FlashPage() {
           one lands, or book custom work instead.
         </p>
         <div className="mt-9 flex flex-wrap justify-center gap-4">
-          <Link
-            href="/book/"
+          <CtaLink
+            href={site.booking.url}
             className="type-button border border-maroon px-7 py-3.5 text-maroon transition-colors duration-(--duration-fast) hover:bg-maroon hover:text-offwhite"
           >
             Tell me when flash drops
-          </Link>
+          </CtaLink>
           <Link
             href="/fine-line-tattoos/custom-tattoos/"
             className="type-button border border-ink-30 px-7 py-3.5 text-ink-70 transition-colors duration-(--duration-fast) hover:border-maroon hover:text-maroon"

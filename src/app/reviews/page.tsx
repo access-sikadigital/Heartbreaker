@@ -19,14 +19,14 @@ import { site } from "@/data/site";
 export const metadata: Metadata = {
   title: "Reviews | Heartbreaker Ink, Mornington",
   description:
-    "What clients say about being tattooed at Heartbreaker Ink — a private fine line studio on the Mornington Peninsula.",
+    "What clients say about being tattooed at Heartbreaker Ink. A private fine line studio on the Mornington Peninsula.",
   alternates: { canonical: "/reviews/" },
 };
 
 const reviews = [
   {
     quote:
-      "From the first consultation to the final result, everything felt thoughtful and calm. The fine line work is stunning — exactly what I imagined, only better.",
+      "From the first consultation to the final result, everything felt thoughtful and calm. The fine line work is stunning, exactly what I imagined, only better.",
     source: "Google",
   },
   {
@@ -96,7 +96,7 @@ export default function ReviewsPage() {
           Been tattooed here?
         </h2>
         <p className="type-body mx-auto mt-6 max-w-[42ch] text-paper-80">
-          A review helps more than you would think — it is how the next nervous
+          A review helps more than you would think. It is how the next nervous
           first-timer decides to send the message.
         </p>
         <Link

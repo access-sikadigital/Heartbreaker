@@ -66,11 +66,11 @@ export type LogoColour = "maroon" | "chilli" | "offwhite" | "ink" | "black" | "w
 export const lockups: Record<Lockup, { label: string; use: string }> = {
   primary: {
     label: "Primary Logo",
-    use: "Hero placements — site header, packaging, primary marketing.",
+    use: "Hero placements, site header, packaging, primary marketing.",
   },
   secondary: {
     label: "Secondary Logo",
-    use: "Where the primary is too wide — square crops, tight layouts.",
+    use: "Where the primary is too wide, square crops, tight layouts.",
   },
   brandmark: {
     label: "Brandmark",
@@ -82,7 +82,7 @@ export const lockups: Record<Lockup, { label: string; use: string }> = {
   },
   "full-stack-2": {
     label: "Full Stack 2",
-    use: "Stacked wordmark, swallow right. Compact — merch and signage.",
+    use: "Stacked wordmark, swallow right. Compact, merch and signage.",
   },
 };
 

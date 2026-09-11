@@ -41,7 +41,7 @@ export const priceBands: PriceBand[] = [
 ];
 
 export const priceFactors = [
-  "Size and how much fine detail sits inside it — detail costs time, not ink.",
+  "Size and how much fine detail sits inside it, detail costs time, not ink.",
   "Placement. Ribs, hands and feet take longer because the skin and the sitting are both harder.",
   "Whether the design is custom-drawn or an existing flash piece.",
   "How much drawing happens before the day. Complex custom work carries design time.",

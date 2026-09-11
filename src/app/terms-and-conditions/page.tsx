@@ -18,13 +18,13 @@ export const metadata: Metadata = {
 };
 
 const sections = [
-  { h: "Age", p: "You must be 18 or over and present photo identification on the day. There are no exceptions, including with a parent or guardian present." },
-  { h: "Deposits", p: "A deposit secures your appointment and comes off the final price. It covers the design time and the reserved slot." },
-  { h: "Rescheduling and cancellation", p: "Give as much notice as you can and your deposit moves with you. Repeated late changes or a no-show forfeit the deposit, because the slot cannot be refilled." },
+  { h: "Age", p: "We are a strictly 18+ studio and there are no exceptions, including with a parent or guardian present. Please do not bring children to your appointment." },
+  { h: "Deposits", p: "A non-refundable deposit is required to secure all appointments. It covers the design time and the reserved slot. Pricing is subject to change and may vary depending on design, placement and time." },
+  { h: "Rescheduling and cancellation", p: "Cancellations and reschedules must be made at least 48 hours before the appointment; anything later results in a loss of deposit. One reschedule may use the same deposit, and any further reschedule requires a new one. If you cancel inside the 48-hour window and do not reschedule, the deposit is held on file for 12 months." },
   { h: "Design", p: "Designs are drawn for you and remain the work of the artist. You will see the drawing before the day and can ask for changes." },
-  { h: "Fitness to be tattooed", p: "You will be asked to complete a health declaration. Do not attend intoxicated, unwell, or having taken blood-thinning medication against medical advice \u2014 the session will be rescheduled." },
+  { h: "Fitness to be tattooed", p: "You will be asked to complete a health declaration. Do not attend intoxicated, unwell, or having taken blood-thinning medication against medical advice; the session will be rescheduled." },
   { h: "Aftercare", p: "Written aftercare is provided. How a tattoo heals depends heavily on how it is cared for, and healing outcomes affected by aftercare are not covered by touch-ups." },
-  { h: "Touch-ups", p: "Minor settling is normal. Get in touch if something needs attention and we will arrange a short session." },
+  { h: "Touch-ups", p: "Touch-ups are free within 3 months of the original appointment date. After 3 months they are $50 for all areas and $100 for fingers. A clear photo of the healed tattoo is required before a touch-up is booked." },
 ];
 
 export default function Page() {

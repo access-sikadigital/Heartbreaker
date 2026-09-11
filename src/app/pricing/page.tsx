@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero } from "@/components/ui/PageHero";
+import { CtaLink } from "@/components/ui/CtaLink";
+import { site } from "@/data/site";
 import { Section } from "@/components/ui/Section";
 import { Reveal, RevealItem } from "@/components/motion/Reveal";
 import { TextScrub } from "@/components/motion/TextScrub";
@@ -17,7 +19,7 @@ import { priceBands, priceFactors } from "@/data/pricing";
 export const metadata: Metadata = {
   title: "Tattoo Pricing | How Much Does a Tattoo Cost? | Heartbreaker Ink",
   description:
-    "What a fine line tattoo costs at Heartbreaker Ink — guide prices by size, what changes the figure, and how deposits work. Mornington Peninsula.",
+    "What a fine line tattoo costs at Heartbreaker Ink, guide prices by size, what changes the figure, and how deposits work. Mornington Peninsula.",
   alternates: { canonical: "/pricing/" },
 };
 
@@ -69,17 +71,18 @@ export default function PricingPage() {
 
       <Section ground="paper">
         <TextScrub as="p" className="type-lead mx-auto max-w-[52ch] text-center text-maroon">
-          A deposit holds your date and comes off the final price. It is not an
-          extra — it is the first part of what you were always going to pay.
+          A non-refundable deposit secures your appointment. Pricing is subject
+          to change and varies with design, placement and time, so the quote you
+          get is for the piece you described.
         </TextScrub>
         <div className="mt-10 text-center">
-          <Link
-            href="/book/"
+          <CtaLink
+            href={site.booking.url}
             className="type-button inline-flex items-center gap-3 border border-maroon px-8 py-4 text-maroon transition-colors duration-(--duration-fast) hover:bg-maroon hover:text-offwhite"
           >
             Get a quote
             <span aria-hidden="true">&#8599;</span>
-          </Link>
+          </CtaLink>
         </div>
       </Section>
 

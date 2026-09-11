@@ -34,7 +34,7 @@ export default function AboutPage() {
           <div>
             <TextScrub as="p" className="type-lead max-w-[46ch] text-maroon">
               I have been tattooing since 2017, and fine line is not a style I
-              added to a menu — it is the reason I picked up a machine.
+              added to a menu. It is the reason I picked up a machine.
             </TextScrub>
 
             <div className="mt-10 flex max-w-[52ch] flex-col gap-5">
@@ -45,7 +45,7 @@ export default function AboutPage() {
                 closes, and as long as the piece needs.
               </p>
               <p className="type-body text-ink-70">
-                Script is where I am happiest — a name, a date, a line worth
+                Script is where I am happiest. A name, a date, a line worth
                 carrying, drawn by hand until it sits right on the body rather
                 than merely fitting on it.
               </p>

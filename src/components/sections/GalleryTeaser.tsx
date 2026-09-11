@@ -82,7 +82,7 @@ export function GalleryTeaser() {
         <p className="type-label text-chilli">Selected work</p>
         <h2 className="type-display max-w-[10ch] text-offwhite">Our tattoos</h2>
         <p className="type-body mx-auto max-w-[36ch] text-paper-80">
-          Healed pieces, shot as they live on skin — not as they looked the day
+          Healed pieces, shot as they live on skin, not as they looked the day
           they were done.
         </p>
       </StickyCollage>

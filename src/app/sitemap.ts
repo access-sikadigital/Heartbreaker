@@ -18,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/flash/", priority: 0.8 },
     { path: "/gallery/", priority: 0.8 },
     { path: "/aftercare/", priority: 0.8 },
+    { path: "/studio-policy/", priority: 0.6 },
     { path: "/pricing/", priority: 0.8 },
     { path: "/about/", priority: 0.7 },
     { path: "/journal/", priority: 0.7 },

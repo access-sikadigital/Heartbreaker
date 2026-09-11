@@ -33,7 +33,7 @@ export const locations: Location[] = [
     intro:
       "The studio is in Mornington, and most of the people who sit in the chair are from within twenty minutes of it.",
     travel:
-      "Parking is straightforward and the studio is private — you will not be walking through a shopfront to get to your appointment. Exact address comes with your booking confirmation.",
+      "Parking is straightforward and the studio is private, you will not be walking through a shopfront to get to your appointment. Exact address comes with your booking confirmation.",
     nearby: ["Mount Eliza", "Mount Martha", "Somerville", "Moorooduc", "Tyabb"],
     hero: "/brand/photography/placeholder-02.jpg",
   },
@@ -48,7 +48,7 @@ export const locations: Location[] = [
     intro:
       "A good portion of the studio's work comes down from Melbourne. An hour each way is a long trip for a tattoo, so the appointment is built to be worth it.",
     travel:
-      "Roughly an hour from the CBD down the Nepean or the Peninsula Link. Sessions are scheduled with the drive in mind — you will not be sitting in a waiting room, and we do not double-book.",
+      "Roughly an hour from the CBD down the Nepean or the Peninsula Link. Sessions are scheduled with the drive in mind, you will not be sitting in a waiting room, and we do not double-book.",
     nearby: ["Melbourne CBD", "Bayside", "Brighton", "Frankston", "Dandenong"],
     hero: "/brand/photography/placeholder-15.jpg",
   },
@@ -63,7 +63,7 @@ export const locations: Location[] = [
     intro:
       "Frankston is fifteen minutes up the road, and it is the closest large centre to the studio.",
     travel:
-      "A short run down the Nepean Highway or the Peninsula Link. Easy enough to come after work — later appointments are available on request.",
+      "A short run down the Nepean Highway or the Peninsula Link. Easy enough to come after work, later appointments are available on request.",
     nearby: ["Frankston South", "Seaford", "Carrum Downs", "Langwarrin", "Mount Eliza"],
     hero: "/brand/photography/placeholder-11.jpg",
   },

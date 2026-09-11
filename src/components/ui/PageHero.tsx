@@ -49,7 +49,7 @@ export function PageHero({
 
             The previous version knocked the photograph back to 30% AND laid a
             near-opaque gradient over it, which left the image as a faint
-            texture doing nothing. Instead the scrim runs HORIZONTALLY — heavy
+            texture doing nothing. Instead the scrim runs HORIZONTALLY, heavy
             on the left where the type sits, clearing to almost nothing on the
             right so the photograph is actually legible. The second, vertical
             layer only protects the very bottom edge.

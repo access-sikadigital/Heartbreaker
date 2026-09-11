@@ -6,6 +6,7 @@ import { useRef } from "react";
 import { gsap, useGSAP, prefersReducedMotion } from "@/lib/gsap";
 import { SplitLines } from "@/components/motion/SplitLines";
 import { ArchFrame } from "@/components/ui/ArchFrame";
+import { CtaLink } from "@/components/ui/CtaLink";
 import { primaryCta } from "@/data/navigation";
 import { site } from "@/data/site";
 import { colors } from "@/lib/tokens";
@@ -98,13 +99,12 @@ export function Hero() {
           </SplitLines>
 
           <div className="mt-9 flex flex-wrap items-center gap-5">
-            <Link
-              href={primaryCta.href}
+            <CtaLink href={primaryCta.href}
               className="type-button inline-flex items-center gap-3 border border-offwhite px-8 py-4 transition-colors duration-(--duration-fast) hover:bg-offwhite hover:text-ink"
             >
               {primaryCta.label}
               <span aria-hidden="true">&#8599;</span>
-            </Link>
+            </CtaLink>
             <Link
               href="/gallery/"
               className="type-label text-paper-60 underline-offset-8 transition-colors hover:text-chilli hover:underline"
@@ -114,7 +114,7 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Arch-framed piece — the doorway into the studio. */}
+        {/* Arch-framed piece, the doorway into the studio. */}
         <div data-hero-arch className="hidden justify-self-end lg:block">
           <ArchFrame rise="50%" className="w-[19rem] bg-maroon-deep">
             <Image

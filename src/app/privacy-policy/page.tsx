@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 };
 
 const sections = [
-  { h: "What we collect", p: "Enquiry and booking details you send us \u2014 your name, contact details, the idea you are describing and any reference images you attach. Nothing is collected that is not needed to answer you or tattoo you safely." },
+  { h: "What we collect", p: "Enquiry and booking details you send us: your name, contact details, the idea you are describing and any reference images you attach. Nothing is collected that is not needed to answer you or tattoo you safely." },
   { h: "Why we hold it", p: "To respond to your enquiry, manage your booking, keep required consent and aftercare records, and contact you about your appointment." },
   { h: "Who sees it", p: "Only the studio, and any booking or payment provider we use to run appointments. We do not sell or share personal information for marketing." },
   { h: "How long we keep it", p: "Consent and health-declaration records are kept for the period Victorian regulations require. Enquiry correspondence is kept only while it is useful." },

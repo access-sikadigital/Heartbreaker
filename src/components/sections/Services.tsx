@@ -38,7 +38,7 @@ const services = [
     href: "/fine-line-tattoos/script-lettering/",
     image: "/brand/photography/script-lettering/back-script.jpg",
     alt: "Hand-drawn script on a shoulder",
-    copy: "Custom script drawn by hand — a word, a date, a line worth carrying.",
+    copy: "Custom script drawn by hand. A word, a date, a line worth carrying.",
   },
   {
     icon: "flash",
@@ -68,20 +68,31 @@ export function Services() {
         </Link>
       </header>
 
+      {/*
+        One card per row below 576px, 2x2 from 576px, four across from 1024px.
+
+        The aspect ratio steps with the column count rather than staying at 4:5
+        everywhere. A 4:5 card at full phone width is 470px of photograph before
+        the heading even starts, which is what made the section feel like a
+        slideshow; the portrait crop only earns its height once the card is one
+        of four in a row.
+      */}
       <Reveal
         stagger={0.09}
-        className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+        className="mt-14 grid gap-6 xs:grid-cols-2 lg:grid-cols-4"
       >
         {services.map((service) => (
           <RevealItem key={service.href}>
             <Link href={service.href} className="group flex h-full flex-col">
-              <div className="relative aspect-4/5 overflow-hidden bg-maroon-deep">
+              <div className="relative aspect-16/10 overflow-hidden bg-maroon-deep xs:aspect-4/3 md:aspect-4/5">
                 <Image
                   src={service.image}
                   alt={service.alt}
                   width={640}
                   height={800}
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  /* Must track the column count above, or Next serves a source
+                     sized for the wrong layout and the card looks soft. */
+                  sizes="(max-width: 575px) 100vw, (max-width: 1023px) 50vw, 25vw"
                   className="h-full w-full object-cover transition-transform duration-[1100ms] ease-(--ease-brand) group-hover:scale-[1.06]"
                 />
                 <span className="absolute bottom-4 left-4 grid h-12 w-12 place-items-center bg-offwhite">

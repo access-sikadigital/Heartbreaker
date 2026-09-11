@@ -132,7 +132,7 @@ export default function SetupReference() {
 
         <p className="type-body mt-6 max-w-[68ch] text-ink-70">
           The guidelines table says Title Case, but every specimen and every
-          mockup is set in caps. The artwork wins — caps at every level except
+          mockup is set in caps. The artwork wins, caps at every level except
           body.
         </p>
       </Section>
@@ -142,7 +142,7 @@ export default function SetupReference() {
         <SectionHead
           index="01"
           title="Logo suite"
-          note="Five lockups. The PDF shows four — the asset library splits Full Stack in two."
+          note="Five lockups. The PDF shows four, the asset library splits Full Stack in two."
           onDark
         />
 
@@ -223,7 +223,7 @@ export default function SetupReference() {
         <SectionHead
           index="05"
           title="Imagery"
-          note="Placeholders only — the inspiration folder is unlicensed. Replace before launch."
+          note="Placeholders only, the inspiration folder is unlicensed. Replace before launch."
         />
 
         <Reveal stagger={0.08} className="mt-10 grid gap-4 sm:grid-cols-3">
@@ -257,7 +257,7 @@ export default function SetupReference() {
             <p className="type-lead text-paper-80">
               Every scroll animation on this scaffold is tied to scroll
               position rather than fired once on entry. Drag the page back and
-              it plays backwards — that reversibility is what separates
+              it plays backwards, that reversibility is what separates
               composed motion from a slideshow.
             </p>
             <p className="type-body mt-5 text-paper-60">
@@ -271,7 +271,7 @@ export default function SetupReference() {
             <StackCards className="flex flex-col gap-5">
               {[
                 "From the first consultation to the final result, everything felt so thoughtful and calm.",
-                "The fine line work is stunning — exactly what I imagined, only better.",
+                "The fine line work is stunning, exactly what I imagined, only better.",
                 "Clean studio, zero pressure, and a piece I will keep looking at for years.",
               ].map((quote, i) => (
                 <figure
@@ -313,7 +313,7 @@ export default function SetupReference() {
         <div className="flex flex-wrap items-end justify-between gap-8">
           <Logo lockup="full-stack-2" colour="offwhite" width={260} />
           <p className="type-label max-w-[36ch] text-paper-60">
-            Scaffold only. No sections built yet — start in{" "}
+            Scaffold only. No sections built yet, start in{" "}
             <code className="text-chilli">src/components/sections</code>.
           </p>
         </div>

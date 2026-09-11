@@ -27,7 +27,7 @@ export function Intro() {
 
           <p className="type-lead mt-8 max-w-[46ch] text-ink-70">
             Heartbreaker Ink is a fine line tattoo studio rooted in intention,
-            authenticity and care — creating timeless pieces that celebrate
+            authenticity and care, creating timeless pieces that celebrate
             individuality through refined detail and thoughtful design.
           </p>
 
@@ -51,7 +51,7 @@ export function Intro() {
           </dl>
         </ScrubReveal>
 
-        {/* Offset pair — different speeds, overlapping edges. */}
+        {/* Offset pair, different speeds, overlapping edges. */}
         <div className="relative">
           <Parallax speed={0.14} className="aspect-4/5 w-[82%]">
             <Image

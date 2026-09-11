@@ -49,7 +49,7 @@ export const services: Service[] = [
     heading: "Small tattoos",
     title: "Small Tattoos | Fine Line Micro Tattoos, Mornington",
     description:
-      "Small and micro fine line tattoos on the Mornington Peninsula. The classic first piece — quiet, precise, and drawn to last. Book online.",
+      "Small and micro fine line tattoos on the Mornington Peninsula. The classic first piece, quiet, precise, and drawn to last. Book online.",
     keyword: { term: "small tattoo", volume: 720, kd: 14 },
     tier: 1,
     icon: "sun",
@@ -64,7 +64,7 @@ export const services: Service[] = [
     forWho:
       "First-timers, anyone testing how their skin takes ink, and people who want a piece only they will notice.",
     detail: [
-      "Single needle, drawn at the size it will be worn — never shrunk from a larger sketch, which is what makes small work blur.",
+      "Single needle, drawn at the size it will be worn, never shrunk from a larger sketch, which is what makes small work blur.",
       "Placement matters more at this scale than at any other. We will tell you honestly if somewhere will not hold the detail.",
       "Most small pieces sit inside a single short session.",
     ],
@@ -76,7 +76,7 @@ export const services: Service[] = [
       },
       {
         q: "Do small tattoos hurt less?",
-        a: "They take less time, which is most of what people mean. The sensation depends far more on placement than size — ribs and feet are sharp anywhere, an outer arm is mild almost everywhere.",
+        a: "They take less time, which is most of what people mean. The sensation depends far more on placement than size, ribs and feet are sharp anywhere, an outer arm is mild almost everywhere.",
       },
     ],
   },
@@ -86,7 +86,7 @@ export const services: Service[] = [
     heading: "Script & lettering tattoos",
     title: "Script Tattoos & Lettering | Heartbreaker Ink, Mornington",
     description:
-      "Custom hand-drawn script and lettering tattoos. A word, a date, a line worth carrying — drawn by hand, never set from a font. Book online.",
+      "Custom hand-drawn script and lettering tattoos. A word, a date, a line worth carrying, drawn by hand, never set from a font. Book online.",
     keyword: { term: "script tattoo", volume: 480, kd: 24 },
     tier: 1,
     icon: "bookings",
@@ -97,12 +97,12 @@ export const services: Service[] = [
       "/brand/photography/script-lettering/arm-garden.jpg",
     ],
     intro:
-      "Script is Beth's signature. Every piece is drawn by hand for the body it will sit on — never typed out in a font and stretched to fit.",
+      "Script is Beth's signature. Every piece is drawn by hand for the body it will sit on, never typed out in a font and stretched to fit.",
     forWho:
       "Names, dates, a line from something that matters. Anyone who wants the handwriting to feel like a person made it.",
     detail: [
       "Drawn by hand, then redrawn against your placement until the flow follows the limb rather than fighting it.",
-      "Letterforms are spaced for how ink spreads over years — tight script is the fastest way to an illegible tattoo.",
+      "Letterforms are spaced for how ink spreads over years, tight script is the fastest way to an illegible tattoo.",
       "Bring the exact wording and any spelling you want kept. We will read it back to you before the needle goes near you.",
     ],
     priceFrom: "$180",
@@ -113,7 +113,7 @@ export const services: Service[] = [
       },
       {
         q: "Will fine script blur over time?",
-        a: "All ink spreads a little. Script is drawn with that in mind — letter spacing and stroke weight are set so it reads cleanly in a decade, not just on the day.",
+        a: "All ink spreads a little. Script is drawn with that in mind, letter spacing and stroke weight are set so it reads cleanly in a decade, not just on the day.",
       },
     ],
   },
@@ -138,7 +138,7 @@ export const services: Service[] = [
     forWho:
       "Anyone with something specific in mind, or a feeling they cannot quite draw yet.",
     detail: [
-      "A consult first — in person or over messages — to work out what the piece actually needs to be.",
+      "A consult first, in person or over messages, to work out what the piece actually needs to be.",
       "Beth draws it, you see it before the day, and there is room to change it.",
       "Larger custom work is often split across sessions so the skin gets a rest.",
     ],
@@ -150,7 +150,7 @@ export const services: Service[] = [
       },
       {
         q: "What if I only have a vague idea?",
-        a: "That is normal and completely fine. Reference images, a mood, a feeling, a story — all of it is useful. The consult exists to turn that into something drawable.",
+        a: "That is normal and completely fine. Reference images, a mood, a feeling, a story. All of it is useful. The consult exists to turn that into something drawable.",
       },
     ],
   },
@@ -171,13 +171,13 @@ export const services: Service[] = [
       "/brand/photography/small-micro/legs-foliage.jpg",
     ],
     intro:
-      "Two pieces designed to belong together — matching, mirrored, or halves of one idea.",
+      "Two pieces designed to belong together, matching, mirrored, or halves of one idea.",
     forWho:
       "Partners, siblings, friends, and anyone marking something shared.",
     detail: [
       "Designs are drawn as a pair, so they read as related without being identical stickers.",
       "Book a double session and come in together. Most matching pairs are done back to back on the same day.",
-      "Different placements on different bodies need different drawings — that is the work.",
+      "Different placements on different bodies need different drawings, that is the work.",
     ],
     priceFrom: "$300 for two",
     faqs: [
@@ -187,7 +187,7 @@ export const services: Service[] = [
       },
       {
         q: "Can we book together?",
-        a: "Yes — say so when you enquire and we will hold a double slot so you are in the studio at the same time.",
+        a: "Yes, say so when you enquire and we will hold a double slot so you are in the studio at the same time.",
       },
     ],
   },
@@ -197,7 +197,7 @@ export const services: Service[] = [
     heading: "Fine line flower tattoos",
     title: "Fine Line Flower & Botanical Tattoos | Mornington",
     description:
-      "Fine line floral and botanical tattoos — birth flowers, single stems and botanical studies, drawn in single needle. Book online.",
+      "Fine line floral and botanical tattoos, birth flowers, single stems and botanical studies, drawn in single needle. Book online.",
     keyword: { term: "fine line flower tattoo", volume: 260, kd: 28 },
     tier: 2,
     icon: "healed",
@@ -208,7 +208,7 @@ export const services: Service[] = [
       "/brand/photography/fine-line/back-red-knit.jpg",
     ],
     intro:
-      "Botanical work is where fine line earns its name — stems, seed heads and petals drawn thin enough to breathe.",
+      "Botanical work is where fine line earns its name, stems, seed heads and petals drawn thin enough to breathe.",
     forWho:
       "Birth flowers, a plant that means something, or a study for its own sake.",
     detail: [
@@ -220,7 +220,7 @@ export const services: Service[] = [
     faqs: [
       {
         q: "What is a birth flower tattoo?",
-        a: "Each month has a flower traditionally associated with it — carnation for January, violet for February, and so on. They are a quiet way to mark a person or a date without lettering.",
+        a: "Each month has a flower traditionally associated with it, carnation for January, violet for February, and so on. They are a quiet way to mark a person or a date without lettering.",
       },
       {
         q: "Can you add to a floral piece later?",
@@ -234,7 +234,7 @@ export const services: Service[] = [
     heading: "Minimalist tattoos",
     title: "Minimalist Tattoos | Fine Line Studio, Mornington",
     description:
-      "Minimalist fine line tattoos — the smallest number of lines that still say it. Mornington Peninsula studio. Book online.",
+      "Minimalist fine line tattoos, the smallest number of lines that still say it. Mornington Peninsula studio. Book online.",
     keyword: { term: "minimalist tattoo", volume: 480, kd: 32 },
     tier: 2,
     icon: "moth",
@@ -249,7 +249,7 @@ export const services: Service[] = [
     forWho:
       "Anyone who wants a piece that sits quietly and does not date.",
     detail: [
-      "Every line has to earn its place — there is nothing to hide behind at this weight.",
+      "Every line has to earn its place, there is nothing to hide behind at this weight.",
       "Ages exceptionally well, because there is no fine detail to close up.",
       "Pairs well with existing work without competing with it.",
     ],
@@ -261,7 +261,7 @@ export const services: Service[] = [
       },
       {
         q: "Will such a fine line fade?",
-        a: "Fine lines soften rather than vanish. Sun is the real enemy — keep it covered or use high SPF and it will hold for years.",
+        a: "Fine lines soften rather than vanish. Sun is the real enemy, keep it covered or use high SPF and it will hold for years.",
       },
     ],
   },
@@ -288,7 +288,7 @@ export const services: Service[] = [
     detail: [
       "Send a clear, well-lit photo before you book. Fine line cannot cover heavy dark work, and pretending otherwise wastes your money.",
       "Some pieces are better lightened with a few laser sessions first. We will tell you if that is the honest answer.",
-      "Reworks are quoted individually — there is no standard price for undoing someone else's decision.",
+      "Reworks are quoted individually, there is no standard price for undoing someone else's decision.",
     ],
     priceFrom: "Quoted per piece",
     faqs: [

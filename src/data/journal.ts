@@ -35,7 +35,7 @@ export const articles: Article[] = [
     title: "Fine line tattoo aftercare: the complete guide",
     metaTitle: "Fine Line Tattoo Aftercare: The Complete Guide",
     description:
-      "How to look after a fine line tattoo through the first fortnight and beyond — washing, moisturising, sun, swimming and what normal healing looks like.",
+      "How to look after a fine line tattoo through the first fortnight and beyond, washing, moisturising, sun, swimming and what normal healing looks like.",
     keyword: { term: "tattoo aftercare", volume: 2900, kd: 19 },
     cluster: "Aftercare",
     read: "8 min",
@@ -46,7 +46,7 @@ export const articles: Article[] = [
     body: [
       {
         type: "p",
-        text: "Fine line work asks a little more of the first two weeks than heavier styles do. The lines carry less ink to begin with, so anything that pulls pigment out — picking, soaking, sun — shows up sooner and matters more.",
+        text: "Fine line work asks a little more of the first two weeks than heavier styles do. The lines carry less ink to begin with, so anything that pulls pigment out, picking, soaking, sun, shows up sooner and matters more.",
       },
       { type: "h2", text: "The first 48 hours" },
       {
@@ -58,19 +58,19 @@ export const articles: Article[] = [
         items: [
           "Wash two to three times a day with lukewarm water and fragrance-free soap.",
           "Pat dry. Never rub, and never use a shared bath towel.",
-          "Apply a thin layer of the balm your artist recommends — thin enough that the skin still looks like skin.",
+          "Apply a thin layer of the balm your artist recommends, thin enough that the skin still looks like skin.",
         ],
       },
       { type: "h2", text: "Week one to two" },
       {
         type: "p",
-        text: "Flaking is normal and it will look alarming for a few days. The piece may go dull or patchy before it settles. Do not pick, do not scratch, and do not panic at a flake taking colour with it — that is dead skin, not your tattoo.",
+        text: "Flaking is normal and it will look alarming for a few days. The piece may go dull or patchy before it settles. Do not pick, do not scratch, and do not panic at a flake taking colour with it, that is dead skin, not your tattoo.",
       },
       { type: "h2", text: "What to avoid" },
       {
         type: "ul",
         items: [
-          "Swimming, baths and spas until fully healed — soaking is the fastest way to lose linework.",
+          "Swimming, baths and spas until fully healed, soaking is the fastest way to lose linework.",
           "Direct sun. Once healed, sunscreen is the single biggest factor in how a fine line piece ages.",
           "Tight clothing over the area, and heavy training that stretches the skin.",
         ],
@@ -78,7 +78,7 @@ export const articles: Article[] = [
       { type: "h2", text: "When to get in touch" },
       {
         type: "p",
-        text: "Redness that spreads, heat, swelling that worsens after day three, or any discharge is worth a call — to us and to a doctor. Infection is uncommon and very treatable early. If something feels wrong, ask rather than wait.",
+        text: "Redness that spreads, heat, swelling that worsens after day three, or any discharge is worth a call, to us and to a doctor. Infection is uncommon and very treatable early. If something feels wrong, ask rather than wait.",
       },
     ],
   },
@@ -109,9 +109,9 @@ export const articles: Article[] = [
       {
         type: "ul",
         items: [
-          "Ocean — bacteria and sand. Wait until fully healed, and rinse afterwards.",
-          "Pools and spas — chlorine is an irritant on broken skin, and heat opens it further.",
-          "Baths — the same soaking problem as everything else. Showers are fine from day one.",
+          "Ocean: bacteria and sand. Wait until fully healed, and rinse afterwards.",
+          "Pools and spas: chlorine is an irritant on broken skin, and heat opens it further.",
+          "Baths: the same soaking problem as everything else. Showers are fine from day one.",
         ],
       },
       { type: "h2", text: "If it happens anyway" },
@@ -126,7 +126,7 @@ export const articles: Article[] = [
     title: "Getting your first tattoo: what to expect",
     metaTitle: "Getting Your First Tattoo: What to Expect | Heartbreaker Ink",
     description:
-      "What actually happens at a first tattoo appointment — booking, the consult, the day itself, pain, and how to look after it afterwards.",
+      "What actually happens at a first tattoo appointment, booking, the consult, the day itself, pain, and how to look after it afterwards.",
     keyword: { term: "first tattoo", volume: 140, kd: 15 },
     cluster: "First timers",
     read: "7 min",
@@ -137,7 +137,7 @@ export const articles: Article[] = [
     body: [
       {
         type: "p",
-        text: "Almost nobody is nervous about the needle. They are nervous about not knowing the order of events — where to stand, what to say, whether it is rude to ask for a break. So here is the entire appointment, plainly.",
+        text: "Almost nobody is nervous about the needle. They are nervous about not knowing the order of events, where to stand, what to say, whether it is rude to ask for a break. So here is the entire appointment, plainly.",
       },
       { type: "h2", text: "Before the day" },
       {
@@ -148,7 +148,7 @@ export const articles: Article[] = [
       {
         type: "ul",
         items: [
-          "A stencil goes on first, and you check the placement in a mirror. Move it as many times as you need — this is the moment to be fussy.",
+          "A stencil goes on first, and you check the placement in a mirror. Move it as many times as you need, this is the moment to be fussy.",
           "A short test line tells you what the sensation actually is. It is almost always less than people imagine.",
           "Breaks whenever you want one. Say so; nobody minds.",
         ],
@@ -161,7 +161,7 @@ export const articles: Article[] = [
       { type: "h2", text: "Afterwards" },
       {
         type: "p",
-        text: "You leave wrapped, with written aftercare and a way to reach us. The first fortnight is the part that matters — the aftercare guide covers it properly.",
+        text: "You leave wrapped, with written aftercare and a way to reach us. The first fortnight is the part that matters, the aftercare guide covers it properly.",
       },
     ],
   },
@@ -177,7 +177,7 @@ export const articles: Article[] = [
     date: "2026-09-16",
     hero: "/brand/photography/fine-line/bird-arm.jpg",
     excerpt:
-      "Yes — but they age differently to bold work, and pretending otherwise does nobody any favours.",
+      "Yes, but they age differently to bold work, and pretending otherwise does nobody any favours.",
     body: [
       {
         type: "p",
@@ -186,14 +186,14 @@ export const articles: Article[] = [
       { type: "h2", text: "What actually changes" },
       {
         type: "p",
-        text: "All ink spreads slightly under the skin over years. On a bold outline that spread is invisible. On a hairline it is a meaningful percentage of the line's width, so fine work softens sooner. Good fine line is drawn anticipating that — spacing, weight and detail density are all set for how it will look in ten years, not ten days.",
+        text: "All ink spreads slightly under the skin over years. On a bold outline that spread is invisible. On a hairline it is a meaningful percentage of the line's width, so fine work softens sooner. Good fine line is drawn anticipating that, spacing, weight and detail density are all set for how it will look in ten years, not ten days.",
       },
       { type: "h2", text: "What makes the difference" },
       {
         type: "ul",
         items: [
           "Sun. Comfortably the biggest factor. Sunscreen on healed work is the best thing you can do for it.",
-          "Placement. High-friction, high-stretch areas — hands, feet, inner wrist — soften faster than an outer arm.",
+          "Placement. High-friction, high-stretch areas (hands, feet, inner wrist) soften faster than an outer arm.",
           "Detail density. Lines drawn too close will eventually read as one shape. This is a drawing decision, not an aftercare one.",
         ],
       },
@@ -209,7 +209,7 @@ export const articles: Article[] = [
     title: "50 small tattoo ideas worth keeping",
     metaTitle: "50 Small Tattoo Ideas Worth Keeping | Heartbreaker Ink",
     description:
-      "Small fine line tattoo ideas by theme — botanical, symbolic, script and abstract — with notes on which placements hold small detail best.",
+      "Small fine line tattoo ideas by theme (botanical, symbolic, script and abstract) with notes on which placements hold small detail best.",
     keyword: { term: "small tattoo ideas", volume: 2900, kd: 31 },
     cluster: "Ideas",
     read: "9 min",
@@ -227,7 +227,7 @@ export const articles: Article[] = [
         type: "ul",
         items: [
           "A single birth flower, stem and all.",
-          "One seed head — dandelion, poppy, nigella.",
+          "One seed head, dandelion, poppy, nigella.",
           "A folded leaf, drawn from real reference.",
           "A sprig of something from a garden that matters to you.",
         ],
@@ -238,7 +238,7 @@ export const articles: Article[] = [
         items: [
           "A swallow, for the journey out and the journey home.",
           "A small moth, which reads better at scale than a butterfly.",
-          "A crescent, a sun, or a single star — quiet and hard to date.",
+          "A crescent, a sun, or a single star, quiet and hard to date.",
           "An anchor, small enough to be a reference rather than a statement.",
         ],
       },
@@ -254,7 +254,7 @@ export const articles: Article[] = [
       { type: "h2", text: "Where small work holds best" },
       {
         type: "p",
-        text: "Outer forearm, upper arm, calf and shoulder blade all hold fine detail well. Fingers, palms, feet and the inside of the wrist are high-friction and high-stretch — beautiful for a few years, and honest studios will tell you they need refreshing.",
+        text: "Outer forearm, upper arm, calf and shoulder blade all hold fine detail well. Fingers, palms, feet and the inside of the wrist are high-friction and high-stretch, beautiful for a few years, and honest studios will tell you they need refreshing.",
       },
     ],
   },
@@ -270,7 +270,7 @@ export const articles: Article[] = [
     date: "2026-09-20",
     hero: "/brand/photography/fine-line/floral-arm.jpg",
     excerpt:
-      "A quiet way to mark a person or a date without lettering — and some translate to single needle far better than others.",
+      "A quiet way to mark a person or a date without lettering. And some translate to single needle far better than others.",
     body: [
       {
         type: "p",
@@ -280,24 +280,24 @@ export const articles: Article[] = [
       {
         type: "ul",
         items: [
-          "January — carnation. Layered petals; wants a little size to read.",
-          "February — violet. Small and simple, ideal for fine line.",
-          "March — daffodil. Strong silhouette, translates well.",
-          "April — daisy. Clean and forgiving at any scale.",
-          "May — lily of the valley. Delicate bells; a natural fit.",
-          "June — rose. Beautiful, but the most detail-hungry on the list.",
-          "July — larkspur. Tall and linear, lovely along a forearm.",
-          "August — poppy. Works especially well as a seed head.",
-          "September — aster. Fine radiating petals; keep it generous.",
-          "October — marigold. Dense; needs size or simplifying.",
-          "November — chrysanthemum. The densest of the twelve.",
-          "December — narcissus. Simple form, ages well.",
+          "January: carnation. Layered petals; wants a little size to read.",
+          "February: violet. Small and simple, ideal for fine line.",
+          "March: daffodil. Strong silhouette, translates well.",
+          "April: daisy. Clean and forgiving at any scale.",
+          "May: lily of the valley. Delicate bells; a natural fit.",
+          "June: rose. Beautiful, but the most detail-hungry on the list.",
+          "July: larkspur. Tall and linear, lovely along a forearm.",
+          "August: poppy. Works especially well as a seed head.",
+          "September: aster. Fine radiating petals; keep it generous.",
+          "October: marigold. Dense; needs size or simplifying.",
+          "November: chrysanthemum. The densest of the twelve.",
+          "December: narcissus. Simple form, ages well.",
         ],
       },
       { type: "h2", text: "Combining months" },
       {
         type: "p",
-        text: "Several flowers for several people is one of the nicest ways to build a piece over time. Tell us the full list at the first session even if you only want one now — the composition gets drawn with the others in mind.",
+        text: "Several flowers for several people is one of the nicest ways to build a piece over time. Tell us the full list at the first session even if you only want one now, the composition gets drawn with the others in mind.",
       },
     ],
   },

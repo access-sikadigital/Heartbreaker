@@ -99,7 +99,7 @@ export function EnquiryForm({ className }: { className?: string }) {
       >
         <h2 className="type-subhead text-maroon">Enquiry sent</h2>
         <p className="type-body mt-4 max-w-[42ch] text-ink-70">
-          Thanks — Beth will come back to you, usually the same day. If you have
+          Thanks, Beth will come back to you, usually the same day. If you have
           reference images, send them through on Instagram and we will match them
           to your enquiry.
         </p>

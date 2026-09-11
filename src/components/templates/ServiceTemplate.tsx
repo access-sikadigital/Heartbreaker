@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { PageHero } from "@/components/ui/PageHero";
+import { CtaLink } from "@/components/ui/CtaLink";
 import { Section } from "@/components/ui/Section";
 import { Icon } from "@/components/ui/Icon";
 import { FaqAccordion, FaqSchema } from "@/components/ui/FaqAccordion";
@@ -55,7 +56,7 @@ export function ServiceTemplate({ service }: { service: Service }) {
         ]}
       />
 
-      {/* 2 — Who it's for */}
+      {/* 2, Who it's for */}
       <Section ground="paper">
         <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
           <div>
@@ -68,7 +69,7 @@ export function ServiceTemplate({ service }: { service: Service }) {
         </div>
       </Section>
 
-      {/* 3 — Gallery strip. The scope calls this the most persuasive element. */}
+      {/* 3, Gallery strip. The scope calls this the most persuasive element. */}
       <Section ground="paper" width="wide" className="pt-0">
         <Reveal stagger={0.1} className="grid gap-4 sm:grid-cols-3">
           {service.gallery.map((src, i) => (
@@ -88,7 +89,7 @@ export function ServiceTemplate({ service }: { service: Service }) {
         </Reveal>
       </Section>
 
-      {/* 4 + 5 — What makes it ours, and how it works */}
+      {/* 4 + 5, What makes it ours, and how it works */}
       <Section ground="ink">
         <PinnedSteps
           aside={
@@ -100,13 +101,13 @@ export function ServiceTemplate({ service }: { service: Service }) {
               <p className="type-body mt-6 max-w-[38ch] text-paper-60">
                 One artist, one client at a time, and no part of it rushed.
               </p>
-              <Link
-                href="/book/"
+              <CtaLink
+                href={site.booking.url}
                 className="type-button mt-8 inline-flex items-center gap-3 border border-offwhite px-7 py-3.5 transition-colors duration-(--duration-fast) hover:bg-offwhite hover:text-ink"
               >
                 Start an enquiry
                 <span aria-hidden="true">&#8599;</span>
-              </Link>
+              </CtaLink>
             </>
           }
         >
@@ -125,7 +126,7 @@ export function ServiceTemplate({ service }: { service: Service }) {
         </PinnedSteps>
       </Section>
 
-      {/* 6 — Pricing guidance */}
+      {/* 6, Pricing guidance */}
       <Section ground="paper">
         <ScrubReveal y={40} from={0.25}>
           <div className="flex flex-wrap items-end justify-between gap-8 border-b rule-ink pb-10">
@@ -135,7 +136,7 @@ export function ServiceTemplate({ service }: { service: Service }) {
             </div>
             <p className="type-body max-w-[40ch] text-ink-70">
               A guide, not a quote. Final price depends on size, detail and
-              placement — you will have an exact figure before you commit.{" "}
+              placement, you will have an exact figure before you commit.{" "}
               <Link href="/pricing/" className="text-maroon underline underline-offset-4">
                 See full pricing
               </Link>
@@ -145,7 +146,7 @@ export function ServiceTemplate({ service }: { service: Service }) {
         </ScrubReveal>
       </Section>
 
-      {/* 8 — FAQ */}
+      {/* 8, FAQ */}
       <Section ground="paper" className="pt-0">
         <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
           <div className="lg:sticky lg:top-28 lg:self-start">

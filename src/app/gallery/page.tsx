@@ -12,7 +12,7 @@ import { colors } from "@/lib/tokens";
 export const metadata: Metadata = {
   title: "Fine Line Tattoo Gallery | Heartbreaker Ink, Mornington",
   description:
-    "Healed fine line tattoo work from Heartbreaker Ink — script, botanical, small pieces and custom designs. Mornington Peninsula studio.",
+    "Healed fine line tattoo work from Heartbreaker Ink, script, botanical, small pieces and custom designs. Mornington Peninsula studio.",
   alternates: { canonical: "/gallery/" },
 };
 
@@ -43,11 +43,11 @@ export default function GalleryPage() {
       <PageHero
         eyebrow="Portfolio"
         heading="Fine line tattoos"
-        intro="Healed work, shot as it lives on skin — not as it looked the day it was done. Everything here was drawn for the person wearing it."
+        intro="Healed work, shot as it lives on skin, not as it looked the day it was done. Everything here was drawn for the person wearing it."
         trail={[{ label: "Gallery", href: "/gallery/" }]}
       />
 
-      {/* Sideways rail — the whole row travels as you scroll past it. */}
+      {/* Sideways rail, the whole row travels as you scroll past it. */}
       <section
         data-ink-color={colors.offwhite}
         className="on-dark bg-ink py-16 text-offwhite lg:py-0"
