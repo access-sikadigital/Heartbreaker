@@ -62,7 +62,7 @@ export function LocationTemplate({ location }: { location: Location }) {
               href={site.booking.url}
               className="type-button mt-8 inline-flex items-center gap-3 border border-maroon px-7 py-3.5 text-maroon transition-colors duration-(--duration-fast) hover:bg-maroon hover:text-offwhite"
             >
-              Book a session
+              {site.booking.label}
               <span aria-hidden="true">&#8599;</span>
             </CtaLink>
           </div>

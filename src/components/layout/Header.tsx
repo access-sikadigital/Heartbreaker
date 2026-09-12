@@ -124,11 +124,30 @@ export function Header() {
               width={830}
               height={53}
               priority
-              className="h-auto w-[176px] sm:w-[240px] lg:w-[264px] xl:w-[300px]"
+              /*
+                224px on a phone, up from 176px.
+
+                The bar only carries the menu button beside it below 640px, so
+                the width was being spent on empty space rather than the
+                wordmark. At 224px inside a 335px content box there is still
+                70px of clear air before the menu button, which keeps the
+                brand's clearspace rule intact.
+              */
+              className="h-auto w-[224px] sm:w-[260px] xl:w-[248px] 2xl:w-[300px]"
             />
           </Link>
 
-          <nav aria-label="Primary" className="hidden items-center gap-9 lg:flex">
+          {/*
+            The desktop bar appears at xl (1280), not lg (1024).
+
+            Seven links plus two buttons plus a legible wordmark measures wider
+            than a 1024px container can hold. The choices were to drop links,
+            shrink the wordmark past the point it reads, or let the row wrap.
+            Showing the menu button on a 1024-wide laptop is the least bad of
+            the four, and the panel already carries every link plus both calls
+            to action.
+          */}
+          <nav aria-label="Primary" className="hidden items-center gap-6 xl:flex 2xl:gap-9">
             {primaryNav.map((link) => (
               <Link key={link.href} href={link.href} className="group relative">
                 <span className="type-label">{link.label}</span>
@@ -137,10 +156,28 @@ export function Header() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
+            {/*
+              Two calls to action, ranked. "Book now" leaves for the booking
+              widget and stays the solid-bordered one; "Contact" is the lower
+              commitment route for anyone not ready to pick a date, so it is
+              drawn quieter rather than competing.
+
+              Shown with the desktop nav, from xl. Below that the header
+              carries Book now plus the menu button, and a third control there
+              pushes the logo down to a size where the wordmark stops being
+              legible. The panel carries Contact instead.
+            */}
+            <Link
+              href="/contact/"
+              className="type-button hidden border border-paper-40 px-5 py-2.5 text-paper-80 transition-colors duration-(--duration-fast) hover:border-offwhite hover:text-offwhite xl:inline-block"
+            >
+              Contact
+            </Link>
+
             <Magnetic className="hidden sm:block">
               <CtaLink href={primaryCta.href}
-                className="type-button border border-offwhite px-5 py-2.5 transition-colors duration-(--duration-fast) hover:bg-offwhite hover:text-maroon"
+                className="type-button btn-fill inline-block px-5 py-2.5"
               >
                 {primaryCta.label}
               </CtaLink>
@@ -151,7 +188,7 @@ export function Header() {
               onClick={() => setOpen((v) => !v)}
               aria-expanded={open}
               aria-controls="mobile-menu"
-              className="relative z-10 flex h-10 w-10 flex-col items-center justify-center gap-[5px] lg:hidden"
+              className="relative z-10 flex h-10 w-10 flex-col items-center justify-center gap-[5px] xl:hidden"
             >
               <span className="sr-only">{open ? "Close menu" : "Open menu"}</span>
               <span
@@ -176,13 +213,17 @@ export function Header() {
           <motion.div
             id="mobile-menu"
             data-ink-color={colors.offwhite}
-            className="on-dark fixed inset-0 z-40 flex flex-col justify-between bg-maroon px-6 pt-(--header-h) pb-10 lg:hidden"
+            className="on-dark fixed inset-0 z-40 flex flex-col justify-between overflow-y-auto bg-maroon px-6 pt-(--header-h) pb-10 xl:hidden"
             initial={{ opacity: 0, y: -16 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -16 }}
             transition={{ duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
           >
-            <nav aria-label="Mobile" className="mt-10 flex flex-col gap-1">
+            {/* py-1.5 rather than py-2: with seven links the panel ran 699px
+                against a 667px iPhone SE viewport, and trimming the link
+                padding is what gives that back. mt-2 starts the list just
+                under the bar instead of floating it a third of the way down. */}
+            <nav aria-label="Mobile" className="mt-2 flex flex-col gap-1">
               {primaryNav.map((link, i) => (
                 <motion.div
                   key={link.href}
@@ -197,7 +238,11 @@ export function Header() {
                   <Link
                     href={link.href}
                     onClick={() => setOpen(false)}
-                    className="type-display block py-2 text-offwhite"
+                    /* type-headline, not type-display. Seven links at display
+                       scale overflow a 667px phone before the CTAs are even
+                       drawn; overflow-y-auto on the panel is the safety net,
+                       not the plan. */
+                    className="type-headline block py-1.5 text-offwhite"
                   >
                     {link.label}
                   </Link>
@@ -211,12 +256,28 @@ export function Header() {
               transition={{ delay: 0.34, duration: 0.4 }}
               className="flex flex-col gap-6"
             >
+              {/*
+                Same filled treatment as the desktop bar. It was a plain
+                outlined box here, which put the primary action in the same
+                visual weight as the secondary one sitting directly beneath it
+                and left the phone with no obvious first choice.
+              */}
               <CtaLink href={primaryCta.href}
                 onClick={() => setOpen(false)}
-                className="type-button flex items-center justify-center border border-offwhite px-6 py-4"
+                className="type-button btn-fill flex items-center justify-center gap-3 px-6 py-4"
               >
                 {primaryCta.label}
+                <span aria-hidden="true">&#8599;</span>
               </CtaLink>
+
+              {/* The desktop bar's Contact button, kept reachable on mobile. */}
+              <Link
+                href="/contact/"
+                onClick={() => setOpen(false)}
+                className="type-button flex items-center justify-center border border-paper-40 px-6 py-4 text-paper-80"
+              >
+                Contact
+              </Link>
 
               <div className="flex flex-wrap items-center justify-between gap-4">
                 <a

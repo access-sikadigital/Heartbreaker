@@ -19,11 +19,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/gallery/", priority: 0.8 },
     { path: "/aftercare/", priority: 0.8 },
     { path: "/studio-policy/", priority: 0.6 },
+    { path: "/work-with-us/", priority: 0.5 },
     { path: "/pricing/", priority: 0.8 },
     { path: "/about/", priority: 0.7 },
     { path: "/journal/", priority: 0.7 },
-    { path: "/book/", priority: 0.9 },
-    { path: "/contact/", priority: 0.8 },
+    /* /book/ redirects to /contact/, so it must not be listed. A sitemap
+       entry that 308s is a crawl-budget waste and a Search Console warning. */
+    { path: "/contact/", priority: 0.9 },
     { path: "/gift-vouchers/", priority: 0.6 },
     { path: "/reviews/", priority: 0.6 },
     { path: "/faqs/", priority: 0.6 },

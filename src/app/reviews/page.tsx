@@ -53,6 +53,7 @@ export default function ReviewsPage() {
         eyebrow="Reviews"
         heading="What people say"
         intro="Most of the studio's work comes from someone sending a friend. That is the only marketing that has ever mattered here."
+        image="/brand/photography/small-micro/back-black-shirt.jpg"
         trail={[{ label: "Reviews", href: "/reviews/" }]}
       />
 

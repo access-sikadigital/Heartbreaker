@@ -9,6 +9,7 @@ import { TextScrub } from "@/components/motion/TextScrub";
 import { Reveal } from "@/components/motion/Reveal";
 import { BookingCta } from "@/components/sections/BookingCta";
 import { aftercareIntro, aftercareSteps } from "@/data/policy";
+import { site } from "@/data/site";
 
 /**
  * Target: "tattoo aftercare" — 2,900/mo, KD 19. The single biggest
@@ -102,8 +103,24 @@ export default function AftercarePage() {
 
             <p className="type-body mt-8 max-w-[40ch] text-ink-70">
               Ink Nurse is stocked in the studio, so you can pick yours up on
-              the day rather than hunting for something on the way home.
+              the day rather than hunting for something on the way home. You can
+              also order it before your appointment.
             </p>
+
+            {/*
+              Straight to Square's hosted checkout, which owns the price and
+              stock. Deliberately no figure quoted here: a number on this page
+              would be a second source of truth and the one that goes stale.
+            */}
+            <a
+              href={site.shop.aftercareUrl}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="type-button mt-8 inline-flex items-center gap-3 border border-maroon px-7 py-3.5 text-maroon transition-colors duration-(--duration-fast) hover:bg-maroon hover:text-offwhite"
+            >
+              {site.shop.aftercareLabel}
+              <span aria-hidden="true">&#8599;</span>
+            </a>
           </div>
 
           <PolicyList items={aftercareSteps} />

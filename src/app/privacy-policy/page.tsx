@@ -33,6 +33,7 @@ export default function Page() {
         eyebrow="Legal"
         heading={"Privacy Policy"}
         intro={"How we handle the information you give us when you enquire, book or subscribe."}
+        image="/brand/photography/small-micro/legs-foliage.jpg"
         trail={[{ label: "Privacy Policy", href: "/privacy-policy/" }]}
       />
 

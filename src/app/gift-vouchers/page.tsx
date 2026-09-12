@@ -21,6 +21,7 @@ export default function GiftVouchersPage() {
         eyebrow="Gift vouchers"
         heading="Give the sitting, not the design"
         intro="A voucher covers the session. They pick the piece, the placement and the date, which is the only sensible way to gift a tattoo."
+        image="/brand/photography/small-micro/heart-hands.jpg"
         trail={[{ label: "Gift vouchers", href: "/gift-vouchers/" }]}
       />
 

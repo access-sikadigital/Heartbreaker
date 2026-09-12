@@ -4,12 +4,15 @@ import { site } from "@/data/site";
 export type Crumb = { label: string; href: string };
 
 /**
- * Breadcrumb trail with matching BreadcrumbList schema.
+ * BreadcrumbList schema on its own, with nothing drawn.
  *
- * The service tree runs three levels deep, so this is doing real work for both
- * the reader and for how the pillar/child relationship is understood in search.
+ * Split out from the visual trail because the two are wanted independently:
+ * the page heroes no longer show a breadcrumb, but the service tree runs three
+ * levels deep and search still needs to understand the pillar/child
+ * relationship. Dropping the markup along with the visuals would have thrown
+ * away the half that was doing the SEO work.
  */
-export function Breadcrumbs({ trail }: { trail: Crumb[] }) {
+export function BreadcrumbSchema({ trail }: { trail: Crumb[] }) {
   const full = [{ label: "Home", href: "/" }, ...trail];
 
   const schema = {
@@ -24,11 +27,20 @@ export function Breadcrumbs({ trail }: { trail: Crumb[] }) {
   };
 
   return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+/** The visible trail, plus the schema. Kept for anywhere that still wants it. */
+export function Breadcrumbs({ trail }: { trail: Crumb[] }) {
+  const full = [{ label: "Home", href: "/" }, ...trail];
+
+  return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-      />
+      <BreadcrumbSchema trail={trail} />
       <nav aria-label="Breadcrumb">
         <ol className="type-label flex flex-wrap items-center gap-2 text-current opacity-70">
           {full.map((c, i) => (

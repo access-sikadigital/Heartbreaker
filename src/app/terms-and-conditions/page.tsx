@@ -34,6 +34,7 @@ export default function Page() {
         eyebrow="Legal"
         heading={"Terms & Conditions"}
         intro={"The terms that apply to booking and being tattooed at the studio."}
+        image="/brand/photography/fine-line/floral-arm.jpg"
         trail={[{ label: "Terms & Conditions", href: "/terms-and-conditions/" }]}
       />
 

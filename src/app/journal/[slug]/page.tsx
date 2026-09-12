@@ -64,6 +64,7 @@ export default async function ArticlePage({ params }: Params) {
         eyebrow={article.cluster}
         heading={article.title}
         intro={article.excerpt}
+        image={article.hero}
         trail={[
           { label: "Journal", href: "/journal/" },
           { label: article.cluster, href: `/journal/${article.slug}/` },

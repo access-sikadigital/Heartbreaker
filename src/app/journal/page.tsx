@@ -24,6 +24,7 @@ export default function JournalPage() {
         eyebrow="Journal"
         heading="Everything you wanted to ask"
         intro="Aftercare, cost, healing, and the questions people are slightly embarrassed to ask in the studio. Written to be useful rather than to rank."
+        image="/brand/photography/script-lettering/arm-script.jpg"
         trail={[{ label: "Journal", href: "/journal/" }]}
       />
 

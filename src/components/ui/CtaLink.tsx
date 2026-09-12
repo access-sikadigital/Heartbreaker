@@ -1,10 +1,13 @@
 import Link from "next/link";
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 
 type CtaLinkProps = {
   href: string;
   children: ReactNode;
   className?: string;
+  /** For the rare one-off a utility class cannot settle, such as a font
+   *  override that has to outrank a type role in the same cascade layer. */
+  style?: CSSProperties;
   /** Force an anchor. Otherwise any absolute URL is treated as external. */
   external?: boolean;
   onClick?: () => void;
@@ -26,6 +29,7 @@ export function CtaLink({
   href,
   children,
   className,
+  style,
   external,
   onClick,
   ...rest
@@ -34,14 +38,26 @@ export function CtaLink({
 
   if (isExternal) {
     return (
-      <a href={href} className={className} onClick={onClick} {...rest}>
+      <a
+        href={href}
+        className={className}
+        style={style}
+        onClick={onClick}
+        {...rest}
+      >
         {children}
       </a>
     );
   }
 
   return (
-    <Link href={href} className={className} onClick={onClick} {...rest}>
+    <Link
+      href={href}
+      className={className}
+      style={style}
+      onClick={onClick}
+      {...rest}
+    >
       {children}
     </Link>
   );

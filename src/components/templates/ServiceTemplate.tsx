@@ -105,7 +105,9 @@ export function ServiceTemplate({ service }: { service: Service }) {
                 href={site.booking.url}
                 className="type-button mt-8 inline-flex items-center gap-3 border border-offwhite px-7 py-3.5 transition-colors duration-(--duration-fast) hover:bg-offwhite hover:text-ink"
               >
-                Start an enquiry
+                {/* Said "Start an enquiry" while opening the booking widget.
+                    The label now matches where the button actually goes. */}
+                {site.booking.label}
                 <span aria-hidden="true">&#8599;</span>
               </CtaLink>
             </>

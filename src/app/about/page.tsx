@@ -26,6 +26,7 @@ export default function AboutPage() {
         eyebrow="The artist"
         heading="Beth"
         intro="Fine line specialist, custom script a signature, and a studio deliberately built to feel like nothing you have to steel yourself for."
+        image="/brand/photography/script-lettering/arm-garden.jpg"
         trail={[{ label: "About", href: "/about/" }]}
       />
 

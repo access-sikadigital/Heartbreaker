@@ -31,6 +31,20 @@ const nextConfig: NextConfig = {
     },
   },
 
+  /**
+   * /book/ was a second enquiry page carrying the same form as /contact/.
+   * Once "Book now" started going straight to the live booking widget it had
+   * no inbound links left, and two pages competing on the same enquiry intent
+   * split whatever authority either would have had. Its useful content (the
+   * four-step "how booking works" explainer) moved to /contact/.
+   *
+   * Permanent, not temporary: the URL is not coming back, and a 308 is what
+   * passes ranking signals on to the destination.
+   */
+  async redirects() {
+    return [{ source: "/book", destination: "/contact/", permanent: true }];
+  },
+
   async headers() {
     return [
       {

@@ -386,6 +386,60 @@ html {
   text-transform: uppercase;
 }
 
+/* ==========================================================================
+   THE PRIMARY BUTTON
+
+   Solid off-white with maroon type: the highest-contrast pairing the palette
+   allows, reserved for the one action that matters on any given screen.
+   Everything else on the site stays outlined, which is what lets this read as
+   the primary without needing to be bigger.
+
+   On hover, chilli wipes across from the left. It is drawn with an animated
+   `background-size` rather than a pseudo-element sliding under the label,
+   because a background-image paints above background-color and below text
+   automatically. No extra element, no z-index stack to get wrong, and the
+   label can never end up behind the wipe.
+
+   Chilli is the accent the guidelines allow exactly one job per composition.
+   This is that job.
+   ========================================================================== */
+@utility btn-fill {
+  position: relative;
+  border: 1px solid var(--color-offwhite);
+  background-color: var(--color-offwhite);
+  color: var(--color-maroon);
+
+  background-image: linear-gradient(
+    to right,
+    var(--color-chilli) 0%,
+    var(--color-chilli) 100%
+  );
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 0% 100%;
+
+  transition:
+    background-size var(--duration-base) var(--ease-brand),
+    color var(--duration-fast) var(--ease-brand),
+    border-color var(--duration-fast) var(--ease-brand);
+
+  &:hover,
+  &:focus-visible {
+    background-size: 100% 100%;
+    border-color: var(--color-chilli);
+    color: var(--color-offwhite);
+  }
+
+  /* The wipe is decoration. The colour change alone still signals the state. */
+  @media (prefers-reduced-motion: reduce) {
+    transition: color var(--duration-fast) var(--ease-brand);
+    &:hover,
+    &:focus-visible {
+      background-size: 100% 100%;
+    }
+  }
+}
+
 /* Tabular figures for prices, dates and any column of numbers. */
 @utility numeric {
   font-variant-numeric: tabular-nums lining-nums;

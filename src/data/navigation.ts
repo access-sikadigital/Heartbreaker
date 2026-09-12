@@ -18,6 +18,11 @@ export const primaryNav: NavLink[] = [
   { label: "Gallery", href: "/gallery/" },
   { label: "Journal", href: "/journal/" },
   { label: "About", href: "/about/" },
+  { label: "Aftercare", href: "/aftercare/" },
+  /* Aimed at artists, not clients. It sits in the nav because an artist
+     looking for a chair will not think to dig through a footer, and it is the
+     only page on the site with an audience other than customers. */
+  { label: "Work with us", href: "/work-with-us/" },
 ];
 
 /**
@@ -48,12 +53,12 @@ export const footerNav: { title: string; links: NavLink[] }[] = [
     title: "Studio",
     links: [
       { label: "About Beth", href: "/about/" },
-      { label: "Gallery", href: "/gallery/" },
       { label: "Reviews", href: "/reviews/" },
       { label: "Pricing", href: "/pricing/" },
       { label: "Aftercare", href: "/aftercare/" },
       { label: "Studio policy", href: "/studio-policy/" },
       { label: "FAQs", href: "/faqs/" },
+      { label: "Work with us", href: "/work-with-us/" },
     ],
   },
   {

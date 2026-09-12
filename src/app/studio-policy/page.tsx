@@ -36,6 +36,7 @@ export default function StudioPolicyPage() {
         eyebrow="Studio policy"
         heading="Before you book"
         intro="The short list every client gets before their appointment. It is here in full so nothing about your deposit or your date comes as a surprise."
+        image="/brand/photography/fine-line/bird-arm.jpg"
         trail={[{ label: "Studio policy", href: "/studio-policy/" }]}
       />
 

@@ -21,6 +21,7 @@ export default function FaqsPage() {
         eyebrow="FAQs"
         heading="Everything worth asking first"
         intro="If it is not here, ask. No question about being tattooed is a stupid one, and the ones people are embarrassed to ask are usually the most common."
+        image="/brand/photography/script-lettering/hand-script.jpg"
         trail={[{ label: "FAQs", href: "/faqs/" }]}
       />
 

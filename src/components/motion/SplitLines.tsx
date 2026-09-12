@@ -36,12 +36,21 @@ export function SplitLines({
     () => {
       if (prefersReducedMotion() || !scope.current) return;
 
+      // Split the HEADING, not the wrapper.
+      //
+      // Splitting the wrapper made SplitText clone the block-level child once
+      // per line, so a two-line <h1> became two <h1> elements in the document.
+      // Targeting the heading itself puts the line divs inside it, leaving one
+      // semantic heading whatever the text wraps to.
+      const target = scope.current.firstElementChild as HTMLElement | null;
+      if (!target) return;
+
       // NO `mask` option on purpose. Masking wraps every line in an
       // overflow-hidden box sized to the line box, and Bold Money's caps
       // overshoot a sub-1 line-height — so at the tight display leading this
       // brand uses, a masked reveal shears the tops and bottoms off the type.
       // Rising from below with a fade gives the same read and cannot clip.
-      const split = SplitText.create(scope.current, {
+      const split = SplitText.create(target, {
         type: "lines",
         linesClass: "line-inner",
         autoSplit: true,
@@ -72,11 +81,18 @@ export function SplitLines({
     { scope, dependencies: [stagger, delay, immediate] },
   );
 
-  // The scope keeps overflow visible so a mid-animation line is never clipped
-  // by an ancestor; SplitText's own per-line masks do the clipping.
+  /*
+    `className` goes on the HEADING, not the wrapper.
+
+    It used to sit on the wrapper, which left the <h1> with no classes at all.
+    globals.css has a base rule setting every h1-h6 to the display face, and a
+    bare element rule beats an inherited value — so a heading given a mono type
+    role (type-headline-sm) silently rendered in Bold Money. Putting the role on
+    the element itself lets the utility layer win, as it was always meant to.
+  */
   return (
-    <div ref={scope} className={cn("overflow-visible", className)}>
-      <Tag>{children}</Tag>
+    <div ref={scope} className="overflow-visible">
+      <Tag className={cn(className)}>{children}</Tag>
     </div>
   );
 }

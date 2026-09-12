@@ -5,7 +5,6 @@ import Link from "next/link";
 import { useRef } from "react";
 import { gsap, useGSAP, prefersReducedMotion } from "@/lib/gsap";
 import { SplitLines } from "@/components/motion/SplitLines";
-import { ArchFrame } from "@/components/ui/ArchFrame";
 import { CtaLink } from "@/components/ui/CtaLink";
 import { primaryCta } from "@/data/navigation";
 import { site } from "@/data/site";
@@ -15,13 +14,14 @@ import { colors } from "@/lib/tokens";
  * Homepage hero.
  *
  * Layered rather than flat: a blurred portrait behind, the lockup and promise
- * in front, and an arch-framed piece of work to the side. Every layer is
- * scrubbed at a different rate, so the hero comes apart as you leave it instead
- * of simply scrolling away — the depth is what stops it reading as a static
- * banner.
+ * in front. The two layers are scrubbed at different rates, so the hero comes
+ * apart as you leave it instead of simply scrolling away — the depth is what
+ * stops it reading as a static banner.
  *
- * The arch frame is doing real work here: it reads as a doorway into the
- * studio, and it is the one soft shape in an identity built from hard edges.
+ * An arch-framed photograph used to sit beside the type on lg and up. It was
+ * removed at the client's request; the grid, its parallax tween and the
+ * ArchFrame import went with it rather than being left behind as dead weight.
+ * ArchFrame itself is still used elsewhere.
  */
 export function Hero() {
   const scope = useRef<HTMLElement>(null);
@@ -47,17 +47,23 @@ export function Hero() {
       scrub("[data-hero-bg]", { scale: 1, yPercent: 12 }, { scale: 1.14, yPercent: 0 });
       // Content leaves faster than the ground behind it.
       scrub("[data-hero-content]", { yPercent: -18, opacity: 0.15 }, { yPercent: 0, opacity: 1 });
-      // The arch rises against everything else.
-      scrub("[data-hero-arch]", { yPercent: -26 }, { yPercent: 6 });
     },
     { scope },
   );
 
+  /*
+    The section is justify-center, not justify-end.
+
+    Bottom-aligned, the block sat in the last third of the frame under a large
+    empty field, which read as the content having fallen rather than been
+    placed. Centred, with the header padding above and the section padding
+    below, it lands just above optical centre, which is where a hero wants it.
+  */
   return (
     <section
       ref={scope}
       data-ink-color={colors.offwhite}
-      className="on-dark relative isolate flex min-h-svh flex-col justify-end overflow-hidden bg-ink pt-(--header-h) text-offwhite"
+      className="on-dark relative isolate flex min-h-svh flex-col justify-center overflow-hidden bg-ink pt-(--header-h) text-offwhite"
     >
       <div data-hero-bg className="absolute inset-0 -z-20 will-change-transform">
         <Image
@@ -74,7 +80,9 @@ export function Hero() {
         className="absolute inset-0 -z-10 bg-gradient-to-t from-ink/90 via-ink/35 to-ink/55"
       />
 
-      <div className="container-wide grid gap-12 pb-14 md:pb-20 lg:grid-cols-[1.35fr_0.65fr] lg:items-end lg:gap-16">
+      {/* Single column since the arch came out. The two-column split and its
+          1.35/0.65 ratio only existed to seat that image beside the type. */}
+      <div className="container-wide pb-14 md:pb-20">
         <div data-hero-content>
           <Image
             src="/brand/logo/brandmark-white.svg"
@@ -94,13 +102,50 @@ export function Hero() {
             className="h-auto w-full max-w-[54rem]"
           />
 
-          <SplitLines as="h1" className="type-headline-sm mt-9 max-w-[20ch]" immediate>
+          {/*
+            30ch, not 20ch: the sentence is 52 characters, so a 20ch measure
+            broke it over three lines with a two-word orphan at the end. At
+            30ch it sets in two even lines.
+
+            leading-tight (1.25) overrides the 0.9 display leading the type
+            role carries. That value is tuned for Bold Money at display sizes;
+            on mono caps at 32px it closed the lines up until the sentence read
+            as a solid block.
+          */}
+          <SplitLines
+            as="h1"
+            className="type-headline-sm mt-9 max-w-[30ch] leading-tight"
+            immediate
+          >
             A fine line tattoo studio on the Mornington Peninsula
           </SplitLines>
 
           <div className="mt-9 flex flex-wrap items-center gap-5">
+            {/*
+              The hero button, and only the hero button, is set in Bold Money.
+
+              An inline style rather than a class on purpose: `type-button`
+              already declares the mono family, and both it and a `font-display`
+              utility live in the same cascade layer, so which one won would
+              depend on the order Tailwind happened to emit them in. A style
+              attribute is unambiguous and cannot be reordered out from under
+              this. Every other button on the site stays mono.
+
+              The size rides with it for the same reason. Bold Money is an
+              extended display face carrying a lot of weight per character, and
+              at the 14px `type-button` size it read as cramped rather than
+              confident. The clamp keeps it from crowding the CTA row on a
+              phone while letting it stand up at desktop width.
+            */}
             <CtaLink href={primaryCta.href}
-              className="type-button inline-flex items-center gap-3 border border-offwhite px-8 py-4 transition-colors duration-(--duration-fast) hover:bg-offwhite hover:text-ink"
+              style={{
+                fontFamily: "var(--font-display)",
+                /* Floor 20px, not 17px. At 1.5vw the old clamp sat on its
+                   floor at every normal laptop width, so a 14px button became
+                   17px and the change read as nothing happening. */
+                fontSize: "clamp(1.25rem, 1.9vw, 1.75rem)",
+              }}
+              className="type-button btn-fill inline-flex items-center gap-3 px-8 py-4"
             >
               {primaryCta.label}
               <span aria-hidden="true">&#8599;</span>
@@ -114,19 +159,6 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Arch-framed piece, the doorway into the studio. */}
-        <div data-hero-arch className="hidden justify-self-end lg:block">
-          <ArchFrame rise="50%" className="w-[19rem] bg-maroon-deep">
-            <Image
-              src="/brand/photography/fine-line/floral-arm.jpg"
-              alt="Fine line floral piece running along a forearm"
-              width={760}
-              height={1000}
-              sizes="19rem"
-              className="aspect-3/4 w-full object-cover"
-            />
-          </ArchFrame>
-        </div>
       </div>
 
       <div className="container-wide flex items-center justify-between border-t border-paper-20 py-5">
