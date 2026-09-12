@@ -35,7 +35,10 @@ export const locations: Location[] = [
     travel:
       "Parking is straightforward and the studio is private, you will not be walking through a shopfront to get to your appointment. Exact address comes with your booking confirmation.",
     nearby: ["Mount Eliza", "Mount Martha", "Somerville", "Moorooduc", "Tyabb"],
-    hero: "/brand/photography/placeholder-02.jpg",
+    /* Was placeholder-02: a street-style selfie in camo shorts, no tattoo
+       visible and nothing to do with Mornington. All three location heroes
+       were mood-board images; each now shows actual fine line work. */
+    hero: "/brand/photography/placeholder-10.jpg",
   },
   {
     slug: "fine-line-tattoo-melbourne",
@@ -50,7 +53,8 @@ export const locations: Location[] = [
     travel:
       "Roughly an hour from the CBD down the Nepean or the Peninsula Link. Sessions are scheduled with the drive in mind, you will not be sitting in a waiting room, and we do not double-book.",
     nearby: ["Melbourne CBD", "Bayside", "Brighton", "Frankston", "Dandenong"],
-    hero: "/brand/photography/placeholder-15.jpg",
+    /* Was placeholder-15: a motion-blurred figure on a pedestrian crossing. */
+    hero: "/brand/photography/placeholder-07.jpg",
   },
   {
     slug: "fine-line-tattoo-frankston",
@@ -65,7 +69,8 @@ export const locations: Location[] = [
     travel:
       "A short run down the Nepean Highway or the Peninsula Link. Easy enough to come after work, later appointments are available on request.",
     nearby: ["Frankston South", "Seaford", "Carrum Downs", "Langwarrin", "Mount Eliza"],
-    hero: "/brand/photography/placeholder-11.jpg",
+    /* Was placeholder-11: a dark abstract blur with no readable subject. */
+    hero: "/brand/photography/placeholder-08.jpg",
   },
 ];
 

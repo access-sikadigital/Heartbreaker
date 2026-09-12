@@ -28,8 +28,15 @@ const steps: ProcessStep[] = [
   {
     title: "Your session",
     body: "A private studio, one client at a time, and no rush. Breaks whenever you need them.",
-    image: "/brand/photography/placeholder-05.jpg",
-    alt: "Beth at work in the studio",
+    /*
+      Was placeholder-05.jpg, captioned "Beth at work in the studio". That
+      image is a motion-blurred fashion editorial of a woman on a chair holding
+      a cigarette: no tattoo, no studio, and not Beth. On the step describing a
+      tattoo session it was actively misleading, and the alt text asserted
+      something untrue to anyone using a screen reader.
+    */
+    image: "/brand/photography/placeholder-13.jpg",
+    alt: "Fine line script reading “muse”, healed, across a shoulder",
   },
   {
     title: "Healing & aftercare",

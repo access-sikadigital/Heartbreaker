@@ -9,6 +9,7 @@ import { Parallax } from "@/components/motion/Parallax";
 import { Counter } from "@/components/motion/Counter";
 import { Reveal, RevealItem } from "@/components/motion/Reveal";
 import { BookingCta } from "@/components/sections/BookingCta";
+import { artist } from "@/data/studio-photos";
 import { site } from "@/data/site";
 
 /** Target: "fine line tattoo artist" — 210/mo, KD 31. */
@@ -26,7 +27,8 @@ export default function AboutPage() {
         eyebrow="The artist"
         heading="Beth"
         intro="Fine line specialist, custom script a signature, and a studio deliberately built to feel like nothing you have to steel yourself for."
-        image="/brand/photography/script-lettering/arm-garden.jpg"
+        image={artist.walking}
+        imageAlt=""
         trail={[{ label: "About", href: "/about/" }]}
       />
 
@@ -75,10 +77,15 @@ export default function AboutPage() {
             </dl>
           </div>
 
+          {/*
+            The real portrait, at last. This slot held placeholder-05.jpg, an
+            unlicensed stock photograph of someone who is not the artist, on
+            the one page whose entire job is introducing her.
+          */}
           <ArchFrame rise="50%" className="bg-maroon-deep lg:justify-self-end">
             <Image
-              src="/brand/photography/placeholder-05.jpg"
-              alt="Beth at work"
+              src={artist.portrait}
+              alt={`${site.founder.name}, ${site.founder.role} at ${site.name}`}
               width={900}
               height={1200}
               sizes="(max-width: 1024px) 100vw, 40vw"

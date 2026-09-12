@@ -94,4 +94,21 @@ export const mosaic: GalleryPiece[] = [
     title: "Single rose",
     meta: "Fine line · ribs",
   },
+  /*
+    From the brand folder's image set, which is a mood board rather than a
+    photo library: most of it is blurred fashion reference with no tattoo in
+    frame, and one file has Instagram's carousel badge burnt into the corner.
+    These two survived the audit — real fine line work, clean, no interface
+    artefacts.
+  */
+  {
+    src: "/brand/photography/placeholder-09.jpg",
+    title: "Blessed",
+    meta: "Script · foot",
+  },
+  {
+    src: "/brand/photography/placeholder-13.jpg",
+    title: "Muse",
+    meta: "Script · shoulder",
+  },
 ];
