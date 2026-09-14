@@ -5,6 +5,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { site } from "@/data/site";
 import { colors } from "@/lib/tokens";
+import { MOTION_ENABLED } from "@/lib/motion-config";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -37,7 +38,17 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang={site.locale} className={fontVariables}>
+    /*
+      `data-motion="off"` drives the CSS half of the site-wide motion switch.
+      It is set here rather than from an effect so the attribute is in the
+      server-rendered HTML: set it later and the page would paint its
+      animated-from state first, which is the flash the switch exists to avoid.
+    */
+    <html
+      lang={site.locale}
+      className={fontVariables}
+      data-motion={MOTION_ENABLED ? undefined : "off"}
+    >
       <body className="bg-offwhite text-ink antialiased">
         <a
           href="#main"

@@ -5,6 +5,7 @@ import { PageHero } from "@/components/ui/PageHero";
 import { Section } from "@/components/ui/Section";
 import { ImageReveal } from "@/components/motion/ImageReveal";
 import { TextScrub } from "@/components/motion/TextScrub";
+import { BookingCta } from "@/components/sections/BookingCta";
 
 /** Target: "tattoo gift voucher" — 90/mo, KD 3. A free win and a revenue line. */
 export const metadata: Metadata = {
@@ -68,6 +69,8 @@ export default function GiftVouchersPage() {
           </ImageReveal>
         </div>
       </Section>
+
+      <BookingCta />
     </>
   );
 }

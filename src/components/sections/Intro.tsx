@@ -2,7 +2,6 @@ import Image from "next/image";
 import { Section } from "@/components/ui/Section";
 import { ScrubReveal } from "@/components/motion/ScrubReveal";
 import { SplitLines } from "@/components/motion/SplitLines";
-import { Parallax } from "@/components/motion/Parallax";
 
 /**
  * Positioning, alongside an offset image pair.
@@ -51,33 +50,28 @@ export function Intro() {
           </dl>
         </ScrubReveal>
 
-        {/* Offset pair, different speeds, overlapping edges. */}
+        {/*
+          One image, full width of its column.
+
+          This was an offset pair: a large frame with a smaller square laid over
+          its bottom-right corner on a faster parallax. The overlap was the
+          whole idea, and with motion off the second frame just sat on top of
+          the first as a box with a white border. The remaining image also
+          stretched to 118% of its box so the parallax had something to travel
+          through; at rest that was simply a crop nobody chose, so it is back
+          to 100%.
+        */}
         <div className="relative">
-          <Parallax speed={0.14} className="aspect-4/5 w-[82%]">
+          <div className="aspect-4/5 w-full overflow-hidden bg-maroon-deep">
             <Image
               src="/brand/photography/fine-line/back-red-knit.jpg"
               alt="Delicate script and stars across an upper back"
               width={900}
               height={1125}
-              sizes="(max-width: 1024px) 82vw, 40vw"
-              className="h-[118%] w-full object-cover"
+              sizes="(max-width: 1024px) 100vw, 45vw"
+              className="h-full w-full object-cover"
             />
-          </Parallax>
-
-          <Parallax
-            speed={0.3}
-            direction="down"
-            className="absolute right-0 bottom-[-8%] aspect-square w-[46%] border-8 border-offwhite"
-          >
-            <Image
-              src="/brand/photography/small-micro/heart-hands.jpg"
-              alt="Matching heart tattoos on two hands"
-              width={620}
-              height={620}
-              sizes="(max-width: 1024px) 46vw, 22vw"
-              className="h-[122%] w-full object-cover"
-            />
-          </Parallax>
+          </div>
         </div>
       </div>
     </Section>

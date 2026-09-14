@@ -3,6 +3,22 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   reactStrictMode: true,
 
+  /**
+   * Serve URLs WITH a trailing slash.
+   *
+   * Every canonical tag on the site and every entry in the sitemap is written
+   * with one ("/gallery/", "/contact/"), but Next's default is to strip it, so
+   * each of those URLs answered with a 308 to the slashless form. The site was
+   * telling search engines to index an address that immediately redirects,
+   * which wastes crawl budget and splits the signal between two URLs for the
+   * same page.
+   *
+   * Aligning the server with what the pages already declare is the smaller of
+   * the two possible fixes; the alternative is rewriting every canonical and
+   * the sitemap generator.
+   */
+  trailingSlash: true,
+
   // The brand ships flat art and photography. AVIF first, WebP as the
   // fallback — both are markedly smaller than the source JPEGs.
   images: {

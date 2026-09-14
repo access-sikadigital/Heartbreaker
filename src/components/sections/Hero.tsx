@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+/* next/link went with the "See the work" secondary link. */
 import { useRef } from "react";
 import { gsap, useGSAP, prefersReducedMotion } from "@/lib/gsap";
 import { SplitLines } from "@/components/motion/SplitLines";
@@ -63,8 +63,27 @@ export function Hero() {
     <section
       ref={scope}
       data-ink-color={colors.offwhite}
-      className="on-dark relative isolate flex min-h-svh flex-col justify-center overflow-hidden bg-ink pt-(--header-h) text-offwhite"
+      className="on-dark relative isolate flex min-h-svh flex-col overflow-hidden bg-ink pt-(--header-h) text-offwhite"
     >
+      {/*
+        objectPosition 50% 45% centres the HEAD, not the image.
+
+        THE WHOLE FACE CANNOT FIT, and no value here will make it. The source
+        is 1600x2000 and the hero is roughly 1920x870, so object-cover scales
+        the image to 1920 wide (2400 tall) and only 870 of those 2400 pixels
+        survive: about 36% of the picture. The head runs from the top of the
+        hair to the chin across roughly 58% of it. 58 does not go into 36.
+
+        45% is the value that puts the middle of the head in the middle of the
+        band, which is the best available compromise. Showing the face whole
+        needs one of two real changes, not a tweak here:
+
+          1. A landscape-framed photograph, where the head occupies less of the
+             frame height.
+          2. Stop full-bleeding this one: constrain it to the hero's height as
+             a centred portrait column with the ink ground either side. The
+             whole face shows, but the section stops being a full-width image.
+      */}
       <div data-hero-bg className="absolute inset-0 -z-20 will-change-transform">
         <Image
           src="/brand/photography/placeholder-18.jpg"
@@ -72,35 +91,35 @@ export function Hero() {
           fill
           priority
           sizes="100vw"
+          style={{ objectPosition: "50% 45%" }}
           className="object-cover opacity-85"
         />
       </div>
       <div
         aria-hidden="true"
-        className="absolute inset-0 -z-10 bg-gradient-to-t from-ink/90 via-ink/35 to-ink/55"
+        className="absolute inset-0 -z-10 bg-gradient-to-t from-ink/90 via-ink/60 to-ink/70"
       />
 
-      {/* Single column since the arch came out. The two-column split and its
-          1.35/0.65 ratio only existed to seat that image beside the type. */}
-      <div className="container-wide pb-14 md:pb-20">
-        <div data-hero-content>
-          <Image
-            src="/brand/logo/brandmark-white.svg"
-            alt=""
-            width={550}
-            height={521}
-            priority
-            className="mb-7 h-auto w-[52px] md:w-[66px]"
-          />
+      {/*
+        Single column since the arch came out. The two-column split and its
+        1.35/0.65 ratio only existed to seat that image beside the type.
 
-          <Image
-            src="/brand/logo/primary-offwhite.svg"
-            alt={site.name}
-            width={830}
-            height={53}
-            priority
-            className="h-auto w-full max-w-[54rem]"
-          />
+        `flex-1` is what moves the studio/scroll bar to the bottom of the hero.
+        The section used to be `justify-center`, which centred the content and
+        the bar TOGETHER as one group and left a band of empty frame beneath
+        them. Letting this block absorb the free space instead pins the bar to
+        the bottom edge while the type stays optically centred above it.
+      */}
+      <div className="container-wide flex flex-1 items-center pb-14 md:pb-20">
+        <div data-hero-content className="w-full text-center">
+          {/*
+            The brandmark and the oversized wordmark have both been removed.
+
+            The header already carries the wordmark at the top of every page,
+            including this one, so the hero was showing the studio's name twice
+            within 200px of itself. The sentence below is now the first thing
+            read, which is the thing that actually says what the studio does.
+          */}
 
           {/*
             30ch, not 20ch: the sentence is 52 characters, so a 20ch measure
@@ -112,15 +131,33 @@ export function Hero() {
             on mono caps at 32px it closed the lines up until the sentence read
             as a solid block.
           */}
+          {/*
+            Lenia Mono ships in ONE weight, so there is no bolder cut to load.
+
+            `-webkit-text-stroke` thickens the existing letterforms instead of
+            faking a second weight by smearing them: the stroke is painted in
+            the same colour as the fill, so it reads as a heavier version of
+            the face the brand actually owns. `paint-order: stroke fill` puts
+            the stroke UNDER the fill, which keeps the counters (the holes in
+            A, O, R) from closing up as it thickens.
+
+            Set in `em`, so the weight scales with the size rather than looking
+            heavy on a phone and hairline on a display.
+          */}
           <SplitLines
             as="h1"
-            className="type-headline-sm mt-9 max-w-[30ch] leading-tight"
+            className="type-headline-sm mx-auto mt-9 max-w-[24ch] leading-tight"
+            style={{
+              fontSize: "clamp(2.25rem, 5.4vw, 5.5rem)",
+              WebkitTextStroke: "0.022em currentColor",
+              paintOrder: "stroke fill",
+            }}
             immediate
           >
             A fine line tattoo studio on the Mornington Peninsula
           </SplitLines>
 
-          <div className="mt-9 flex flex-wrap items-center gap-5">
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-5">
             {/*
               The hero button, and only the hero button, is set in Bold Money.
 
@@ -145,17 +182,10 @@ export function Hero() {
                    17px and the change read as nothing happening. */
                 fontSize: "clamp(1.25rem, 1.9vw, 1.75rem)",
               }}
-              className="type-button btn-fill inline-flex items-center gap-3 px-8 py-4"
+              className="type-button btn-fill inline-flex items-center px-8 py-4"
             >
               {primaryCta.label}
-              <span aria-hidden="true">&#8599;</span>
             </CtaLink>
-            <Link
-              href="/gallery/"
-              className="type-label text-paper-60 underline-offset-8 transition-colors hover:text-chilli hover:underline"
-            >
-              See the work
-            </Link>
           </div>
         </div>
 

@@ -1,70 +1,62 @@
-import { StickyCollage, type CollageImage } from "@/components/motion/StickyCollage";
+import Image from "next/image";
+import Link from "next/link";
 import { colors } from "@/lib/tokens";
 
 /**
  * Portfolio teaser.
  *
- * At rest the work tiles the frame as a packed grid with even gutters. On
- * scroll the centre piece opens to the full width and height of the viewport
- * while the other four clear the frame in the direction they already lean.
+ * A plain grid. This used to be <StickyCollage>: five absolutely positioned
+ * tiles that scattered and reconverged on scroll, with the centre piece opening
+ * to fill the viewport.
  *
- * Rects are percentages, laid out so nothing overlaps and every gutter is ~2%.
- * The `sizes` on the centre piece is 100vw because that is what it ends up at
- * — sizing it for its resting box would serve a small source that the browser
- * then upscales at exactly the moment it fills the screen.
+ * It was removed because absolute positioning in percentages only holds while
+ * the container keeps roughly the proportions it was designed against. On a
+ * 400px-wide phone the tiles landed on top of each other and spilled past the
+ * section edge — the layout had no way to reflow, because none of it was in
+ * normal flow. A grid cannot overlap: the browser does the packing, and the
+ * same markup works at 375px and 1920px without a single hand-placed rect.
+ *
+ * Kept: the images, the order, and the varied tile shapes that gave the
+ * original its rhythm. Lost: the scroll choreography, deliberately.
  */
-const tiles: CollageImage[] = [
+const tiles = [
   {
-    // Top left, wide.
     src: "/brand/photography/fine-line/shoulder-circles.jpg",
     alt: "Concentric line work tattooed on a shoulder",
-    rect: { x: 1.5, y: 2, w: 62, h: 29 },
-    travel: { y: -70 },
-    sizes: "65vw",
-    width: 1200,
-    height: 620,
+    /* Wide tile: two columns from sm up. */
+    span: "sm:col-span-2",
+    aspect: "aspect-16/10",
+    sizes: "(max-width: 639px) 100vw, 66vw",
     priority: true,
   },
   {
-    // Top right.
     src: "/brand/photography/script-lettering/hand-script.jpg",
     alt: "Fine line script along the inside of a forearm",
-    rect: { x: 65, y: 14, w: 33.5, h: 33 },
-    travel: { x: 70 },
-    sizes: "36vw",
-    width: 700,
-    height: 700,
+    span: "",
+    aspect: "aspect-square",
+    sizes: "(max-width: 639px) 100vw, 33vw",
   },
   {
-    // Centre — the piece that opens to fill the frame.
     src: "/brand/photography/small-micro/rose-abdomen.jpg",
     alt: "Fine line rose tattooed on the abdomen",
-    rect: { x: 33.5, y: 33, w: 30, h: 32 },
-    fill: true,
-    sizes: "100vw",
-    width: 1920,
-    height: 1280,
+    span: "",
+    aspect: "aspect-3/4",
+    sizes: "(max-width: 639px) 100vw, 33vw",
     priority: true,
   },
   {
-    // Left, tall.
     src: "/brand/photography/fine-line/bird-arm.jpg",
     alt: "Small fine line bird tattooed on an upper arm",
-    rect: { x: 1.5, y: 33, w: 30, h: 55 },
-    travel: { x: -70 },
-    sizes: "32vw",
-    width: 700,
-    height: 1250,
+    span: "",
+    aspect: "aspect-3/4",
+    sizes: "(max-width: 639px) 100vw, 33vw",
   },
   {
-    // Bottom, wide.
     src: "/brand/photography/script-lettering/arm-garden.jpg",
     alt: "Script tattoo on a forearm, photographed in a garden",
-    rect: { x: 33.5, y: 67, w: 65, h: 31 },
-    travel: { y: 70 },
-    sizes: "68vw",
-    width: 1200,
-    height: 620,
+    span: "",
+    aspect: "aspect-3/4",
+    sizes: "(max-width: 639px) 100vw, 33vw",
   },
 ];
 
@@ -73,19 +65,51 @@ export function GalleryTeaser() {
     <section
       id="gallery"
       data-ink-color={colors.offwhite}
-      className="on-dark relative bg-ink text-offwhite"
+      className="on-dark relative bg-ink py-20 text-offwhite md:py-28"
     >
-      <StickyCollage
-        images={tiles}
-        cta={{ label: "View the portfolio", href: "/gallery/" }}
-      >
-        <p className="type-label text-chilli">Selected work</p>
-        <h2 className="type-display max-w-[10ch] text-offwhite">Our tattoos</h2>
-        <p className="type-body mx-auto max-w-[36ch] text-paper-80">
-          Healed pieces, shot as they live on skin, not as they looked the day
-          they were done.
-        </p>
-      </StickyCollage>
+      <div className="container-wide">
+        <div className="flex flex-wrap items-end justify-between gap-6">
+          <div>
+            <p className="type-label text-chilli">Selected work</p>
+            <h2 className="type-display mt-4 max-w-[10ch] text-offwhite">
+              Our tattoos
+            </h2>
+          </div>
+          <p className="type-body max-w-[36ch] text-paper-60">
+            Healed pieces, shot as they live on skin, not as they looked the day
+            they were done.
+          </p>
+        </div>
+
+        <div className="mt-12 grid gap-4 sm:grid-cols-3">
+          {tiles.map((tile) => (
+            <figure
+              key={tile.src}
+              className={`group overflow-hidden bg-maroon-deep ${tile.span} ${tile.aspect}`}
+            >
+              <Image
+                src={tile.src}
+                alt={tile.alt}
+                width={1200}
+                height={1200}
+                sizes={tile.sizes}
+                priority={tile.priority}
+                className="h-full w-full object-cover transition-transform duration-[1200ms] ease-(--ease-brand) group-hover:scale-[1.04]"
+              />
+            </figure>
+          ))}
+        </div>
+
+        <div className="mt-12">
+          <Link
+            href="/gallery/"
+            className="type-button inline-flex items-center gap-3 border border-offwhite px-8 py-4 transition-colors duration-(--duration-fast) hover:bg-offwhite hover:text-ink"
+          >
+            View the portfolio
+            <span aria-hidden="true">&#8599;</span>
+          </Link>
+        </div>
+      </div>
     </section>
   );
 }

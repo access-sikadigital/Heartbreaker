@@ -2,13 +2,12 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { PageHero } from "@/components/ui/PageHero";
 import { Section } from "@/components/ui/Section";
-import { PushThrough } from "@/components/motion/PushThrough";
+/* PushThrough, TextScrub and the ink colour token all went with the
+   scroll sequence this page used to open with. */
 import { ImageReveal } from "@/components/motion/ImageReveal";
-import { TextScrub } from "@/components/motion/TextScrub";
 import { Reveal, RevealItem } from "@/components/motion/Reveal";
 import { BookingCta } from "@/components/sections/BookingCta";
 import { featured, mosaic } from "@/data/gallery";
-import { colors } from "@/lib/tokens";
 
 /**
  * Target: "fine line tattoos" — 2,900/mo, KD 32.
@@ -40,30 +39,63 @@ export default function GalleryPage() {
         trail={[{ label: "Gallery", href: "/gallery/" }]}
       />
 
-      {/* A short pause before the sequence, so it starts deliberately rather
-          than the hero running straight into a full-screen photograph. */}
-      <section
-        data-ink-color={colors.offwhite}
-        className="on-dark bg-ink pt-20 text-offwhite md:pt-28"
-      >
-        <div className="container-wide flex flex-wrap items-end justify-between gap-8">
+      {/*
+        The featured pieces, large and in normal flow.
+
+        This was <PushThrough>: six absolutely stacked cards that scaled and
+        crossfaded on scroll. With animation switched off the whole thing
+        collapsed — every card and all six captions rendered at once, on top of
+        each other. Its static fallback was written with Tailwind's
+        `motion-reduce:` variants, which key off the operating system's
+        setting and so never fired for the site's own switch.
+
+        A large two-column grid says the same thing without depending on
+        JavaScript to be legible: the work at a size you can judge a line by,
+        with the caption under each piece rather than floating over it.
+      */}
+      <Section ground="ink" width="wide">
+        <div className="flex flex-wrap items-end justify-between gap-8">
           <div>
             <p className="type-label text-chilli">Selected work</p>
-            <TextScrub
-              as="h2"
-              className="type-headline mt-5 max-w-[16ch] text-offwhite"
-            >
+            <h2 className="type-headline mt-5 max-w-[16ch] text-offwhite">
               Close enough to judge a line by
-            </TextScrub>
+            </h2>
           </div>
           <p className="type-body max-w-[34ch] text-paper-60">
-            Keep scrolling. Each piece opens to full size before it passes,
-            which is the only honest way to show fine line work on a screen.
+            Healed pieces at full size. Fine line lives or dies on the line
+            itself, so it is shown big enough to see one.
           </p>
         </div>
-      </section>
 
-      <PushThrough items={featured} />
+        <div className="mt-14 grid gap-6 sm:grid-cols-2">
+          {featured.map((piece, i) => (
+            <figure key={piece.src} className="group">
+              {/*
+                Landscape, not portrait. At two columns on a wide screen a 3:4
+                tile is taller than the viewport: one photograph filled the
+                whole window and the grid read as a slideshow. 4:3 roughly
+                halves that, and 16:10 from lg keeps it in check as the columns
+                get wider still.
+              */}
+              <div className="aspect-4/3 overflow-hidden bg-maroon-deep lg:aspect-16/10">
+                <Image
+                  src={piece.src}
+                  alt={piece.title}
+                  width={1200}
+                  height={1600}
+                  sizes="(max-width: 639px) 100vw, 50vw"
+                  priority={i < 2}
+                  className="h-full w-full object-cover transition-transform duration-[1200ms] ease-(--ease-brand) group-hover:scale-[1.03]"
+                />
+              </div>
+              <figcaption className="mt-5">
+                <p className="type-subhead text-offwhite">{piece.title}</p>
+                <p className="type-label mt-2 text-chilli">{piece.meta}</p>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </Section>
 
       <Section ground="paper" width="wide">
         <div className="flex flex-wrap items-end justify-between gap-6">

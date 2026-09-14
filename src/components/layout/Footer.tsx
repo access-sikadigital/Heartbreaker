@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { CtaLink } from "@/components/ui/CtaLink";
-import { footerNav, legalNav, primaryCta } from "@/data/navigation";
+/* CtaLink and primaryCta went with the closing call to action below. */
+import { footerNav, legalNav } from "@/data/navigation";
 import { site } from "@/data/site";
 import { colors } from "@/lib/tokens";
 
@@ -25,24 +25,14 @@ export function Footer() {
       data-ink-color={colors.offwhite}
       className="on-dark relative overflow-hidden bg-maroon text-offwhite"
     >
-      {/* Closing call to action */}
-      <div className="container-wide border-b border-paper-20 py-16 md:py-20">
-        <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
-          <div>
-            <p className="type-label text-chilli">Bookings</p>
-            <h2 className="type-display mt-4 max-w-[14ch]">
-              Your story deserves intention
-            </h2>
-          </div>
+      {/*
+        The closing "Your story deserves intention" band has been removed.
 
-          <CtaLink href={primaryCta.href}
-            className="type-button inline-flex shrink-0 items-center gap-3 border border-offwhite px-8 py-4 transition-colors duration-(--duration-fast) hover:bg-offwhite hover:text-maroon"
-          >
-            {primaryCta.label}
-            <span aria-hidden="true">&#8599;</span>
-          </CtaLink>
-        </div>
-      </div>
+        Every page already ends with <BookingCta>, so the footer's own call to
+        action landed immediately underneath it: two Book-a-tattoo buttons,
+        stacked, a few hundred pixels apart. The second one added no new
+        argument and cost the footer its opening.
+      */}
 
       {/* Navigation + studio details */}
       <div className="container-wide grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4">
@@ -95,25 +85,24 @@ export function Footer() {
       </div>
 
       {/*
-        Oversized wordmark as a graphic device.
+        The brandmark, centred, as the closing device.
 
-        It sits in its own band with real padding. An earlier version used a
-        negative bottom margin to tuck it behind the legal row, which just put
-        the copyright on top of it and pushed the "INK" past the right edge
-        where the footer's overflow clipped it. Contained and full-width, the
-        mark reads as intentional rather than broken.
+        This was the full wordmark at display width and 12% opacity. On a
+        400px phone it stretched edge to edge as a pale grey smear that read as
+        a rendering fault rather than a graphic. The bird is square, so it
+        holds its shape at any width, and at full strength it reads as a mark
+        instead of a ghost.
       */}
       <div
         aria-hidden="true"
-        className="pointer-events-none select-none px-6 pt-6 pb-10"
-        style={{ opacity: 0.12 }}
+        className="pointer-events-none flex select-none justify-center px-6 pt-4 pb-12"
       >
         <Image
-          src="/brand/logo/primary-offwhite.svg"
+          src="/brand/logo/brandmark-white.svg"
           alt=""
-          width={830}
-          height={53}
-          className="h-auto w-full"
+          width={550}
+          height={521}
+          className="h-auto w-[54px] opacity-70 md:w-[68px]"
         />
       </div>
 

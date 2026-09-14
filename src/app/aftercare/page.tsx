@@ -154,9 +154,19 @@ export default function AftercarePage() {
         </PinnedSteps>
       </Section>
 
-      <Section ground="chilli">
-        <h2 className="type-headline max-w-[16ch]">When to ask for help</h2>
-        <p className="type-lead mt-6 max-w-[52ch] text-paper-80">
+      {/*
+        Paper, not chilli. A full-bleed red band is the loudest thing the
+        palette can do, and spending it on the infection warning made the one
+        genuinely calm-voiced section on the page read as an alarm. The chilli
+        accent survives on the label, which is enough to mark it as the section
+        to find in a hurry.
+      */}
+      <Section ground="paper" className="border-t rule-ink">
+        <p className="type-label text-chilli">If something is not right</p>
+        <h2 className="type-headline mt-4 max-w-[16ch] text-maroon">
+          When to ask for help
+        </h2>
+        <p className="type-lead mt-6 max-w-[52ch] text-ink-70">
           Spreading redness, heat, swelling that worsens after day three, or any
           discharge is worth a call, to us and to a doctor. Infection is
           uncommon and very treatable early. If something feels wrong, ask
@@ -165,14 +175,14 @@ export default function AftercarePage() {
         <div className="mt-9 flex flex-wrap gap-4">
           <Link
             href="/contact/"
-            className="type-button inline-flex items-center gap-3 border border-offwhite px-7 py-3.5 transition-colors duration-(--duration-fast) hover:bg-offwhite hover:text-chilli"
+            className="type-button inline-flex items-center gap-3 border border-maroon px-7 py-3.5 text-maroon transition-colors duration-(--duration-fast) hover:bg-maroon hover:text-offwhite"
           >
             Get in touch
             <span aria-hidden="true">&#8599;</span>
           </Link>
           <Link
             href="/studio-policy/"
-            className="type-button inline-flex items-center gap-3 border border-paper-40 px-7 py-3.5 text-paper-80 transition-colors duration-(--duration-fast) hover:border-offwhite hover:text-offwhite"
+            className="type-button inline-flex items-center gap-3 border border-ink-30 px-7 py-3.5 text-ink-70 transition-colors duration-(--duration-fast) hover:border-maroon hover:text-maroon"
           >
             Touch-up policy
             <span aria-hidden="true">&#8599;</span>

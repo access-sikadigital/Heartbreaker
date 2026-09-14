@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/ui/PageHero";
 import { Section } from "@/components/ui/Section";
+import { BookingCta } from "@/components/sections/BookingCta";
 
 /**
  * PLACEHOLDER LEGAL COPY.
@@ -52,6 +53,8 @@ export default function Page() {
           ))}
         </div>
       </Section>
+
+      <BookingCta />
     </>
   );
 }

@@ -11,6 +11,15 @@ type CounterProps = {
   suffix?: string;
   prefix?: string;
   className?: string;
+  /**
+   * Group thousands with a separator. On by default, because the counter is
+   * usually showing a quantity.
+   *
+   * Turn it OFF for years. `toLocaleString()` has no idea that 2017 is a date
+   * and renders it "2,017", which is how the studio's opening year ended up
+   * looking like a headcount.
+   */
+  group?: boolean;
 };
 
 /**
@@ -27,8 +36,10 @@ export function Counter({
   suffix = "",
   prefix = "",
   className,
+  group = true,
 }: CounterProps) {
   const ref = useRef<HTMLSpanElement>(null);
+  const format = (n: number) => (group ? n.toLocaleString() : String(n));
 
   useGSAP(
     () => {
@@ -43,7 +54,7 @@ export function Counter({
         ease: "brand-out",
         snap: { value: 1 },
         onUpdate: () => {
-          el.textContent = `${prefix}${Math.round(counter.value).toLocaleString()}${suffix}`;
+          el.textContent = `${prefix}${format(Math.round(counter.value))}${suffix}`;
         },
         scrollTrigger: { trigger: el, start: "top 88%", once: true },
       });
@@ -54,7 +65,7 @@ export function Counter({
   return (
     <span ref={ref} className={cn("numeric", className)}>
       {prefix}
-      {to.toLocaleString()}
+      {format(to)}
       {suffix}
     </span>
   );

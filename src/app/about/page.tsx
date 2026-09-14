@@ -63,7 +63,8 @@ export default function AboutPage() {
               <div>
                 <dt className="type-label text-ink-50">Tattooing since</dt>
                 <dd className="type-subhead mt-2 text-maroon">
-                  <Counter to={2017} />
+                  {/* group={false}: it is a year, not a quantity. */}
+                  <Counter to={2017} group={false} />
                 </dd>
               </div>
               <div>

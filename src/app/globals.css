@@ -581,3 +581,44 @@ html {
     animation: none !important;
   }
 }
+
+/* ==========================================================================
+   MOTION OFF — the site-wide switch
+
+   Mirrors the reduced-motion block above, keyed off the attribute that
+   layout.tsx stamps on <html> when MOTION_ENABLED is false. The two are kept
+   separate rather than merged into one selector list: the block above is an
+   accessibility obligation and must never be removed, this one is a design
+   decision that may be reverted.
+
+   The `.anim-*` rules are the important half. Those classes start at
+   opacity: 0 so a scroll reveal has somewhere to animate FROM, and with the
+   JavaScript switched off nothing would ever bring them back. Without this,
+   turning motion off would blank half the page.
+   ========================================================================== */
+
+:root[data-motion="off"] {
+  scroll-behavior: auto !important;
+
+  & *,
+  & *::before,
+  & *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0ms !important;
+  }
+
+  & .anim-fade,
+  & .anim-rise,
+  & .anim-clip,
+  & .line-inner {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+  }
+
+  & .marquee-track {
+    animation: none !important;
+    transform: none !important;
+  }
+}

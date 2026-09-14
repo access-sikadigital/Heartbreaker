@@ -10,8 +10,15 @@ import {
   type ReactNode,
 } from "react";
 import Lenis from "lenis";
-import { gsap, ScrollTrigger, registerGsap, prefersReducedMotion } from "@/lib/gsap";
+import { MotionConfig } from "motion/react";
+import {
+  gsap,
+  ScrollTrigger,
+  registerGsap,
+  systemPrefersReducedMotion,
+} from "@/lib/gsap";
 import { useIsomorphicLayoutEffect } from "@/hooks/useIsomorphicLayoutEffect";
+import { MOTION_ENABLED, SMOOTH_SCROLL_ENABLED } from "@/lib/motion-config";
 
 type SmoothScrollApi = {
   lenis: Lenis | null;
@@ -51,7 +58,13 @@ export function SmoothScroll({ children }: { children: ReactNode }) {
     // Tells CSS that JS is live, so animated elements may safely start hidden.
     document.documentElement.classList.add("js");
 
-    if (prefersReducedMotion()) {
+    /*
+      Gated on the smooth-scroll switch and the visitor's real preference, NOT
+      on the animation switch. Scroll-linked animation being off does not mean
+      the wheel should feel different: those are two separate decisions, and
+      they are two separate flags in motion-config.ts.
+    */
+    if (!SMOOTH_SCROLL_ENABLED || systemPrefersReducedMotion()) {
       ScrollTrigger.refresh();
       return;
     }
@@ -106,15 +119,57 @@ export function SmoothScroll({ children }: { children: ReactNode }) {
     }
   }, []);
 
-  const stop = useCallback(() => lenisRef.current?.stop(), []);
-  const start = useCallback(() => lenisRef.current?.start(), []);
+  /*
+    With smooth scrolling off there is no Lenis instance, so `stop()` would
+    have been a no-op and the page would scroll underneath the open mobile
+    menu — on iOS that leaves you somewhere else entirely when you close it.
+    Falling back to locking the document keeps the menu behaving the same way
+    whether or not Lenis is running.
+  */
+  const stop = useCallback(() => {
+    const instance = lenisRef.current;
+    if (instance) {
+      instance.stop();
+      return;
+    }
+    document.documentElement.style.overflow = "hidden";
+  }, []);
+
+  const start = useCallback(() => {
+    const instance = lenisRef.current;
+    if (instance) {
+      instance.start();
+      return;
+    }
+    document.documentElement.style.overflow = "";
+  }, []);
 
   const api = useMemo<SmoothScrollApi>(
     () => ({ lenis, scrollTo, stop, start }),
     [lenis, scrollTo, stop, start],
   );
 
-  return (
-    <SmoothScrollContext.Provider value={api}>{children}</SmoothScrollContext.Provider>
+  /*
+    MotionConfig covers the half of the site GSAP does not: the Reveal /
+    RevealItem entrances and the mobile menu's AnimatePresence, which are
+    Motion components with their own `initial` / `animate` / `exit` props and
+    never consult `prefersReducedMotion()`.
+
+    "always" rather than "user": the switch is a design decision here, not the
+    visitor's preference. Motion still applies the END state of every
+    transition, so elements land where they belong instead of being left at the
+    `initial` values — which is exactly the stranded-at-opacity-0 failure that
+    deleting the components by hand would have risked.
+
+    This provider is the right home for it because it is already the client
+    boundary. Putting MotionConfig in layout.tsx would drag a client component
+    into a server one for no gain.
+  */
+  const tree = MOTION_ENABLED ? (
+    children
+  ) : (
+    <MotionConfig reducedMotion="always">{children}</MotionConfig>
   );
+
+  return <SmoothScrollContext.Provider value={api}>{tree}</SmoothScrollContext.Provider>;
 }

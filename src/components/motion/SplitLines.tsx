@@ -1,12 +1,14 @@
 "use client";
 
-import { useRef, type ElementType, type ReactNode } from "react";
+import { useRef, type CSSProperties, type ElementType, type ReactNode } from "react";
 import { gsap, useGSAP, SplitText, ScrollTrigger, prefersReducedMotion } from "@/lib/gsap";
 import { cn } from "@/lib/utils";
 
 type SplitLinesProps = {
   children: ReactNode;
   className?: string;
+  /** Lands on the heading itself, alongside `className`. */
+  style?: CSSProperties;
   as?: ElementType;
   /** Seconds between each line. */
   stagger?: number;
@@ -25,6 +27,7 @@ type SplitLinesProps = {
 export function SplitLines({
   children,
   className,
+  style,
   as: Tag = "div",
   stagger = 0.09,
   delay = 0,
@@ -92,7 +95,9 @@ export function SplitLines({
   */
   return (
     <div ref={scope} className="overflow-visible">
-      <Tag className={cn(className)}>{children}</Tag>
+      <Tag className={cn(className)} style={style}>
+        {children}
+      </Tag>
     </div>
   );
 }

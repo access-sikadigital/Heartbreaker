@@ -9,6 +9,7 @@ import { CustomEase } from "gsap/CustomEase";
 import { Observer } from "gsap/Observer";
 import { Flip } from "gsap/Flip";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
+import { MOTION_ENABLED } from "@/lib/motion-config";
 
 let registered = false;
 
@@ -59,8 +60,31 @@ export function registerGsap() {
 // a module Next also evaluates during SSR.
 registerGsap();
 
-/** True when the visitor has asked for reduced motion. */
+/**
+ * True when animation should not run.
+ *
+ * Two reasons it returns true: the visitor asked for reduced motion, or the
+ * site-wide switch in `motion-config.ts` is off. Every animated component
+ * already calls this before doing anything, so the switch reaches all of them
+ * without touching one of them.
+ *
+ * The name is now slightly narrower than the behaviour. It stays because it is
+ * called in about twenty places and a rename would be twenty edits that change
+ * no logic.
+ */
 export function prefersReducedMotion() {
+  if (!MOTION_ENABLED) return true;
+  return systemPrefersReducedMotion();
+}
+
+/**
+ * The visitor's ACTUAL operating-system preference, ignoring the site switch.
+ *
+ * Needed because the two are no longer the same question. Animations are off
+ * by site decision, but smooth scrolling is on, and the only thing that should
+ * override smooth scrolling is a real request for reduced motion.
+ */
+export function systemPrefersReducedMotion() {
   if (typeof window === "undefined") return false;
   return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 }

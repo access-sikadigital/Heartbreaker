@@ -5,6 +5,7 @@ import { Section } from "@/components/ui/Section";
 import { PinnedSteps } from "@/components/motion/PinnedSteps";
 import { TextScrub } from "@/components/motion/TextScrub";
 import { Reveal, RevealItem } from "@/components/motion/Reveal";
+import { BookingCta } from "@/components/sections/BookingCta";
 import { site } from "@/data/site";
 
 /**
@@ -190,6 +191,8 @@ export default function WorkWithUsPage() {
           </div>
         </div>
       </Section>
+
+      <BookingCta />
     </>
   );
 }

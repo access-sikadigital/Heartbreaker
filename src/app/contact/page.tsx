@@ -7,6 +7,7 @@ import { PinnedSteps } from "@/components/motion/PinnedSteps";
 import { TextScrub } from "@/components/motion/TextScrub";
 import { Reveal, RevealItem } from "@/components/motion/Reveal";
 import { EnquiryForm } from "@/components/forms/EnquiryForm";
+import { BookingCta } from "@/components/sections/BookingCta";
 import { site } from "@/data/site";
 import { JsonLd, localBusinessSchema } from "@/lib/schema";
 
@@ -315,6 +316,8 @@ export default function ContactPage() {
           ))}
         </PinnedSteps>
       </Section>
+
+      <BookingCta />
     </>
   );
 }
