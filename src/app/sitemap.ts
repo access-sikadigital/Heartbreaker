@@ -29,6 +29,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/gift-vouchers/", priority: 0.6 },
     { path: "/reviews/", priority: 0.6 },
     { path: "/faqs/", priority: 0.6 },
+    /* Event page. Remove after 21 Nov 2026 along with src/app/vinehop/. */
+    { path: "/vinehop/", priority: 0.5 },
   ];
 
   return [
