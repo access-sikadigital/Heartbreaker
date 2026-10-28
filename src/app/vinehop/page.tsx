@@ -1,97 +1,170 @@
 import type { Metadata } from "next";
-import { PageHero } from "@/components/ui/PageHero";
+import Image from "next/image";
+import Script from "next/script";
 import { Section } from "@/components/ui/Section";
 import { GhlBookingEmbed } from "@/components/forms/GhlBookingEmbed";
 import { vinehop } from "@/data/vinehop";
+import { colors } from "@/lib/tokens";
 
 /**
- * Event page for Vinehop 2026. Replaces sending people to the GHL funnel page:
- * the copy lives here, the booking and payment stay in GHL via the embedded
- * calendar group, so slots, prices and confirmations are still managed in one
- * place.
+ * Vinehop 2026 pre-booking page.
  *
- * Not in the nav. Traffic comes from Instagram, ads and the festival itself,
- * all of which link straight here. Take it down (or redirect it) after the day.
+ * Built to match the GHL funnel page section for section: co-brand band and
+ * stall photo, the pitch with the booking menu straight under it, this year's
+ * designs, terms, last year's reel and reviews. Booking, payment and the
+ * reviews feed stay in GHL; everything else is the site's own.
+ *
+ * Not in the nav. Traffic comes from Instagram, ads and the festival itself.
+ * Take it down (or redirect it) after the day.
  */
 export const metadata: Metadata = {
-  title: "Vinehop 2026 Fine Line Tattoos",
-  description: `Fine line flash and freckle tattoos at ${vinehop.name}, ${vinehop.dateLabel}. Pre-booking only, limited spots. Pick your tattoo and time and pay to secure it.`,
+  title: "Vinehop 2026 Fine Line Tattoo Pre-Booking",
+  description: `Book your Vinehop flash or freckle tattoo with Heartbreaker Ink, ${vinehop.dateLabel}. Pre-booking only, ${vinehop.spots} spots for the whole day.`,
   alternates: { canonical: "/vinehop/" },
 };
 
+const bookButton =
+  "type-button inline-flex items-center gap-3 bg-chilli px-8 py-4 text-offwhite transition-colors duration-(--duration-fast) hover:bg-maroon";
+
 export default function VinehopPage() {
+  const { images, designs, terms } = vinehop;
+
   return (
     <>
-      <PageHero
-        eyebrow={`${vinehop.name} · ${vinehop.dateLabel}`}
-        heading="Fine line tattoos at Vinehop"
-        intro="Flash and freckle tattoos on the day, by pre-booking only. Limited spots, first in, best dressed."
-        image="/brand/photography/small-micro/legs-foliage.jpg"
-        trail={[{ label: "Vinehop 2026", href: "/vinehop/" }]}
-      />
-
-      <Section ground="paper">
-        <div className="grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:gap-20">
-          <div>
-            <p className="type-label text-chilli">What&rsquo;s on offer</p>
-            <h2 className="type-headline mt-4 max-w-[14ch] text-maroon">
-              Pick one, then pick a time
-            </h2>
-            <p className="type-body mt-6 max-w-[40ch] text-ink-70">
-              {vinehop.dateLabel}, {vinehop.hoursLabel}. Prices are shown when
-              you choose an option below.
-            </p>
-          </div>
-
-          <ul className="flex flex-col">
-            {vinehop.options.map((o) => (
-              <li
-                key={o.name}
-                className="grid grid-cols-[1fr_auto] gap-x-6 gap-y-2 border-t rule-ink py-6"
-              >
-                <h3 className="type-subhead text-maroon">{o.name}</h3>
-                <span className="type-label numeric pt-1 text-ink-50">{o.time}</span>
-                <p className="type-body col-span-2 max-w-[48ch] text-ink-70">{o.detail}</p>
-              </li>
-            ))}
-          </ul>
+      {/* Co-brand band, then the stall. The header sits over the band. */}
+      <section data-ink-color={colors.offwhite} className="on-dark bg-maroon pt-(--header-h)">
+        <div className="flex justify-center px-6 py-6">
+          <Image
+            src={images.lockup.src}
+            width={images.lockup.width}
+            height={images.lockup.height}
+            alt="Heartbreaker Ink × Vinehop"
+            priority
+            className="h-14 w-auto md:h-20"
+          />
         </div>
-      </Section>
-
-      <Section ground="maroon">
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
-          <div>
-            <p className="type-label text-chilli">Before you book</p>
-            <h2 className="type-headline mt-4 max-w-[14ch]">The fine print</h2>
-          </div>
-          <ol className="flex flex-col">
-            {vinehop.rules.map((rule, i) => (
-              <li
-                key={rule}
-                className="grid grid-cols-[3rem_1fr] gap-5 border-t border-paper-20 py-6"
-              >
-                <span className="type-label numeric pt-1 text-chilli">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <p className="type-body max-w-[44ch] text-paper-80">{rule}</p>
-              </li>
-            ))}
-          </ol>
+        <div className="relative h-[70vw] max-h-[640px] min-h-[280px]">
+          <Image
+            src={images.hero.src}
+            alt="The Heartbreaker Ink fine line tattoo stall at Vinehop"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-[50%_35%]"
+          />
         </div>
-      </Section>
+      </section>
 
-      <Section ground="paper" id="book">
-        <p className="type-label text-chilli">Book your spot</p>
-        <h2 className="type-headline mt-4 max-w-[16ch] text-maroon">
-          Choose your tattoo and time
-        </h2>
-        <div className="mt-12">
+      <Section ground="paper" className="text-center">
+        <h1 className="type-headline mx-auto max-w-[20ch] text-maroon">
+          Fine line tattoo pre-booking page
+        </h1>
+        <div className="type-body mx-auto mt-8 flex max-w-[52ch] flex-col gap-5 text-ink-70">
+          <p>
+            Book your exclusive Vinehop flash tattoo and get inked by the{" "}
+            <strong className="text-chilli">Heartbreaker Ink</strong> team at
+            this year&rsquo;s festival.
+          </p>
+          <p>
+            Pre-bookings are <strong className="text-chilli">essential</strong>{" "}
+            this year, with only{" "}
+            <strong className="text-chilli">{vinehop.spots} spots available</strong>{" "}
+            for the entire day.
+          </p>
+          <p>Once they&rsquo;re gone, they&rsquo;re gone, so get in quick!</p>
+        </div>
+
+        <p id="book" className="type-subhead mt-12 scroll-mt-28 text-chilli">
+          Book here <span aria-hidden="true">&darr;</span>
+        </p>
+
+        <div className="mx-auto mt-8 max-w-4xl bg-white p-3 text-left shadow-[0_8px_40px_rgb(0_0_0/0.08)] md:p-6">
           <GhlBookingEmbed
             src={vinehop.widgetUrl}
             title={`Book a tattoo at ${vinehop.name}`}
             fallbackUrl={vinehop.funnelUrl}
           />
         </div>
+      </Section>
+
+      <Section ground="maroon" className="text-center">
+        <h2 className="type-headline">This year&rsquo;s designs</h2>
+        <div className="mx-auto mt-12 grid max-w-4xl grid-cols-2 gap-x-3 gap-y-14 sm:gap-x-6">
+          {designs.map((d) => (
+            <div key={d.label} className="flex flex-col items-center">
+              <p className="type-label text-chilli">&mdash; {d.label} &mdash;</p>
+              <Image
+                src={d.sheet.src}
+                width={d.sheet.width}
+                height={d.sheet.height}
+                alt={`${d.label} designs for Vinehop 2026`}
+                sizes="(max-width: 639px) 50vw, 448px"
+                className="mt-5 h-auto w-full bg-white"
+              />
+              <p className="type-label mt-6 text-paper-80">size: {d.size}</p>
+              <Image
+                src={d.onSkin.src}
+                width={d.onSkin.width}
+                height={d.onSkin.height}
+                alt={`A ${d.label.toLowerCase()} tattoo on an arm, to show the size`}
+                sizes="(max-width: 639px) 50vw, 448px"
+                className="mt-6 h-auto w-full"
+              />
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      <Section ground="paper" className="text-center">
+        <h2 className="type-headline text-maroon">Terms</h2>
+        <dl className="mt-10 flex flex-col gap-8">
+          {terms.map((t) => (
+            <div key={t.title}>
+              <dt className="type-label text-chilli">{t.title}</dt>
+              <dd className="type-body mt-2 text-ink-70">{t.body}</dd>
+            </div>
+          ))}
+        </dl>
+        <a href="#book" className={`${bookButton} mt-12`}>
+          Book my Vinehop tattoo
+        </a>
+      </Section>
+
+      <Section ground="paper" className="border-t rule-ink text-center">
+        <h2 className="type-headline text-maroon">Last year was a vibe!</h2>
+        <p className="type-label mt-4 text-chilli">Don&rsquo;t miss out</p>
+
+        <video
+          src={vinehop.video}
+          className="mx-auto mt-10 aspect-video w-full max-w-4xl bg-ink object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+          controls
+          preload="metadata"
+        />
+
+        {vinehop.reviewsWidgetUrl && (
+          <div className="mx-auto mt-14 max-w-4xl bg-white p-3 text-left shadow-[0_8px_40px_rgb(0_0_0/0.08)] md:p-6">
+            <h3 className="type-subhead text-maroon">The Heartbreaker experience</h3>
+            <iframe
+              className="lc_reviews_widget mt-4 block w-full border-0"
+              src={vinehop.reviewsWidgetUrl}
+              title="Heartbreaker Ink reviews"
+              style={{ minWidth: "100%", minHeight: 260 }}
+              loading="lazy"
+            />
+            <Script
+              src="https://reputationhub.site/reputation/assets/review-widget.js"
+              strategy="lazyOnload"
+            />
+          </div>
+        )}
+
+        <a href="#book" className={`${bookButton} mt-14`}>
+          Book my Vinehop tattoo
+        </a>
       </Section>
     </>
   );
