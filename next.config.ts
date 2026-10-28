@@ -26,12 +26,6 @@ const nextConfig: NextConfig = {
     deviceSizes: [400, 640, 828, 1080, 1280, 1600, 1920, 2560],
     imageSizes: [128, 200, 256, 384],
 
-    // GoHighLevel's media library. The Vinehop page serves its photos straight
-    // from the funnel folder there, so they stay managed in one place.
-    remotePatterns: [
-      { protocol: "https", hostname: "assets.cdn.filesafe.space", pathname: "/R3qo0uUhGSXmwcu1vMxl/**" },
-    ],
-
     // Every logo and icon on the site is an SVG, and the image optimiser
     // rejects SVG with a 400 unless this is set — which renders them as broken
     // images rather than throwing anything. Safe here because the only SVGs
@@ -65,6 +59,34 @@ const nextConfig: NextConfig = {
    */
   async redirects() {
     return [{ source: "/book", destination: "/contact/", permanent: true }];
+  },
+
+  /**
+   * /vinehop/ IS the GHL funnel page, served from this domain.
+   *
+   * Vercel fetches page.heartbreakerink.com/vinehop-2026-booking-page and
+   * returns it at /vinehop/, so visitors stay on the main site's address but
+   * get the exact page built in GHL: same layout, same booking calendar, same
+   * payment flow. Edit the page in GHL and this updates with it.
+   *
+   * A rebuilt copy was tried first and was slower, drifted from the original
+   * and fought the site's smooth scrolling. Proxying avoids all three.
+   *
+   * The page's canonical tag still names the GHL address, which is correct:
+   * there is one page, so search engines should index one URL. Remove this
+   * after the event (21 Nov 2026).
+   */
+  async rewrites() {
+    return {
+      beforeFiles: [
+        {
+          source: "/vinehop/",
+          destination: "https://page.heartbreakerink.com/vinehop-2026-booking-page",
+        },
+      ],
+      afterFiles: [],
+      fallback: [],
+    };
   },
 
   async headers() {
