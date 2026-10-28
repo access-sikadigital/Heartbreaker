@@ -26,6 +26,12 @@ const nextConfig: NextConfig = {
     deviceSizes: [400, 640, 828, 1080, 1280, 1600, 1920, 2560],
     imageSizes: [128, 200, 256, 384],
 
+    // GoHighLevel's media library. The Vinehop page serves its photos straight
+    // from the funnel folder there, so they stay managed in one place.
+    remotePatterns: [
+      { protocol: "https", hostname: "assets.cdn.filesafe.space", pathname: "/R3qo0uUhGSXmwcu1vMxl/**" },
+    ],
+
     // Every logo and icon on the site is an SVG, and the image optimiser
     // rejects SVG with a 400 unless this is set — which renders them as broken
     // images rather than throwing anything. Safe here because the only SVGs
