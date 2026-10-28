@@ -14,7 +14,7 @@ import { vinehop } from "@/data/vinehop";
  * all of which link straight here. Take it down (or redirect it) after the day.
  */
 export const metadata: Metadata = {
-  title: "Vinehop 2026 Fine Line Tattoos | Heartbreaker Ink",
+  title: "Vinehop 2026 Fine Line Tattoos",
   description: `Fine line flash and freckle tattoos at ${vinehop.name}, ${vinehop.dateLabel}. Pre-booking only, limited spots. Pick your tattoo and time and pay to secure it.`,
   alternates: { canonical: "/vinehop/" },
 };
