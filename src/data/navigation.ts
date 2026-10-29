@@ -13,6 +13,11 @@ export type NavLink = { label: string; href: string; external?: boolean };
 
 /** Primary header navigation. */
 export const primaryNav: NavLink[] = [
+  /* Event page, up until Vinehop on 21 Nov 2026; remove it with the rewrite
+     in next.config.ts after the day. `external` because /vinehop/ is the GHL
+     page proxied in, not a Next route, so it needs a full page load rather
+     than client-side routing. */
+  { label: "Vinehop", href: "/vinehop/", external: true },
   { label: "Fine line", href: "/fine-line-tattoos/" },
   { label: "Flash", href: "/flash/" },
   { label: "Gallery", href: "/gallery/" },

@@ -147,12 +147,12 @@ export function Header() {
             the four, and the panel already carries every link plus both calls
             to action.
           */}
-          <nav aria-label="Primary" className="hidden items-center gap-6 xl:flex 2xl:gap-9">
+          <nav aria-label="Primary" className="hidden items-center gap-4 whitespace-nowrap xl:flex 2xl:gap-9">
             {primaryNav.map((link) => (
-              <Link key={link.href} href={link.href} className="group relative">
+              <CtaLink key={link.href} href={link.href} external={link.external} className="group relative">
                 <span className="type-label">{link.label}</span>
                 <span className="absolute -bottom-1.5 left-0 h-px w-full origin-right scale-x-0 bg-chilli transition-transform duration-(--duration-fast) ease-(--ease-brand) group-hover:origin-left group-hover:scale-x-100" />
-              </Link>
+              </CtaLink>
             ))}
           </nav>
 
@@ -177,7 +177,7 @@ export function Header() {
 
             <Magnetic className="hidden sm:block">
               <CtaLink href={primaryCta.href}
-                className="type-button btn-fill inline-block px-5 py-2.5"
+                className="type-button btn-fill inline-block whitespace-nowrap px-5 py-2.5"
               >
                 {primaryCta.label}
               </CtaLink>
@@ -235,8 +235,9 @@ export function Header() {
                     ease: [0.22, 1, 0.36, 1],
                   }}
                 >
-                  <Link
+                  <CtaLink
                     href={link.href}
+                    external={link.external}
                     onClick={() => setOpen(false)}
                     /* type-headline, not type-display. Seven links at display
                        scale overflow a 667px phone before the CTAs are even
@@ -245,7 +246,7 @@ export function Header() {
                     className="type-headline block py-1.5 text-offwhite"
                   >
                     {link.label}
-                  </Link>
+                  </CtaLink>
                 </motion.div>
               ))}
             </nav>
